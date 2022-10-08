@@ -1,0 +1,301 @@
+syntax = "proto3";
+option java_package = "io.openisms";
+option go_package = "github.com/openisms/api";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+package io.openisms.v1;
+
+message Event {
+  Meta meta = 1;
+  SourceSystem source = 2;
+  repeated User users = 3;
+  repeated PhysicalObject devices = 4;
+  repeated Repository repositories = 7;
+  repeated Certification certification = 9;
+  repeated Pentest pentest = 11;
+  repeated Statistics stats = 13;
+}
+
+message Meta {
+  google.protobuf.Timestamp created = 1;
+  string identifier = 2;
+  string etag = 3;
+}
+
+message SourceSystem {
+  string name = 1;
+  string vendor = 2;
+  string url = 3;
+  string logo_url = 4;
+  SourceType type = 5;
+
+  enum SourceType {
+    undefined = 0;
+    // Infrastructure
+    identity_provider = 1; // IdP, IAM, Google Workspace, Okta, Identity Management, Cloud Directory, Active Directory, Access Management, SAML
+    source_control_management = 2;
+    cloud_provider = 3; // AWS, Google Cloud, Azure, Hetzner, OVH
+    database = 4;
+    network = 5; // Tailscale, Wireguard, VPN, Cloudflare
+    // Devices & Security, connected to laptops
+    device_management = 10; // jamf, SimpleMDM
+    security_software = 11; // Anti-virus
+    password_manager = 12; // MFA, 1Password
+    // Tools & SaaS
+    communication = 20; // Slack, E-Mail
+    human_resources = 21;// HR, Personio, BambooHR
+    content_management_system = 22;  // CMS, Notion, Confluence, WordPress
+    ticketing = 23; // Jira, Trello, Asana, Monday.com, airfocus
+    customer_relationship_management = 24;// CRM
+    finance = 25; // Stripe, invoice handling
+    analytics = 26;
+  }
+}
+
+message User {
+  Person person = 1;
+  google.protobuf.BoolValue second_factor_active = 5;
+  google.protobuf.BoolValue second_factor_enforced = 6;
+  google.protobuf.BoolValue active = 7;
+  google.protobuf.BoolValue suspended = 8;
+  google.protobuf.BoolValue disabled = 9;
+  google.protobuf.BoolValue deleted = 10;
+  repeated string groups = 15;
+  repeated string privileges = 16;
+
+  Employment employment = 20;
+  repeated ConnectedAccount connected_accounts = 21; // via SSO, SAML, OIDC
+  repeated PhysicalObject possessions = 22; // Laptop, Phone, Adaptor
+  repeated string tags = 40;
+}
+
+message Person {
+  string id = 1;
+  Name name = 2;
+  string primary_email = 3;
+  repeated string other_emails = 4;
+  UrlWithEtag picture = 5;
+  string company = 6;
+
+  google.protobuf.Timestamp created = 10; // technical date
+  google.protobuf.Timestamp updated = 11; // technical date
+
+}
+
+message Name {
+  string given_name = 1;
+  string family_name = 2;
+  string full_name = 3;
+  string title = 4; // Dr., Sir
+  string position = 5; // CEO, CTO
+  string role = 6; // Developer, Customer Support Agent
+}
+
+message UrlWithEtag {
+  string url = 1;
+  string etag = 2;
+  google.protobuf.Timestamp last_modified = 3;
+}
+
+message Employment {
+  string contract = 1; // full-time, intern, consultant
+  string status = 2; // candidate, hired, active, hiatus, terminated, left
+  Date begin = 3;
+  Date end = 4;
+}
+
+message ConnectedAccount {
+  string app_id = 1;
+  string app_name = 2;
+  string app_type = 3;
+  string app_url = 4;
+  string user_id = 5;
+  repeated string scopes = 6;
+}
+
+message PhysicalObject {
+  string type = 1;
+  string name = 2;
+  string manufacturer = 3;
+  string vendor = 4;
+  string identifier = 5; // company-internal
+  string serial_number = 6;
+  string imei = 7;
+  string meid = 8;
+  repeated Network networks = 9;
+  string hostname = 10;
+  repeated string user_accounts = 11;
+  OperatingSystem os = 12;
+  SecurityFeatures security = 13;
+  repeated Profile profiles = 14;
+  repeated Application apps = 15;
+  repeated string tags = 20;
+}
+
+message SecurityFeatures {
+  google.protobuf.BoolValue activation_lock = 1;
+  google.protobuf.BoolValue supervised = 2;
+  google.protobuf.BoolValue file_vault = 3;
+  google.protobuf.BoolValue full_disk_encryption = 4;
+  google.protobuf.BoolValue secure_password = 5;
+  google.protobuf.BoolValue automatic_screen_lock = 6;
+  google.protobuf.Int32Value screen_lock_after = 7;
+  google.protobuf.BoolValue firewall_enabled = 8;
+  google.protobuf.BoolValue automatic_updates = 9;
+}
+
+message Network {
+  string name = 1;
+  string type = 2; // ethernet, bluetooth, virtual, gsm, vpc
+  string mac_address = 3;
+}
+
+message OperatingSystem {
+  OperatingSystem os = 1;
+  string major_version = 2;
+  string full_version = 3;
+
+  enum OperatingSystems {
+    undefined = 0;
+    macos = 1;
+    windows = 2;
+    linux = 3;
+    unix = 4;
+    chrome_os = 5;
+    ios = 10;
+    android = 11;
+    ros = 14;
+    other = 15;
+  }
+}
+
+message Application {
+  string name = 1;
+  string path = 2;
+  string vendor = 3;
+  string url = 4;
+  string description = 5;
+  string version = 6;
+  google.protobuf.BoolValue signed = 7;
+  google.protobuf.BoolValue system_app = 8;
+  string installation_source = 9; // App Store; homebrew; MDM
+}
+
+message Profile {
+  string name = 1;
+  string identifier = 2;
+  google.protobuf.BoolValue removal_allowed = 3;
+  string payload_type = 4;
+  string payload_identifier = 5;
+}
+
+// from https://github.com/googleapis/googleapis/blob/master/google/type/date.proto
+message Date {
+  // Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+  int32 year = 1;
+
+  // Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+  int32 month = 2;
+
+  // Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a
+  // year by itself or a year and month where the day isn't significant.
+  int32 day = 3;
+}
+
+message Certification {
+  string type = 1; // ISO27k, SOC2, HIPAA
+  string url = 2; // to certificate
+  repeated string tags = 10;
+}
+
+message Company {
+  string name = 1;
+  string url = 2;
+  string category = 3;
+  Person contact = 4;
+  repeated string address = 5;
+}
+
+message Pentest {
+  string id = 1;
+  Date begin = 2;
+  Date end = 3;
+  Company company = 4;
+  string focus = 5;
+  bool passed = 6;
+  string result = 7;
+  string url = 8;
+  repeated Person contacts = 9;
+  repeated string tags = 10;
+}
+
+message Repository {
+  string name = 1;
+  string url = 2;
+  string description = 3;
+  Visibility visibility = 4;
+  repeated Person members = 5;
+  repeated string security_attributes = 6; // branch-protection
+  repeated string tags = 10;
+}
+
+enum Visibility {
+  undefined = 0;
+  public = 1;
+  internal = 2; // private
+  confidential = 3;
+}
+
+message Statistics {
+  string identifier = 1; // accounts:num_users, device_management:num_30day_desktop_linux_managed_devices
+  string name = 2; // Number of users
+  int32 value = 3; // 42
+  string comment = 4; // "Does not include suspended users"
+}
+
+
+/**
+-
+- Projects[]
+- Databases[]
+- Training[]
+  - Security|Fire|Awareness
+  - Name
+  - ID
+  - URL
+  - Length
+  - PlaceInSeries
+  - TotalInSeries
+  - CompletedByUser[]
+  - HeldByUser
+  - Documents[]
+  - FollowUpAfter
+  - NextOccurrence
+- Incidents[]
+- Monitoring
+  - Latencies[]
+    - Name
+    - Percentile
+    - Value
+      - Min|Max|Avg
+      - Value
+    - Tags[]
+  - Gauges[]
+    - Name
+    - Value
+    - Tags[]
+  - Counters[]
+    - Name
+    - Value
+    - Tags[]
+- Tasks[]
+  - Name
+  - Description
+  - successfull|failed
+  - Message
+  - URL
+  - Tags[]
+
+ */
