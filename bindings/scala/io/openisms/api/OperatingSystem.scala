@@ -7,7 +7,7 @@ package io.openisms.api
 
 @SerialVersionUID(0L)
 final case class OperatingSystem(
-    os: _root_.scala.Option[io.openisms.api.OperatingSystem] = _root_.scala.None,
+    os: io.openisms.api.OperatingSystem.OperatingSystems = io.openisms.api.OperatingSystem.OperatingSystems.undefined,
     majorVersion: _root_.scala.Predef.String = "",
     fullVersion: _root_.scala.Predef.String = "",
     unknownFields: _root_.scalapb.UnknownFieldSet = _root_.scalapb.UnknownFieldSet.empty
@@ -16,9 +16,12 @@ final case class OperatingSystem(
     private[this] var __serializedSizeMemoized: _root_.scala.Int = 0
     private[this] def __computeSerializedSize(): _root_.scala.Int = {
       var __size = 0
-      if (os.isDefined) {
-        val __value = os.get
-        __size += 1 + _root_.com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(__value.serializedSize) + __value.serializedSize
+      
+      {
+        val __value = os.value
+        if (__value != 0) {
+          __size += _root_.com.google.protobuf.CodedOutputStream.computeEnumSize(1, __value)
+        }
       };
       
       {
@@ -47,11 +50,11 @@ final case class OperatingSystem(
       
     }
     def writeTo(`_output__`: _root_.com.google.protobuf.CodedOutputStream): _root_.scala.Unit = {
-      os.foreach { __v =>
-        val __m = __v
-        _output__.writeTag(1, 2)
-        _output__.writeUInt32NoTag(__m.serializedSize)
-        __m.writeTo(_output__)
+      {
+        val __v = os.value
+        if (__v != 0) {
+          _output__.writeEnum(1, __v)
+        }
       };
       {
         val __v = majorVersion
@@ -67,16 +70,17 @@ final case class OperatingSystem(
       };
       unknownFields.writeTo(_output__)
     }
-    def getOs: io.openisms.api.OperatingSystem = os.getOrElse(io.openisms.api.OperatingSystem.defaultInstance)
-    def clearOs: OperatingSystem = copy(os = _root_.scala.None)
-    def withOs(__v: io.openisms.api.OperatingSystem): OperatingSystem = copy(os = Option(__v))
+    def withOs(__v: io.openisms.api.OperatingSystem.OperatingSystems): OperatingSystem = copy(os = __v)
     def withMajorVersion(__v: _root_.scala.Predef.String): OperatingSystem = copy(majorVersion = __v)
     def withFullVersion(__v: _root_.scala.Predef.String): OperatingSystem = copy(fullVersion = __v)
     def withUnknownFields(__v: _root_.scalapb.UnknownFieldSet) = copy(unknownFields = __v)
     def discardUnknownFields = copy(unknownFields = _root_.scalapb.UnknownFieldSet.empty)
     def getFieldByNumber(__fieldNumber: _root_.scala.Int): _root_.scala.Any = {
       (__fieldNumber: @_root_.scala.unchecked) match {
-        case 1 => os.orNull
+        case 1 => {
+          val __t = os.javaValueDescriptor
+          if (__t.getNumber() != 0) __t else null
+        }
         case 2 => {
           val __t = majorVersion
           if (__t != "") __t else null
@@ -90,7 +94,7 @@ final case class OperatingSystem(
     def getField(__field: _root_.scalapb.descriptors.FieldDescriptor): _root_.scalapb.descriptors.PValue = {
       _root_.scala.Predef.require(__field.containingMessage eq companion.scalaDescriptor)
       (__field.number: @_root_.scala.unchecked) match {
-        case 1 => os.map(_.toPMessage).getOrElse(_root_.scalapb.descriptors.PEmpty)
+        case 1 => _root_.scalapb.descriptors.PEnum(os.scalaValueDescriptor)
         case 2 => _root_.scalapb.descriptors.PString(majorVersion)
         case 3 => _root_.scalapb.descriptors.PString(fullVersion)
       }
@@ -103,7 +107,7 @@ final case class OperatingSystem(
 object OperatingSystem extends scalapb.GeneratedMessageCompanion[io.openisms.api.OperatingSystem] {
   implicit def messageCompanion: scalapb.GeneratedMessageCompanion[io.openisms.api.OperatingSystem] = this
   def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): io.openisms.api.OperatingSystem = {
-    var __os: _root_.scala.Option[io.openisms.api.OperatingSystem] = _root_.scala.None
+    var __os: io.openisms.api.OperatingSystem.OperatingSystems = io.openisms.api.OperatingSystem.OperatingSystems.undefined
     var __majorVersion: _root_.scala.Predef.String = ""
     var __fullVersion: _root_.scala.Predef.String = ""
     var `_unknownFields__`: _root_.scalapb.UnknownFieldSet.Builder = null
@@ -112,8 +116,8 @@ object OperatingSystem extends scalapb.GeneratedMessageCompanion[io.openisms.api
       val _tag__ = _input__.readTag()
       _tag__ match {
         case 0 => _done__ = true
-        case 10 =>
-          __os = Option(__os.fold(_root_.scalapb.LiteParser.readMessage[io.openisms.api.OperatingSystem](_input__))(_root_.scalapb.LiteParser.readMessage(_input__, _)))
+        case 8 =>
+          __os = io.openisms.api.OperatingSystem.OperatingSystems.fromValue(_input__.readEnum())
         case 18 =>
           __majorVersion = _input__.readStringRequireUtf8()
         case 26 =>
@@ -136,7 +140,7 @@ object OperatingSystem extends scalapb.GeneratedMessageCompanion[io.openisms.api
     case _root_.scalapb.descriptors.PMessage(__fieldsMap) =>
       _root_.scala.Predef.require(__fieldsMap.keys.forall(_.containingMessage eq scalaDescriptor), "FieldDescriptor does not match message type.")
       io.openisms.api.OperatingSystem(
-        os = __fieldsMap.get(scalaDescriptor.findFieldByNumber(1).get).flatMap(_.as[_root_.scala.Option[io.openisms.api.OperatingSystem]]),
+        os = io.openisms.api.OperatingSystem.OperatingSystems.fromValue(__fieldsMap.get(scalaDescriptor.findFieldByNumber(1).get).map(_.as[_root_.scalapb.descriptors.EnumValueDescriptor]).getOrElse(io.openisms.api.OperatingSystem.OperatingSystems.undefined.scalaValueDescriptor).number),
         majorVersion = __fieldsMap.get(scalaDescriptor.findFieldByNumber(2).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
         fullVersion = __fieldsMap.get(scalaDescriptor.findFieldByNumber(3).get).map(_.as[_root_.scala.Predef.String]).getOrElse("")
       )
@@ -144,17 +148,15 @@ object OperatingSystem extends scalapb.GeneratedMessageCompanion[io.openisms.api
   }
   def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = ApiProto.javaDescriptor.getMessageTypes().get(12)
   def scalaDescriptor: _root_.scalapb.descriptors.Descriptor = ApiProto.scalaDescriptor.messages(12)
-  def messageCompanionForFieldNumber(__number: _root_.scala.Int): _root_.scalapb.GeneratedMessageCompanion[_] = {
-    var __out: _root_.scalapb.GeneratedMessageCompanion[_] = null
-    (__number: @_root_.scala.unchecked) match {
-      case 1 => __out = io.openisms.api.OperatingSystem
-    }
-    __out
-  }
+  def messageCompanionForFieldNumber(__number: _root_.scala.Int): _root_.scalapb.GeneratedMessageCompanion[_] = throw new MatchError(__number)
   lazy val nestedMessagesCompanions: Seq[_root_.scalapb.GeneratedMessageCompanion[_ <: _root_.scalapb.GeneratedMessage]] = Seq.empty
-  def enumCompanionForFieldNumber(__fieldNumber: _root_.scala.Int): _root_.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__fieldNumber)
+  def enumCompanionForFieldNumber(__fieldNumber: _root_.scala.Int): _root_.scalapb.GeneratedEnumCompanion[_] = {
+    (__fieldNumber: @_root_.scala.unchecked) match {
+      case 1 => io.openisms.api.OperatingSystem.OperatingSystems
+    }
+  }
   lazy val defaultInstance = io.openisms.api.OperatingSystem(
-    os = _root_.scala.None,
+    os = io.openisms.api.OperatingSystem.OperatingSystems.undefined,
     majorVersion = "",
     fullVersion = ""
   )
@@ -268,8 +270,7 @@ object OperatingSystem extends scalapb.GeneratedMessageCompanion[io.openisms.api
     def scalaDescriptor: _root_.scalapb.descriptors.EnumDescriptor = io.openisms.api.OperatingSystem.scalaDescriptor.enums(0)
   }
   implicit class OperatingSystemLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, io.openisms.api.OperatingSystem]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, io.openisms.api.OperatingSystem](_l) {
-    def os: _root_.scalapb.lenses.Lens[UpperPB, io.openisms.api.OperatingSystem] = field(_.getOs)((c_, f_) => c_.copy(os = Option(f_)))
-    def optionalOs: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Option[io.openisms.api.OperatingSystem]] = field(_.os)((c_, f_) => c_.copy(os = f_))
+    def os: _root_.scalapb.lenses.Lens[UpperPB, io.openisms.api.OperatingSystem.OperatingSystems] = field(_.os)((c_, f_) => c_.copy(os = f_))
     def majorVersion: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.majorVersion)((c_, f_) => c_.copy(majorVersion = f_))
     def fullVersion: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.fullVersion)((c_, f_) => c_.copy(fullVersion = f_))
   }
@@ -277,7 +278,7 @@ object OperatingSystem extends scalapb.GeneratedMessageCompanion[io.openisms.api
   final val MAJOR_VERSION_FIELD_NUMBER = 2
   final val FULL_VERSION_FIELD_NUMBER = 3
   def of(
-    os: _root_.scala.Option[io.openisms.api.OperatingSystem],
+    os: io.openisms.api.OperatingSystem.OperatingSystems,
     majorVersion: _root_.scala.Predef.String,
     fullVersion: _root_.scala.Predef.String
   ): _root_.io.openisms.api.OperatingSystem = _root_.io.openisms.api.OperatingSystem(

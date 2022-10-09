@@ -244,7 +244,8 @@ PROTOBUF_CONSTEXPR OperatingSystem::OperatingSystem(
     ::_pbi::ConstantInitialized)
   : major_version_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
   , full_version_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , os_(nullptr){}
+  , os_(0)
+{}
 struct OperatingSystemDefaultTypeInternal {
   PROTOBUF_CONSTEXPR OperatingSystemDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -788,45 +789,45 @@ const char descriptor_table_protodef_io_2fopenisms_2fapi_2eproto[] PROTOBUF_SECT
   "bled\030\010 \001(\0132\032.google.protobuf.BoolValue\0225"
   "\n\021automatic_updates\030\t \001(\0132\032.google.proto"
   "buf.BoolValue\":\n\007Network\022\014\n\004name\030\001 \001(\t\022\014"
-  "\n\004type\030\002 \001(\t\022\023\n\013mac_address\030\003 \001(\t\"\365\001\n\017Op"
-  "eratingSystem\022+\n\002os\030\001 \001(\0132\037.io.openisms."
-  "v1.OperatingSystem\022\025\n\rmajor_version\030\002 \001("
-  "\t\022\024\n\014full_version\030\003 \001(\t\"\207\001\n\020OperatingSys"
-  "tems\022\r\n\tundefined\020\000\022\t\n\005macos\020\001\022\013\n\007window"
-  "s\020\002\022\t\n\005linux\020\003\022\010\n\004unix\020\004\022\r\n\tchrome_os\020\005\022"
-  "\007\n\003ios\020\n\022\013\n\007android\020\013\022\007\n\003ros\020\016\022\t\n\005other\020"
-  "\017\"\345\001\n\013Application\022\014\n\004name\030\001 \001(\t\022\014\n\004path\030"
-  "\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\013\n\003url\030\004 \001(\t\022\023\n\013de"
-  "scription\030\005 \001(\t\022\017\n\007version\030\006 \001(\t\022*\n\006sign"
-  "ed\030\007 \001(\0132\032.google.protobuf.BoolValue\022.\n\n"
-  "system_app\030\010 \001(\0132\032.google.protobuf.BoolV"
-  "alue\022\033\n\023installation_source\030\t \001(\t\"\222\001\n\007Pr"
-  "ofile\022\014\n\004name\030\001 \001(\t\022\022\n\nidentifier\030\002 \001(\t\022"
-  "3\n\017removal_allowed\030\003 \001(\0132\032.google.protob"
-  "uf.BoolValue\022\024\n\014payload_type\030\004 \001(\t\022\032\n\022pa"
-  "yload_identifier\030\005 \001(\t\"0\n\004Date\022\014\n\004year\030\001"
-  " \001(\005\022\r\n\005month\030\002 \001(\005\022\013\n\003day\030\003 \001(\005\"8\n\rCert"
-  "ification\022\014\n\004type\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004"
-  "tags\030\n \003(\t\"p\n\007Company\022\014\n\004name\030\001 \001(\t\022\013\n\003u"
-  "rl\030\002 \001(\t\022\020\n\010category\030\003 \001(\t\022\'\n\007contact\030\004 "
-  "\001(\0132\026.io.openisms.v1.Person\022\017\n\007address\030\005"
-  " \003(\t\"\373\001\n\007Pentest\022\n\n\002id\030\001 \001(\t\022#\n\005begin\030\002 "
-  "\001(\0132\024.io.openisms.v1.Date\022!\n\003end\030\003 \001(\0132\024"
-  ".io.openisms.v1.Date\022(\n\007company\030\004 \001(\0132\027."
-  "io.openisms.v1.Company\022\r\n\005focus\030\005 \001(\t\022\016\n"
-  "\006passed\030\006 \001(\010\022\016\n\006result\030\007 \001(\t\022\013\n\003url\030\010 \001"
-  "(\t\022(\n\010contacts\030\t \003(\0132\026.io.openisms.v1.Pe"
-  "rson\022\014\n\004tags\030\n \003(\t\"\300\001\n\nRepository\022\014\n\004nam"
-  "e\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\023\n\013description\030\003 \001("
-  "\t\022.\n\nvisibility\030\004 \001(\0162\032.io.openisms.v1.V"
-  "isibility\022\'\n\007members\030\005 \003(\0132\026.io.openisms"
-  ".v1.Person\022\033\n\023security_attributes\030\006 \003(\t\022"
-  "\014\n\004tags\030\n \003(\t\"N\n\nStatistics\022\022\n\nidentifie"
-  "r\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\005\022\017\n\007"
-  "comment\030\004 \001(\t*G\n\nVisibility\022\r\n\tundefined"
-  "\020\000\022\n\n\006public\020\001\022\014\n\010internal\020\002\022\020\n\014confiden"
-  "tial\020\003B&\n\013io.openismsZ\027github.com/openis"
-  "ms/apib\006proto3"
+  "\n\004type\030\002 \001(\t\022\023\n\013mac_address\030\003 \001(\t\"\206\002\n\017Op"
+  "eratingSystem\022<\n\002os\030\001 \001(\01620.io.openisms."
+  "v1.OperatingSystem.OperatingSystems\022\025\n\rm"
+  "ajor_version\030\002 \001(\t\022\024\n\014full_version\030\003 \001(\t"
+  "\"\207\001\n\020OperatingSystems\022\r\n\tundefined\020\000\022\t\n\005"
+  "macos\020\001\022\013\n\007windows\020\002\022\t\n\005linux\020\003\022\010\n\004unix\020"
+  "\004\022\r\n\tchrome_os\020\005\022\007\n\003ios\020\n\022\013\n\007android\020\013\022\007"
+  "\n\003ros\020\016\022\t\n\005other\020\017\"\345\001\n\013Application\022\014\n\004na"
+  "me\030\001 \001(\t\022\014\n\004path\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\013"
+  "\n\003url\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\017\n\007vers"
+  "ion\030\006 \001(\t\022*\n\006signed\030\007 \001(\0132\032.google.proto"
+  "buf.BoolValue\022.\n\nsystem_app\030\010 \001(\0132\032.goog"
+  "le.protobuf.BoolValue\022\033\n\023installation_so"
+  "urce\030\t \001(\t\"\222\001\n\007Profile\022\014\n\004name\030\001 \001(\t\022\022\n\n"
+  "identifier\030\002 \001(\t\0223\n\017removal_allowed\030\003 \001("
+  "\0132\032.google.protobuf.BoolValue\022\024\n\014payload"
+  "_type\030\004 \001(\t\022\032\n\022payload_identifier\030\005 \001(\t\""
+  "0\n\004Date\022\014\n\004year\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\013\n\003"
+  "day\030\003 \001(\005\"8\n\rCertification\022\014\n\004type\030\001 \001(\t"
+  "\022\013\n\003url\030\002 \001(\t\022\014\n\004tags\030\n \003(\t\"p\n\007Company\022\014"
+  "\n\004name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\020\n\010category\030\003 "
+  "\001(\t\022\'\n\007contact\030\004 \001(\0132\026.io.openisms.v1.Pe"
+  "rson\022\017\n\007address\030\005 \003(\t\"\373\001\n\007Pentest\022\n\n\002id\030"
+  "\001 \001(\t\022#\n\005begin\030\002 \001(\0132\024.io.openisms.v1.Da"
+  "te\022!\n\003end\030\003 \001(\0132\024.io.openisms.v1.Date\022(\n"
+  "\007company\030\004 \001(\0132\027.io.openisms.v1.Company\022"
+  "\r\n\005focus\030\005 \001(\t\022\016\n\006passed\030\006 \001(\010\022\016\n\006result"
+  "\030\007 \001(\t\022\013\n\003url\030\010 \001(\t\022(\n\010contacts\030\t \003(\0132\026."
+  "io.openisms.v1.Person\022\014\n\004tags\030\n \003(\t\"\300\001\n\n"
+  "Repository\022\014\n\004name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\023\n"
+  "\013description\030\003 \001(\t\022.\n\nvisibility\030\004 \001(\0162\032"
+  ".io.openisms.v1.Visibility\022\'\n\007members\030\005 "
+  "\003(\0132\026.io.openisms.v1.Person\022\033\n\023security_"
+  "attributes\030\006 \003(\t\022\014\n\004tags\030\n \003(\t\"N\n\nStatis"
+  "tics\022\022\n\nidentifier\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r"
+  "\n\005value\030\003 \001(\005\022\017\n\007comment\030\004 \001(\t*G\n\nVisibi"
+  "lity\022\r\n\tundefined\020\000\022\n\n\006public\020\001\022\014\n\010inter"
+  "nal\020\002\022\020\n\014confidential\020\003B&\n\013io.openismsZ\027"
+  "github.com/openisms/apib\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_io_2fopenisms_2fapi_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -834,7 +835,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_io_2fopenisms_2fapi
 };
 static ::_pbi::once_flag descriptor_table_io_2fopenisms_2fapi_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_io_2fopenisms_2fapi_2eproto = {
-    false, false, 4814, descriptor_table_protodef_io_2fopenisms_2fapi_2eproto,
+    false, false, 4831, descriptor_table_protodef_io_2fopenisms_2fapi_2eproto,
     "io/openisms/api.proto",
     &descriptor_table_io_2fopenisms_2fapi_2eproto_once, descriptor_table_io_2fopenisms_2fapi_2eproto_deps, 2, 21,
     schemas, file_default_instances, TableStruct_io_2fopenisms_2fapi_2eproto::offsets,
@@ -6439,13 +6440,8 @@ void Network::InternalSwap(Network* other) {
 
 class OperatingSystem::_Internal {
  public:
-  static const ::io::openisms::v1::OperatingSystem& os(const OperatingSystem* msg);
 };
 
-const ::io::openisms::v1::OperatingSystem&
-OperatingSystem::_Internal::os(const OperatingSystem* msg) {
-  return *msg->os_;
-}
 OperatingSystem::OperatingSystem(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -6471,11 +6467,7 @@ OperatingSystem::OperatingSystem(const OperatingSystem& from)
     full_version_.Set(from._internal_full_version(), 
       GetArenaForAllocation());
   }
-  if (from._internal_has_os()) {
-    os_ = new ::io::openisms::v1::OperatingSystem(*from.os_);
-  } else {
-    os_ = nullptr;
-  }
+  os_ = from.os_;
   // @@protoc_insertion_point(copy_constructor:io.openisms.v1.OperatingSystem)
 }
 
@@ -6488,7 +6480,7 @@ full_version_.InitDefault();
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   full_version_.Set("", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-os_ = nullptr;
+os_ = 0;
 }
 
 OperatingSystem::~OperatingSystem() {
@@ -6504,7 +6496,6 @@ inline void OperatingSystem::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   major_version_.Destroy();
   full_version_.Destroy();
-  if (this != internal_default_instance()) delete os_;
 }
 
 void OperatingSystem::SetCachedSize(int size) const {
@@ -6519,10 +6510,7 @@ void OperatingSystem::Clear() {
 
   major_version_.ClearToEmpty();
   full_version_.ClearToEmpty();
-  if (GetArenaForAllocation() == nullptr && os_ != nullptr) {
-    delete os_;
-  }
-  os_ = nullptr;
+  os_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6532,11 +6520,12 @@ const char* OperatingSystem::_InternalParse(const char* ptr, ::_pbi::ParseContex
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .io.openisms.v1.OperatingSystem os = 1;
+      // .io.openisms.v1.OperatingSystem.OperatingSystems os = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_os(), ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
+          _internal_set_os(static_cast<::io::openisms::v1::OperatingSystem_OperatingSystems>(val));
         } else
           goto handle_unusual;
         continue;
@@ -6589,11 +6578,11 @@ uint8_t* OperatingSystem::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .io.openisms.v1.OperatingSystem os = 1;
-  if (this->_internal_has_os()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::os(this),
-        _Internal::os(this).GetCachedSize(), target, stream);
+  // .io.openisms.v1.OperatingSystem.OperatingSystems os = 1;
+  if (this->_internal_os() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_os(), target);
   }
 
   // string major_version = 2;
@@ -6646,11 +6635,10 @@ size_t OperatingSystem::ByteSizeLong() const {
         this->_internal_full_version());
   }
 
-  // .io.openisms.v1.OperatingSystem os = 1;
-  if (this->_internal_has_os()) {
+  // .io.openisms.v1.OperatingSystem.OperatingSystems os = 1;
+  if (this->_internal_os() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *os_);
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_os());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -6681,8 +6669,8 @@ void OperatingSystem::MergeFrom(const OperatingSystem& from) {
   if (!from._internal_full_version().empty()) {
     _internal_set_full_version(from._internal_full_version());
   }
-  if (from._internal_has_os()) {
-    _internal_mutable_os()->::io::openisms::v1::OperatingSystem::MergeFrom(from._internal_os());
+  if (from._internal_os() != 0) {
+    _internal_set_os(from._internal_os());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }

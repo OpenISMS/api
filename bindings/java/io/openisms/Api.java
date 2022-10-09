@@ -23139,19 +23139,15 @@ public final class Api {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-     * @return Whether the os field is set.
+     * <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
+     * @return The enum numeric value on the wire for os.
      */
-    boolean hasOs();
+    int getOsValue();
     /**
-     * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
+     * <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
      * @return The os.
      */
-    io.openisms.Api.OperatingSystem getOs();
-    /**
-     * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-     */
-    io.openisms.Api.OperatingSystemOrBuilder getOsOrBuilder();
+    io.openisms.Api.OperatingSystem.OperatingSystems getOs();
 
     /**
      * <code>string major_version = 2;</code>
@@ -23190,6 +23186,7 @@ public final class Api {
       super(builder);
     }
     private OperatingSystem() {
+      os_ = 0;
       majorVersion_ = "";
       fullVersion_ = "";
     }
@@ -23224,17 +23221,10 @@ public final class Api {
             case 0:
               done = true;
               break;
-            case 10: {
-              io.openisms.Api.OperatingSystem.Builder subBuilder = null;
-              if (os_ != null) {
-                subBuilder = os_.toBuilder();
-              }
-              os_ = input.readMessage(io.openisms.Api.OperatingSystem.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(os_);
-                os_ = subBuilder.buildPartial();
-              }
+            case 8: {
+              int rawValue = input.readEnum();
 
+              os_ = rawValue;
               break;
             }
             case 18: {
@@ -23464,29 +23454,22 @@ public final class Api {
     }
 
     public static final int OS_FIELD_NUMBER = 1;
-    private io.openisms.Api.OperatingSystem os_;
+    private int os_;
     /**
-     * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-     * @return Whether the os field is set.
+     * <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
+     * @return The enum numeric value on the wire for os.
      */
-    @java.lang.Override
-    public boolean hasOs() {
-      return os_ != null;
+    @java.lang.Override public int getOsValue() {
+      return os_;
     }
     /**
-     * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
+     * <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
      * @return The os.
      */
-    @java.lang.Override
-    public io.openisms.Api.OperatingSystem getOs() {
-      return os_ == null ? io.openisms.Api.OperatingSystem.getDefaultInstance() : os_;
-    }
-    /**
-     * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-     */
-    @java.lang.Override
-    public io.openisms.Api.OperatingSystemOrBuilder getOsOrBuilder() {
-      return getOs();
+    @java.lang.Override public io.openisms.Api.OperatingSystem.OperatingSystems getOs() {
+      @SuppressWarnings("deprecation")
+      io.openisms.Api.OperatingSystem.OperatingSystems result = io.openisms.Api.OperatingSystem.OperatingSystems.valueOf(os_);
+      return result == null ? io.openisms.Api.OperatingSystem.OperatingSystems.UNRECOGNIZED : result;
     }
 
     public static final int MAJOR_VERSION_FIELD_NUMBER = 2;
@@ -23579,8 +23562,8 @@ public final class Api {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (os_ != null) {
-        output.writeMessage(1, getOs());
+      if (os_ != io.openisms.Api.OperatingSystem.OperatingSystems.undefined.getNumber()) {
+        output.writeEnum(1, os_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(majorVersion_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, majorVersion_);
@@ -23597,9 +23580,9 @@ public final class Api {
       if (size != -1) return size;
 
       size = 0;
-      if (os_ != null) {
+      if (os_ != io.openisms.Api.OperatingSystem.OperatingSystems.undefined.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getOs());
+          .computeEnumSize(1, os_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(majorVersion_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, majorVersion_);
@@ -23622,11 +23605,7 @@ public final class Api {
       }
       io.openisms.Api.OperatingSystem other = (io.openisms.Api.OperatingSystem) obj;
 
-      if (hasOs() != other.hasOs()) return false;
-      if (hasOs()) {
-        if (!getOs()
-            .equals(other.getOs())) return false;
-      }
+      if (os_ != other.os_) return false;
       if (!getMajorVersion()
           .equals(other.getMajorVersion())) return false;
       if (!getFullVersion()
@@ -23642,10 +23621,8 @@ public final class Api {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasOs()) {
-        hash = (37 * hash) + OS_FIELD_NUMBER;
-        hash = (53 * hash) + getOs().hashCode();
-      }
+      hash = (37 * hash) + OS_FIELD_NUMBER;
+      hash = (53 * hash) + os_;
       hash = (37 * hash) + MAJOR_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getMajorVersion().hashCode();
       hash = (37 * hash) + FULL_VERSION_FIELD_NUMBER;
@@ -23783,12 +23760,8 @@ public final class Api {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (osBuilder_ == null) {
-          os_ = null;
-        } else {
-          os_ = null;
-          osBuilder_ = null;
-        }
+        os_ = 0;
+
         majorVersion_ = "";
 
         fullVersion_ = "";
@@ -23819,11 +23792,7 @@ public final class Api {
       @java.lang.Override
       public io.openisms.Api.OperatingSystem buildPartial() {
         io.openisms.Api.OperatingSystem result = new io.openisms.Api.OperatingSystem(this);
-        if (osBuilder_ == null) {
-          result.os_ = os_;
-        } else {
-          result.os_ = osBuilder_.build();
-        }
+        result.os_ = os_;
         result.majorVersion_ = majorVersion_;
         result.fullVersion_ = fullVersion_;
         onBuilt();
@@ -23874,8 +23843,8 @@ public final class Api {
 
       public Builder mergeFrom(io.openisms.Api.OperatingSystem other) {
         if (other == io.openisms.Api.OperatingSystem.getDefaultInstance()) return this;
-        if (other.hasOs()) {
-          mergeOs(other.getOs());
+        if (other.os_ != 0) {
+          setOsValue(other.getOsValue());
         }
         if (!other.getMajorVersion().isEmpty()) {
           majorVersion_ = other.majorVersion_;
@@ -23914,123 +23883,58 @@ public final class Api {
         return this;
       }
 
-      private io.openisms.Api.OperatingSystem os_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          io.openisms.Api.OperatingSystem, io.openisms.Api.OperatingSystem.Builder, io.openisms.Api.OperatingSystemOrBuilder> osBuilder_;
+      private int os_ = 0;
       /**
-       * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-       * @return Whether the os field is set.
+       * <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
+       * @return The enum numeric value on the wire for os.
        */
-      public boolean hasOs() {
-        return osBuilder_ != null || os_ != null;
+      @java.lang.Override public int getOsValue() {
+        return os_;
       }
       /**
-       * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
+       * <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
+       * @param value The enum numeric value on the wire for os to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOsValue(int value) {
+        
+        os_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
        * @return The os.
        */
-      public io.openisms.Api.OperatingSystem getOs() {
-        if (osBuilder_ == null) {
-          return os_ == null ? io.openisms.Api.OperatingSystem.getDefaultInstance() : os_;
-        } else {
-          return osBuilder_.getMessage();
-        }
+      @java.lang.Override
+      public io.openisms.Api.OperatingSystem.OperatingSystems getOs() {
+        @SuppressWarnings("deprecation")
+        io.openisms.Api.OperatingSystem.OperatingSystems result = io.openisms.Api.OperatingSystem.OperatingSystems.valueOf(os_);
+        return result == null ? io.openisms.Api.OperatingSystem.OperatingSystems.UNRECOGNIZED : result;
       }
       /**
-       * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
+       * <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
+       * @param value The os to set.
+       * @return This builder for chaining.
        */
-      public Builder setOs(io.openisms.Api.OperatingSystem value) {
-        if (osBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          os_ = value;
-          onChanged();
-        } else {
-          osBuilder_.setMessage(value);
+      public Builder setOs(io.openisms.Api.OperatingSystem.OperatingSystems value) {
+        if (value == null) {
+          throw new NullPointerException();
         }
-
+        
+        os_ = value.getNumber();
+        onChanged();
         return this;
       }
       /**
-       * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-       */
-      public Builder setOs(
-          io.openisms.Api.OperatingSystem.Builder builderForValue) {
-        if (osBuilder_ == null) {
-          os_ = builderForValue.build();
-          onChanged();
-        } else {
-          osBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-       */
-      public Builder mergeOs(io.openisms.Api.OperatingSystem value) {
-        if (osBuilder_ == null) {
-          if (os_ != null) {
-            os_ =
-              io.openisms.Api.OperatingSystem.newBuilder(os_).mergeFrom(value).buildPartial();
-          } else {
-            os_ = value;
-          }
-          onChanged();
-        } else {
-          osBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
+       * <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOs() {
-        if (osBuilder_ == null) {
-          os_ = null;
-          onChanged();
-        } else {
-          os_ = null;
-          osBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-       */
-      public io.openisms.Api.OperatingSystem.Builder getOsBuilder() {
         
+        os_ = 0;
         onChanged();
-        return getOsFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-       */
-      public io.openisms.Api.OperatingSystemOrBuilder getOsOrBuilder() {
-        if (osBuilder_ != null) {
-          return osBuilder_.getMessageOrBuilder();
-        } else {
-          return os_ == null ?
-              io.openisms.Api.OperatingSystem.getDefaultInstance() : os_;
-        }
-      }
-      /**
-       * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          io.openisms.Api.OperatingSystem, io.openisms.Api.OperatingSystem.Builder, io.openisms.Api.OperatingSystemOrBuilder> 
-          getOsFieldBuilder() {
-        if (osBuilder_ == null) {
-          osBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.openisms.Api.OperatingSystem, io.openisms.Api.OperatingSystem.Builder, io.openisms.Api.OperatingSystemOrBuilder>(
-                  getOs(),
-                  getParentForChildren(),
-                  isClean());
-          os_ = null;
-        }
-        return osBuilder_;
+        return this;
       }
 
       private java.lang.Object majorVersion_ = "";
@@ -35790,45 +35694,45 @@ public final class Api {
       "bled\030\010 \001(\0132\032.google.protobuf.BoolValue\0225" +
       "\n\021automatic_updates\030\t \001(\0132\032.google.proto" +
       "buf.BoolValue\":\n\007Network\022\014\n\004name\030\001 \001(\t\022\014" +
-      "\n\004type\030\002 \001(\t\022\023\n\013mac_address\030\003 \001(\t\"\365\001\n\017Op" +
-      "eratingSystem\022+\n\002os\030\001 \001(\0132\037.io.openisms." +
-      "v1.OperatingSystem\022\025\n\rmajor_version\030\002 \001(" +
-      "\t\022\024\n\014full_version\030\003 \001(\t\"\207\001\n\020OperatingSys" +
-      "tems\022\r\n\tundefined\020\000\022\t\n\005macos\020\001\022\013\n\007window" +
-      "s\020\002\022\t\n\005linux\020\003\022\010\n\004unix\020\004\022\r\n\tchrome_os\020\005\022" +
-      "\007\n\003ios\020\n\022\013\n\007android\020\013\022\007\n\003ros\020\016\022\t\n\005other\020" +
-      "\017\"\345\001\n\013Application\022\014\n\004name\030\001 \001(\t\022\014\n\004path\030" +
-      "\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\013\n\003url\030\004 \001(\t\022\023\n\013de" +
-      "scription\030\005 \001(\t\022\017\n\007version\030\006 \001(\t\022*\n\006sign" +
-      "ed\030\007 \001(\0132\032.google.protobuf.BoolValue\022.\n\n" +
-      "system_app\030\010 \001(\0132\032.google.protobuf.BoolV" +
-      "alue\022\033\n\023installation_source\030\t \001(\t\"\222\001\n\007Pr" +
-      "ofile\022\014\n\004name\030\001 \001(\t\022\022\n\nidentifier\030\002 \001(\t\022" +
-      "3\n\017removal_allowed\030\003 \001(\0132\032.google.protob" +
-      "uf.BoolValue\022\024\n\014payload_type\030\004 \001(\t\022\032\n\022pa" +
-      "yload_identifier\030\005 \001(\t\"0\n\004Date\022\014\n\004year\030\001" +
-      " \001(\005\022\r\n\005month\030\002 \001(\005\022\013\n\003day\030\003 \001(\005\"8\n\rCert" +
-      "ification\022\014\n\004type\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004" +
-      "tags\030\n \003(\t\"p\n\007Company\022\014\n\004name\030\001 \001(\t\022\013\n\003u" +
-      "rl\030\002 \001(\t\022\020\n\010category\030\003 \001(\t\022\'\n\007contact\030\004 " +
-      "\001(\0132\026.io.openisms.v1.Person\022\017\n\007address\030\005" +
-      " \003(\t\"\373\001\n\007Pentest\022\n\n\002id\030\001 \001(\t\022#\n\005begin\030\002 " +
-      "\001(\0132\024.io.openisms.v1.Date\022!\n\003end\030\003 \001(\0132\024" +
-      ".io.openisms.v1.Date\022(\n\007company\030\004 \001(\0132\027." +
-      "io.openisms.v1.Company\022\r\n\005focus\030\005 \001(\t\022\016\n" +
-      "\006passed\030\006 \001(\010\022\016\n\006result\030\007 \001(\t\022\013\n\003url\030\010 \001" +
-      "(\t\022(\n\010contacts\030\t \003(\0132\026.io.openisms.v1.Pe" +
-      "rson\022\014\n\004tags\030\n \003(\t\"\300\001\n\nRepository\022\014\n\004nam" +
-      "e\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\023\n\013description\030\003 \001(" +
-      "\t\022.\n\nvisibility\030\004 \001(\0162\032.io.openisms.v1.V" +
-      "isibility\022\'\n\007members\030\005 \003(\0132\026.io.openisms" +
-      ".v1.Person\022\033\n\023security_attributes\030\006 \003(\t\022" +
-      "\014\n\004tags\030\n \003(\t\"N\n\nStatistics\022\022\n\nidentifie" +
-      "r\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\005\022\017\n\007" +
-      "comment\030\004 \001(\t*G\n\nVisibility\022\r\n\tundefined" +
-      "\020\000\022\n\n\006public\020\001\022\014\n\010internal\020\002\022\020\n\014confiden" +
-      "tial\020\003B&\n\013io.openismsZ\027github.com/openis" +
-      "ms/apib\006proto3"
+      "\n\004type\030\002 \001(\t\022\023\n\013mac_address\030\003 \001(\t\"\206\002\n\017Op" +
+      "eratingSystem\022<\n\002os\030\001 \001(\01620.io.openisms." +
+      "v1.OperatingSystem.OperatingSystems\022\025\n\rm" +
+      "ajor_version\030\002 \001(\t\022\024\n\014full_version\030\003 \001(\t" +
+      "\"\207\001\n\020OperatingSystems\022\r\n\tundefined\020\000\022\t\n\005" +
+      "macos\020\001\022\013\n\007windows\020\002\022\t\n\005linux\020\003\022\010\n\004unix\020" +
+      "\004\022\r\n\tchrome_os\020\005\022\007\n\003ios\020\n\022\013\n\007android\020\013\022\007" +
+      "\n\003ros\020\016\022\t\n\005other\020\017\"\345\001\n\013Application\022\014\n\004na" +
+      "me\030\001 \001(\t\022\014\n\004path\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\013" +
+      "\n\003url\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\017\n\007vers" +
+      "ion\030\006 \001(\t\022*\n\006signed\030\007 \001(\0132\032.google.proto" +
+      "buf.BoolValue\022.\n\nsystem_app\030\010 \001(\0132\032.goog" +
+      "le.protobuf.BoolValue\022\033\n\023installation_so" +
+      "urce\030\t \001(\t\"\222\001\n\007Profile\022\014\n\004name\030\001 \001(\t\022\022\n\n" +
+      "identifier\030\002 \001(\t\0223\n\017removal_allowed\030\003 \001(" +
+      "\0132\032.google.protobuf.BoolValue\022\024\n\014payload" +
+      "_type\030\004 \001(\t\022\032\n\022payload_identifier\030\005 \001(\t\"" +
+      "0\n\004Date\022\014\n\004year\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\013\n\003" +
+      "day\030\003 \001(\005\"8\n\rCertification\022\014\n\004type\030\001 \001(\t" +
+      "\022\013\n\003url\030\002 \001(\t\022\014\n\004tags\030\n \003(\t\"p\n\007Company\022\014" +
+      "\n\004name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\020\n\010category\030\003 " +
+      "\001(\t\022\'\n\007contact\030\004 \001(\0132\026.io.openisms.v1.Pe" +
+      "rson\022\017\n\007address\030\005 \003(\t\"\373\001\n\007Pentest\022\n\n\002id\030" +
+      "\001 \001(\t\022#\n\005begin\030\002 \001(\0132\024.io.openisms.v1.Da" +
+      "te\022!\n\003end\030\003 \001(\0132\024.io.openisms.v1.Date\022(\n" +
+      "\007company\030\004 \001(\0132\027.io.openisms.v1.Company\022" +
+      "\r\n\005focus\030\005 \001(\t\022\016\n\006passed\030\006 \001(\010\022\016\n\006result" +
+      "\030\007 \001(\t\022\013\n\003url\030\010 \001(\t\022(\n\010contacts\030\t \003(\0132\026." +
+      "io.openisms.v1.Person\022\014\n\004tags\030\n \003(\t\"\300\001\n\n" +
+      "Repository\022\014\n\004name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\023\n" +
+      "\013description\030\003 \001(\t\022.\n\nvisibility\030\004 \001(\0162\032" +
+      ".io.openisms.v1.Visibility\022\'\n\007members\030\005 " +
+      "\003(\0132\026.io.openisms.v1.Person\022\033\n\023security_" +
+      "attributes\030\006 \003(\t\022\014\n\004tags\030\n \003(\t\"N\n\nStatis" +
+      "tics\022\022\n\nidentifier\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r" +
+      "\n\005value\030\003 \001(\005\022\017\n\007comment\030\004 \001(\t*G\n\nVisibi" +
+      "lity\022\r\n\tundefined\020\000\022\n\n\006public\020\001\022\014\n\010inter" +
+      "nal\020\002\022\020\n\014confidential\020\003B&\n\013io.openismsZ\027" +
+      "github.com/openisms/apib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

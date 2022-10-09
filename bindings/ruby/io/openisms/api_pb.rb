@@ -135,7 +135,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :mac_address, :string, 3
     end
     add_message "io.openisms.v1.OperatingSystem" do
-      optional :os, :message, 1, "io.openisms.v1.OperatingSystem"
+      optional :os, :enum, 1, "io.openisms.v1.OperatingSystem.OperatingSystems"
       optional :major_version, :string, 2
       optional :full_version, :string, 3
     end

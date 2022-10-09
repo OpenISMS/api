@@ -665,15 +665,25 @@ typedef GPB_ENUM(OperatingSystem_FieldNumber) {
 
 GPB_FINAL @interface OperatingSystem : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) OperatingSystem *os;
-/** Test to see if @c os has been set. */
-@property(nonatomic, readwrite) BOOL hasOs;
+@property(nonatomic, readwrite) OperatingSystem_OperatingSystems os;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *majorVersion;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *fullVersion;
 
 @end
+
+/**
+ * Fetches the raw value of a @c OperatingSystem's @c os property, even
+ * if the value was not defined by the enum at the time the code was generated.
+ **/
+int32_t OperatingSystem_Os_RawValue(OperatingSystem *message);
+/**
+ * Sets the raw value of an @c OperatingSystem's @c os property, allowing
+ * it to be set to a value that was not defined by the enum at the time the code
+ * was generated.
+ **/
+void SetOperatingSystem_Os_RawValue(OperatingSystem *message, int32_t value);
 
 #pragma mark - Application
 

@@ -23,9 +23,9 @@ public object OperatingSystemKt {
     internal fun _build(): io.openisms.Api.OperatingSystem = _builder.build()
 
     /**
-     * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
+     * <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
      */
-    public var os: io.openisms.Api.OperatingSystem
+    public var os: io.openisms.Api.OperatingSystem.OperatingSystems
       @JvmName("getOs")
       get() = _builder.getOs()
       @JvmName("setOs")
@@ -33,17 +33,10 @@ public object OperatingSystemKt {
         _builder.setOs(value)
       }
     /**
-     * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
+     * <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
      */
     public fun clearOs() {
       _builder.clearOs()
-    }
-    /**
-     * <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-     * @return Whether the os field is set.
-     */
-    public fun hasOs(): kotlin.Boolean {
-      return _builder.hasOs()
     }
 
     /**
@@ -84,7 +77,4 @@ public object OperatingSystemKt {
 @kotlin.jvm.JvmSynthetic
 public inline fun io.openisms.Api.OperatingSystem.copy(block: io.openisms.OperatingSystemKt.Dsl.() -> kotlin.Unit): io.openisms.Api.OperatingSystem =
   io.openisms.OperatingSystemKt.Dsl._create(this.toBuilder()).apply { block() }._build()
-
-val io.openisms.Api.OperatingSystemOrBuilder.osOrNull: io.openisms.Api.OperatingSystem?
-  get() = if (hasOs()) getOs() else null
 

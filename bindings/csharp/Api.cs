@@ -97,40 +97,41 @@ namespace Io.Openisms.V1 {
             "cmV3YWxsX2VuYWJsZWQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZh",
             "bHVlEjUKEWF1dG9tYXRpY191cGRhdGVzGAkgASgLMhouZ29vZ2xlLnByb3Rv",
             "YnVmLkJvb2xWYWx1ZSI6CgdOZXR3b3JrEgwKBG5hbWUYASABKAkSDAoEdHlw",
-            "ZRgCIAEoCRITCgttYWNfYWRkcmVzcxgDIAEoCSL1AQoPT3BlcmF0aW5nU3lz",
-            "dGVtEisKAm9zGAEgASgLMh8uaW8ub3BlbmlzbXMudjEuT3BlcmF0aW5nU3lz",
-            "dGVtEhUKDW1ham9yX3ZlcnNpb24YAiABKAkSFAoMZnVsbF92ZXJzaW9uGAMg",
-            "ASgJIocBChBPcGVyYXRpbmdTeXN0ZW1zEg0KCXVuZGVmaW5lZBAAEgkKBW1h",
-            "Y29zEAESCwoHd2luZG93cxACEgkKBWxpbnV4EAMSCAoEdW5peBAEEg0KCWNo",
-            "cm9tZV9vcxAFEgcKA2lvcxAKEgsKB2FuZHJvaWQQCxIHCgNyb3MQDhIJCgVv",
-            "dGhlchAPIuUBCgtBcHBsaWNhdGlvbhIMCgRuYW1lGAEgASgJEgwKBHBhdGgY",
-            "AiABKAkSDgoGdmVuZG9yGAMgASgJEgsKA3VybBgEIAEoCRITCgtkZXNjcmlw",
-            "dGlvbhgFIAEoCRIPCgd2ZXJzaW9uGAYgASgJEioKBnNpZ25lZBgHIAEoCzIa",
-            "Lmdvb2dsZS5wcm90b2J1Zi5Cb29sVmFsdWUSLgoKc3lzdGVtX2FwcBgIIAEo",
-            "CzIaLmdvb2dsZS5wcm90b2J1Zi5Cb29sVmFsdWUSGwoTaW5zdGFsbGF0aW9u",
-            "X3NvdXJjZRgJIAEoCSKSAQoHUHJvZmlsZRIMCgRuYW1lGAEgASgJEhIKCmlk",
-            "ZW50aWZpZXIYAiABKAkSMwoPcmVtb3ZhbF9hbGxvd2VkGAMgASgLMhouZ29v",
-            "Z2xlLnByb3RvYnVmLkJvb2xWYWx1ZRIUCgxwYXlsb2FkX3R5cGUYBCABKAkS",
-            "GgoScGF5bG9hZF9pZGVudGlmaWVyGAUgASgJIjAKBERhdGUSDAoEeWVhchgB",
-            "IAEoBRINCgVtb250aBgCIAEoBRILCgNkYXkYAyABKAUiOAoNQ2VydGlmaWNh",
-            "dGlvbhIMCgR0eXBlGAEgASgJEgsKA3VybBgCIAEoCRIMCgR0YWdzGAogAygJ",
-            "InAKB0NvbXBhbnkSDAoEbmFtZRgBIAEoCRILCgN1cmwYAiABKAkSEAoIY2F0",
-            "ZWdvcnkYAyABKAkSJwoHY29udGFjdBgEIAEoCzIWLmlvLm9wZW5pc21zLnYx",
-            "LlBlcnNvbhIPCgdhZGRyZXNzGAUgAygJIvsBCgdQZW50ZXN0EgoKAmlkGAEg",
-            "ASgJEiMKBWJlZ2luGAIgASgLMhQuaW8ub3BlbmlzbXMudjEuRGF0ZRIhCgNl",
-            "bmQYAyABKAsyFC5pby5vcGVuaXNtcy52MS5EYXRlEigKB2NvbXBhbnkYBCAB",
-            "KAsyFy5pby5vcGVuaXNtcy52MS5Db21wYW55Eg0KBWZvY3VzGAUgASgJEg4K",
-            "BnBhc3NlZBgGIAEoCBIOCgZyZXN1bHQYByABKAkSCwoDdXJsGAggASgJEigK",
-            "CGNvbnRhY3RzGAkgAygLMhYuaW8ub3BlbmlzbXMudjEuUGVyc29uEgwKBHRh",
-            "Z3MYCiADKAkiwAEKClJlcG9zaXRvcnkSDAoEbmFtZRgBIAEoCRILCgN1cmwY",
-            "AiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSLgoKdmlzaWJpbGl0eRgEIAEo",
-            "DjIaLmlvLm9wZW5pc21zLnYxLlZpc2liaWxpdHkSJwoHbWVtYmVycxgFIAMo",
-            "CzIWLmlvLm9wZW5pc21zLnYxLlBlcnNvbhIbChNzZWN1cml0eV9hdHRyaWJ1",
-            "dGVzGAYgAygJEgwKBHRhZ3MYCiADKAkiTgoKU3RhdGlzdGljcxISCgppZGVu",
-            "dGlmaWVyGAEgASgJEgwKBG5hbWUYAiABKAkSDQoFdmFsdWUYAyABKAUSDwoH",
-            "Y29tbWVudBgEIAEoCSpHCgpWaXNpYmlsaXR5Eg0KCXVuZGVmaW5lZBAAEgoK",
-            "BnB1YmxpYxABEgwKCGludGVybmFsEAISEAoMY29uZmlkZW50aWFsEANCJgoL",
-            "aW8ub3BlbmlzbXNaF2dpdGh1Yi5jb20vb3BlbmlzbXMvYXBpYgZwcm90bzM="));
+            "ZRgCIAEoCRITCgttYWNfYWRkcmVzcxgDIAEoCSKGAgoPT3BlcmF0aW5nU3lz",
+            "dGVtEjwKAm9zGAEgASgOMjAuaW8ub3BlbmlzbXMudjEuT3BlcmF0aW5nU3lz",
+            "dGVtLk9wZXJhdGluZ1N5c3RlbXMSFQoNbWFqb3JfdmVyc2lvbhgCIAEoCRIU",
+            "CgxmdWxsX3ZlcnNpb24YAyABKAkihwEKEE9wZXJhdGluZ1N5c3RlbXMSDQoJ",
+            "dW5kZWZpbmVkEAASCQoFbWFjb3MQARILCgd3aW5kb3dzEAISCQoFbGludXgQ",
+            "AxIICgR1bml4EAQSDQoJY2hyb21lX29zEAUSBwoDaW9zEAoSCwoHYW5kcm9p",
+            "ZBALEgcKA3JvcxAOEgkKBW90aGVyEA8i5QEKC0FwcGxpY2F0aW9uEgwKBG5h",
+            "bWUYASABKAkSDAoEcGF0aBgCIAEoCRIOCgZ2ZW5kb3IYAyABKAkSCwoDdXJs",
+            "GAQgASgJEhMKC2Rlc2NyaXB0aW9uGAUgASgJEg8KB3ZlcnNpb24YBiABKAkS",
+            "KgoGc2lnbmVkGAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLkJvb2xWYWx1ZRIu",
+            "CgpzeXN0ZW1fYXBwGAggASgLMhouZ29vZ2xlLnByb3RvYnVmLkJvb2xWYWx1",
+            "ZRIbChNpbnN0YWxsYXRpb25fc291cmNlGAkgASgJIpIBCgdQcm9maWxlEgwK",
+            "BG5hbWUYASABKAkSEgoKaWRlbnRpZmllchgCIAEoCRIzCg9yZW1vdmFsX2Fs",
+            "bG93ZWQYAyABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlEhQKDHBh",
+            "eWxvYWRfdHlwZRgEIAEoCRIaChJwYXlsb2FkX2lkZW50aWZpZXIYBSABKAki",
+            "MAoERGF0ZRIMCgR5ZWFyGAEgASgFEg0KBW1vbnRoGAIgASgFEgsKA2RheRgD",
+            "IAEoBSI4Cg1DZXJ0aWZpY2F0aW9uEgwKBHR5cGUYASABKAkSCwoDdXJsGAIg",
+            "ASgJEgwKBHRhZ3MYCiADKAkicAoHQ29tcGFueRIMCgRuYW1lGAEgASgJEgsK",
+            "A3VybBgCIAEoCRIQCghjYXRlZ29yeRgDIAEoCRInCgdjb250YWN0GAQgASgL",
+            "MhYuaW8ub3BlbmlzbXMudjEuUGVyc29uEg8KB2FkZHJlc3MYBSADKAki+wEK",
+            "B1BlbnRlc3QSCgoCaWQYASABKAkSIwoFYmVnaW4YAiABKAsyFC5pby5vcGVu",
+            "aXNtcy52MS5EYXRlEiEKA2VuZBgDIAEoCzIULmlvLm9wZW5pc21zLnYxLkRh",
+            "dGUSKAoHY29tcGFueRgEIAEoCzIXLmlvLm9wZW5pc21zLnYxLkNvbXBhbnkS",
+            "DQoFZm9jdXMYBSABKAkSDgoGcGFzc2VkGAYgASgIEg4KBnJlc3VsdBgHIAEo",
+            "CRILCgN1cmwYCCABKAkSKAoIY29udGFjdHMYCSADKAsyFi5pby5vcGVuaXNt",
+            "cy52MS5QZXJzb24SDAoEdGFncxgKIAMoCSLAAQoKUmVwb3NpdG9yeRIMCgRu",
+            "YW1lGAEgASgJEgsKA3VybBgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIu",
+            "Cgp2aXNpYmlsaXR5GAQgASgOMhouaW8ub3BlbmlzbXMudjEuVmlzaWJpbGl0",
+            "eRInCgdtZW1iZXJzGAUgAygLMhYuaW8ub3BlbmlzbXMudjEuUGVyc29uEhsK",
+            "E3NlY3VyaXR5X2F0dHJpYnV0ZXMYBiADKAkSDAoEdGFncxgKIAMoCSJOCgpT",
+            "dGF0aXN0aWNzEhIKCmlkZW50aWZpZXIYASABKAkSDAoEbmFtZRgCIAEoCRIN",
+            "CgV2YWx1ZRgDIAEoBRIPCgdjb21tZW50GAQgASgJKkcKClZpc2liaWxpdHkS",
+            "DQoJdW5kZWZpbmVkEAASCgoGcHVibGljEAESDAoIaW50ZXJuYWwQAhIQCgxj",
+            "b25maWRlbnRpYWwQA0ImCgtpby5vcGVuaXNtc1oXZ2l0aHViLmNvbS9vcGVu",
+            "aXNtcy9hcGliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Io.Openisms.V1.Visibility), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -5284,7 +5285,7 @@ namespace Io.Openisms.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OperatingSystem(OperatingSystem other) : this() {
-      os_ = other.os_ != null ? other.os_.Clone() : null;
+      os_ = other.os_;
       majorVersion_ = other.majorVersion_;
       fullVersion_ = other.fullVersion_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -5298,10 +5299,10 @@ namespace Io.Openisms.V1 {
 
     /// <summary>Field number for the "os" field.</summary>
     public const int OsFieldNumber = 1;
-    private global::Io.Openisms.V1.OperatingSystem os_;
+    private global::Io.Openisms.V1.OperatingSystem.Types.OperatingSystems os_ = global::Io.Openisms.V1.OperatingSystem.Types.OperatingSystems.Undefined;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Io.Openisms.V1.OperatingSystem Os {
+    public global::Io.Openisms.V1.OperatingSystem.Types.OperatingSystems Os {
       get { return os_; }
       set {
         os_ = value;
@@ -5347,7 +5348,7 @@ namespace Io.Openisms.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Os, other.Os)) return false;
+      if (Os != other.Os) return false;
       if (MajorVersion != other.MajorVersion) return false;
       if (FullVersion != other.FullVersion) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -5357,7 +5358,7 @@ namespace Io.Openisms.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (os_ != null) hash ^= Os.GetHashCode();
+      if (Os != global::Io.Openisms.V1.OperatingSystem.Types.OperatingSystems.Undefined) hash ^= Os.GetHashCode();
       if (MajorVersion.Length != 0) hash ^= MajorVersion.GetHashCode();
       if (FullVersion.Length != 0) hash ^= FullVersion.GetHashCode();
       if (_unknownFields != null) {
@@ -5378,9 +5379,9 @@ namespace Io.Openisms.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (os_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Os);
+      if (Os != global::Io.Openisms.V1.OperatingSystem.Types.OperatingSystems.Undefined) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Os);
       }
       if (MajorVersion.Length != 0) {
         output.WriteRawTag(18);
@@ -5400,9 +5401,9 @@ namespace Io.Openisms.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (os_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Os);
+      if (Os != global::Io.Openisms.V1.OperatingSystem.Types.OperatingSystems.Undefined) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Os);
       }
       if (MajorVersion.Length != 0) {
         output.WriteRawTag(18);
@@ -5422,8 +5423,8 @@ namespace Io.Openisms.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (os_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Os);
+      if (Os != global::Io.Openisms.V1.OperatingSystem.Types.OperatingSystems.Undefined) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Os);
       }
       if (MajorVersion.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(MajorVersion);
@@ -5443,11 +5444,8 @@ namespace Io.Openisms.V1 {
       if (other == null) {
         return;
       }
-      if (other.os_ != null) {
-        if (os_ == null) {
-          Os = new global::Io.Openisms.V1.OperatingSystem();
-        }
-        Os.MergeFrom(other.Os);
+      if (other.Os != global::Io.Openisms.V1.OperatingSystem.Types.OperatingSystems.Undefined) {
+        Os = other.Os;
       }
       if (other.MajorVersion.Length != 0) {
         MajorVersion = other.MajorVersion;
@@ -5470,11 +5468,8 @@ namespace Io.Openisms.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            if (os_ == null) {
-              Os = new global::Io.Openisms.V1.OperatingSystem();
-            }
-            input.ReadMessage(Os);
+          case 8: {
+            Os = (global::Io.Openisms.V1.OperatingSystem.Types.OperatingSystems) input.ReadEnum();
             break;
           }
           case 18: {
@@ -5500,11 +5495,8 @@ namespace Io.Openisms.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            if (os_ == null) {
-              Os = new global::Io.Openisms.V1.OperatingSystem();
-            }
-            input.ReadMessage(Os);
+          case 8: {
+            Os = (global::Io.Openisms.V1.OperatingSystem.Types.OperatingSystems) input.ReadEnum();
             break;
           }
           case 18: {

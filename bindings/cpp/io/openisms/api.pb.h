@@ -3652,23 +3652,14 @@ class OperatingSystem final :
   std::string* _internal_mutable_full_version();
   public:
 
-  // .io.openisms.v1.OperatingSystem os = 1;
-  bool has_os() const;
-  private:
-  bool _internal_has_os() const;
-  public:
+  // .io.openisms.v1.OperatingSystem.OperatingSystems os = 1;
   void clear_os();
-  const ::io::openisms::v1::OperatingSystem& os() const;
-  PROTOBUF_NODISCARD ::io::openisms::v1::OperatingSystem* release_os();
-  ::io::openisms::v1::OperatingSystem* mutable_os();
-  void set_allocated_os(::io::openisms::v1::OperatingSystem* os);
+  ::io::openisms::v1::OperatingSystem_OperatingSystems os() const;
+  void set_os(::io::openisms::v1::OperatingSystem_OperatingSystems value);
   private:
-  const ::io::openisms::v1::OperatingSystem& _internal_os() const;
-  ::io::openisms::v1::OperatingSystem* _internal_mutable_os();
+  ::io::openisms::v1::OperatingSystem_OperatingSystems _internal_os() const;
+  void _internal_set_os(::io::openisms::v1::OperatingSystem_OperatingSystems value);
   public:
-  void unsafe_arena_set_allocated_os(
-      ::io::openisms::v1::OperatingSystem* os);
-  ::io::openisms::v1::OperatingSystem* unsafe_arena_release_os();
 
   // @@protoc_insertion_point(class_scope:io.openisms.v1.OperatingSystem)
  private:
@@ -3679,7 +3670,7 @@ class OperatingSystem final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr major_version_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr full_version_;
-  ::io::openisms::v1::OperatingSystem* os_;
+  int os_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_io_2fopenisms_2fapi_2eproto;
 };
@@ -10890,94 +10881,24 @@ inline void Network::set_allocated_mac_address(std::string* mac_address) {
 
 // OperatingSystem
 
-// .io.openisms.v1.OperatingSystem os = 1;
-inline bool OperatingSystem::_internal_has_os() const {
-  return this != internal_default_instance() && os_ != nullptr;
-}
-inline bool OperatingSystem::has_os() const {
-  return _internal_has_os();
-}
+// .io.openisms.v1.OperatingSystem.OperatingSystems os = 1;
 inline void OperatingSystem::clear_os() {
-  if (GetArenaForAllocation() == nullptr && os_ != nullptr) {
-    delete os_;
-  }
-  os_ = nullptr;
+  os_ = 0;
 }
-inline const ::io::openisms::v1::OperatingSystem& OperatingSystem::_internal_os() const {
-  const ::io::openisms::v1::OperatingSystem* p = os_;
-  return p != nullptr ? *p : reinterpret_cast<const ::io::openisms::v1::OperatingSystem&>(
-      ::io::openisms::v1::_OperatingSystem_default_instance_);
+inline ::io::openisms::v1::OperatingSystem_OperatingSystems OperatingSystem::_internal_os() const {
+  return static_cast< ::io::openisms::v1::OperatingSystem_OperatingSystems >(os_);
 }
-inline const ::io::openisms::v1::OperatingSystem& OperatingSystem::os() const {
+inline ::io::openisms::v1::OperatingSystem_OperatingSystems OperatingSystem::os() const {
   // @@protoc_insertion_point(field_get:io.openisms.v1.OperatingSystem.os)
   return _internal_os();
 }
-inline void OperatingSystem::unsafe_arena_set_allocated_os(
-    ::io::openisms::v1::OperatingSystem* os) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(os_);
-  }
-  os_ = os;
-  if (os) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:io.openisms.v1.OperatingSystem.os)
-}
-inline ::io::openisms::v1::OperatingSystem* OperatingSystem::release_os() {
+inline void OperatingSystem::_internal_set_os(::io::openisms::v1::OperatingSystem_OperatingSystems value) {
   
-  ::io::openisms::v1::OperatingSystem* temp = os_;
-  os_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
+  os_ = value;
 }
-inline ::io::openisms::v1::OperatingSystem* OperatingSystem::unsafe_arena_release_os() {
-  // @@protoc_insertion_point(field_release:io.openisms.v1.OperatingSystem.os)
-  
-  ::io::openisms::v1::OperatingSystem* temp = os_;
-  os_ = nullptr;
-  return temp;
-}
-inline ::io::openisms::v1::OperatingSystem* OperatingSystem::_internal_mutable_os() {
-  
-  if (os_ == nullptr) {
-    auto* p = CreateMaybeMessage<::io::openisms::v1::OperatingSystem>(GetArenaForAllocation());
-    os_ = p;
-  }
-  return os_;
-}
-inline ::io::openisms::v1::OperatingSystem* OperatingSystem::mutable_os() {
-  ::io::openisms::v1::OperatingSystem* _msg = _internal_mutable_os();
-  // @@protoc_insertion_point(field_mutable:io.openisms.v1.OperatingSystem.os)
-  return _msg;
-}
-inline void OperatingSystem::set_allocated_os(::io::openisms::v1::OperatingSystem* os) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete os_;
-  }
-  if (os) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(os);
-    if (message_arena != submessage_arena) {
-      os = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, os, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  os_ = os;
-  // @@protoc_insertion_point(field_set_allocated:io.openisms.v1.OperatingSystem.os)
+inline void OperatingSystem::set_os(::io::openisms::v1::OperatingSystem_OperatingSystems value) {
+  _internal_set_os(value);
+  // @@protoc_insertion_point(field_set:io.openisms.v1.OperatingSystem.os)
 }
 
 // string major_version = 2;

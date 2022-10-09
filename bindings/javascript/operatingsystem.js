@@ -71,7 +71,7 @@ proto.io.openisms.v1.OperatingSystem.prototype.toObject = function(opt_includeIn
  */
 proto.io.openisms.v1.OperatingSystem.toObject = function(includeInstance, msg) {
   var f, obj = {
-    os: (f = msg.getOs()) && proto.io.openisms.v1.OperatingSystem.toObject(includeInstance, f),
+    os: jspb.Message.getFieldWithDefault(msg, 1, 0),
     majorVersion: jspb.Message.getFieldWithDefault(msg, 2, ""),
     fullVersion: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
@@ -111,8 +111,7 @@ proto.io.openisms.v1.OperatingSystem.deserializeBinaryFromReader = function(msg,
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.io.openisms.v1.OperatingSystem;
-      reader.readMessage(value,proto.io.openisms.v1.OperatingSystem.deserializeBinaryFromReader);
+      var value = /** @type {!proto.io.openisms.v1.OperatingSystem.OperatingSystems} */ (reader.readEnum());
       msg.setOs(value);
       break;
     case 2:
@@ -153,11 +152,10 @@ proto.io.openisms.v1.OperatingSystem.prototype.serializeBinary = function() {
 proto.io.openisms.v1.OperatingSystem.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOs();
-  if (f != null) {
-    writer.writeMessage(
+  if (f !== 0.0) {
+    writer.writeEnum(
       1,
-      f,
-      proto.io.openisms.v1.OperatingSystem.serializeBinaryToWriter
+      f
     );
   }
   f = message.getMajorVersion();
@@ -194,39 +192,20 @@ proto.io.openisms.v1.OperatingSystem.OperatingSystems = {
 };
 
 /**
- * optional OperatingSystem os = 1;
- * @return {?proto.io.openisms.v1.OperatingSystem}
+ * optional OperatingSystems os = 1;
+ * @return {!proto.io.openisms.v1.OperatingSystem.OperatingSystems}
  */
 proto.io.openisms.v1.OperatingSystem.prototype.getOs = function() {
-  return /** @type{?proto.io.openisms.v1.OperatingSystem} */ (
-    jspb.Message.getWrapperField(this, proto.io.openisms.v1.OperatingSystem, 1));
+  return /** @type {!proto.io.openisms.v1.OperatingSystem.OperatingSystems} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /**
- * @param {?proto.io.openisms.v1.OperatingSystem|undefined} value
+ * @param {!proto.io.openisms.v1.OperatingSystem.OperatingSystems} value
  * @return {!proto.io.openisms.v1.OperatingSystem} returns this
-*/
+ */
 proto.io.openisms.v1.OperatingSystem.prototype.setOs = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.io.openisms.v1.OperatingSystem} returns this
- */
-proto.io.openisms.v1.OperatingSystem.prototype.clearOs = function() {
-  return this.setOs(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.io.openisms.v1.OperatingSystem.prototype.hasOs = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 

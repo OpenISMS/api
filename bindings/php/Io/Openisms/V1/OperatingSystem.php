@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class OperatingSystem extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.io.openisms.v1.OperatingSystem os = 1;</code>
+     * Generated from protobuf field <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
      */
-    protected $os = null;
+    protected $os = 0;
     /**
      * Generated from protobuf field <code>string major_version = 2;</code>
      */
@@ -32,7 +32,7 @@ class OperatingSystem extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Io\Openisms\V1\OperatingSystem $os
+     *     @type int $os
      *     @type string $major_version
      *     @type string $full_version
      * }
@@ -43,32 +43,22 @@ class OperatingSystem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-     * @return \Io\Openisms\V1\OperatingSystem|null
+     * Generated from protobuf field <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
+     * @return int
      */
     public function getOs()
     {
         return $this->os;
     }
 
-    public function hasOs()
-    {
-        return isset($this->os);
-    }
-
-    public function clearOs()
-    {
-        unset($this->os);
-    }
-
     /**
-     * Generated from protobuf field <code>.io.openisms.v1.OperatingSystem os = 1;</code>
-     * @param \Io\Openisms\V1\OperatingSystem $var
+     * Generated from protobuf field <code>.io.openisms.v1.OperatingSystem.OperatingSystems os = 1;</code>
+     * @param int $var
      * @return $this
      */
     public function setOs($var)
     {
-        GPBUtil::checkMessage($var, \Io\Openisms\V1\OperatingSystem::class);
+        GPBUtil::checkEnum($var, \Io\Openisms\V1\OperatingSystem\OperatingSystems::class);
         $this->os = $var;
 
         return $this;

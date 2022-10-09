@@ -792,24 +792,11 @@ struct Io_Openisms_V1_OperatingSystem {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var os: Io_Openisms_V1_OperatingSystem {
-    get {return _storage._os ?? Io_Openisms_V1_OperatingSystem()}
-    set {_uniqueStorage()._os = newValue}
-  }
-  /// Returns true if `os` has been explicitly set.
-  var hasOs: Bool {return _storage._os != nil}
-  /// Clears the value of `os`. Subsequent reads from it will return its default value.
-  mutating func clearOs() {_uniqueStorage()._os = nil}
+  var os: Io_Openisms_V1_OperatingSystem.OperatingSystems = .undefined
 
-  var majorVersion: String {
-    get {return _storage._majorVersion}
-    set {_uniqueStorage()._majorVersion = newValue}
-  }
+  var majorVersion: String = String()
 
-  var fullVersion: String {
-    get {return _storage._fullVersion}
-    set {_uniqueStorage()._fullVersion = newValue}
-  }
+  var fullVersion: String = String()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -866,8 +853,6 @@ struct Io_Openisms_V1_OperatingSystem {
   }
 
   init() {}
-
-  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 #if swift(>=4.2)
@@ -2235,77 +2220,37 @@ extension Io_Openisms_V1_OperatingSystem: SwiftProtobuf.Message, SwiftProtobuf._
     3: .standard(proto: "full_version"),
   ]
 
-  fileprivate class _StorageClass {
-    var _os: Io_Openisms_V1_OperatingSystem? = nil
-    var _majorVersion: String = String()
-    var _fullVersion: String = String()
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _os = source._os
-      _majorVersion = source._majorVersion
-      _fullVersion = source._fullVersion
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularMessageField(value: &_storage._os) }()
-        case 2: try { try decoder.decodeSingularStringField(value: &_storage._majorVersion) }()
-        case 3: try { try decoder.decodeSingularStringField(value: &_storage._fullVersion) }()
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularEnumField(value: &self.os) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.majorVersion) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.fullVersion) }()
+      default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every if/case branch local when no optimizations
-      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
-      // https://github.com/apple/swift-protobuf/issues/1182
-      try { if let v = _storage._os {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      } }()
-      if !_storage._majorVersion.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._majorVersion, fieldNumber: 2)
-      }
-      if !_storage._fullVersion.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._fullVersion, fieldNumber: 3)
-      }
+    if self.os != .undefined {
+      try visitor.visitSingularEnumField(value: self.os, fieldNumber: 1)
+    }
+    if !self.majorVersion.isEmpty {
+      try visitor.visitSingularStringField(value: self.majorVersion, fieldNumber: 2)
+    }
+    if !self.fullVersion.isEmpty {
+      try visitor.visitSingularStringField(value: self.fullVersion, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: Io_Openisms_V1_OperatingSystem, rhs: Io_Openisms_V1_OperatingSystem) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._os != rhs_storage._os {return false}
-        if _storage._majorVersion != rhs_storage._majorVersion {return false}
-        if _storage._fullVersion != rhs_storage._fullVersion {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs.os != rhs.os {return false}
+    if lhs.majorVersion != rhs.majorVersion {return false}
+    if lhs.fullVersion != rhs.fullVersion {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

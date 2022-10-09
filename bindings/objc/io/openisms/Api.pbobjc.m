@@ -1548,13 +1548,13 @@ typedef struct Network__storage_ {
 
 @implementation OperatingSystem
 
-@dynamic hasOs, os;
+@dynamic os;
 @dynamic majorVersion;
 @dynamic fullVersion;
 
 typedef struct OperatingSystem__storage_ {
   uint32_t _has_storage_[1];
-  OperatingSystem *os;
+  OperatingSystem_OperatingSystems os;
   NSString *majorVersion;
   NSString *fullVersion;
 } OperatingSystem__storage_;
@@ -1567,12 +1567,12 @@ typedef struct OperatingSystem__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "os",
-        .dataTypeSpecific.clazz = GPBObjCClass(OperatingSystem),
+        .dataTypeSpecific.enumDescFunc = OperatingSystem_OperatingSystems_EnumDescriptor,
         .number = OperatingSystem_FieldNumber_Os,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(OperatingSystem__storage_, os),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeEnum,
       },
       {
         .name = "majorVersion",
@@ -1610,6 +1610,18 @@ typedef struct OperatingSystem__storage_ {
 }
 
 @end
+
+int32_t OperatingSystem_Os_RawValue(OperatingSystem *message) {
+  GPBDescriptor *descriptor = [OperatingSystem descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:OperatingSystem_FieldNumber_Os];
+  return GPBGetMessageRawEnumField(message, field);
+}
+
+void SetOperatingSystem_Os_RawValue(OperatingSystem *message, int32_t value) {
+  GPBDescriptor *descriptor = [OperatingSystem descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:OperatingSystem_FieldNumber_Os];
+  GPBSetMessageRawEnumField(message, field, value);
+}
 
 #pragma mark - Enum OperatingSystem_OperatingSystems
 
