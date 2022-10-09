@@ -41,13 +41,13 @@ GPBObjCClassDeclaration(Network);
 GPBObjCClassDeclaration(OperatingSystem);
 GPBObjCClassDeclaration(Pentest);
 GPBObjCClassDeclaration(Person);
+GPBObjCClassDeclaration(Photo);
 GPBObjCClassDeclaration(PhysicalObject);
 GPBObjCClassDeclaration(Profile);
 GPBObjCClassDeclaration(Repository);
 GPBObjCClassDeclaration(SecurityFeatures);
 GPBObjCClassDeclaration(SourceSystem);
 GPBObjCClassDeclaration(Statistics);
-GPBObjCClassDeclaration(UrlWithEtag);
 GPBObjCClassDeclaration(User);
 
 #pragma mark - ApiRoot
@@ -676,7 +676,7 @@ typedef struct Person__storage_ {
   Name *name;
   NSString *primaryEmail;
   NSMutableArray *otherEmailsArray;
-  UrlWithEtag *picture;
+  Photo *picture;
   NSString *company;
   GPBTimestamp *created;
   GPBTimestamp *updated;
@@ -726,7 +726,7 @@ typedef struct Person__storage_ {
       },
       {
         .name = "picture",
-        .dataTypeSpecific.clazz = GPBObjCClass(UrlWithEtag),
+        .dataTypeSpecific.clazz = GPBObjCClass(Photo),
         .number = Person_FieldNumber_Picture,
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(Person__storage_, picture),
@@ -879,20 +879,22 @@ typedef struct Name__storage_ {
 
 @end
 
-#pragma mark - UrlWithEtag
+#pragma mark - Photo
 
-@implementation UrlWithEtag
+@implementation Photo
 
 @dynamic URL;
+@dynamic base64Encoded;
 @dynamic etag;
 @dynamic hasLastModified, lastModified;
 
-typedef struct UrlWithEtag__storage_ {
+typedef struct Photo__storage_ {
   uint32_t _has_storage_[1];
   NSString *URL;
+  NSString *base64Encoded;
   NSString *etag;
   GPBTimestamp *lastModified;
-} UrlWithEtag__storage_;
+} Photo__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -903,42 +905,51 @@ typedef struct UrlWithEtag__storage_ {
       {
         .name = "URL",
         .dataTypeSpecific.clazz = Nil,
-        .number = UrlWithEtag_FieldNumber_URL,
+        .number = Photo_FieldNumber_URL,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(UrlWithEtag__storage_, URL),
+        .offset = (uint32_t)offsetof(Photo__storage_, URL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "base64Encoded",
+        .dataTypeSpecific.clazz = Nil,
+        .number = Photo_FieldNumber_Base64Encoded,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Photo__storage_, base64Encoded),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "etag",
         .dataTypeSpecific.clazz = Nil,
-        .number = UrlWithEtag_FieldNumber_Etag,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(UrlWithEtag__storage_, etag),
+        .number = Photo_FieldNumber_Etag,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Photo__storage_, etag),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "lastModified",
         .dataTypeSpecific.clazz = GPBObjCClass(GPBTimestamp),
-        .number = UrlWithEtag_FieldNumber_LastModified,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(UrlWithEtag__storage_, lastModified),
+        .number = Photo_FieldNumber_LastModified,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Photo__storage_, lastModified),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[UrlWithEtag class]
+        [GPBDescriptor allocDescriptorForClass:[Photo class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(UrlWithEtag__storage_)
+                                   storageSize:sizeof(Photo__storage_)
                                          flags:(GPBDescriptorInitializationFlags)(GPBDescriptorInitializationFlag_UsesClassRefs | GPBDescriptorInitializationFlag_Proto3OptionalKnown)];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\001\001!!!\000";
+        "\002\001!!!\000\002\004\202\247\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     #if defined(DEBUG) && DEBUG

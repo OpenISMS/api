@@ -89,6 +89,9 @@ extern PentestDefaultTypeInternal _Pentest_default_instance_;
 class Person;
 struct PersonDefaultTypeInternal;
 extern PersonDefaultTypeInternal _Person_default_instance_;
+class Photo;
+struct PhotoDefaultTypeInternal;
+extern PhotoDefaultTypeInternal _Photo_default_instance_;
 class PhysicalObject;
 struct PhysicalObjectDefaultTypeInternal;
 extern PhysicalObjectDefaultTypeInternal _PhysicalObject_default_instance_;
@@ -107,9 +110,6 @@ extern SourceSystemDefaultTypeInternal _SourceSystem_default_instance_;
 class Statistics;
 struct StatisticsDefaultTypeInternal;
 extern StatisticsDefaultTypeInternal _Statistics_default_instance_;
-class UrlWithEtag;
-struct UrlWithEtagDefaultTypeInternal;
-extern UrlWithEtagDefaultTypeInternal _UrlWithEtag_default_instance_;
 class User;
 struct UserDefaultTypeInternal;
 extern UserDefaultTypeInternal _User_default_instance_;
@@ -130,13 +130,13 @@ template<> ::io::openisms::v1::Network* Arena::CreateMaybeMessage<::io::openisms
 template<> ::io::openisms::v1::OperatingSystem* Arena::CreateMaybeMessage<::io::openisms::v1::OperatingSystem>(Arena*);
 template<> ::io::openisms::v1::Pentest* Arena::CreateMaybeMessage<::io::openisms::v1::Pentest>(Arena*);
 template<> ::io::openisms::v1::Person* Arena::CreateMaybeMessage<::io::openisms::v1::Person>(Arena*);
+template<> ::io::openisms::v1::Photo* Arena::CreateMaybeMessage<::io::openisms::v1::Photo>(Arena*);
 template<> ::io::openisms::v1::PhysicalObject* Arena::CreateMaybeMessage<::io::openisms::v1::PhysicalObject>(Arena*);
 template<> ::io::openisms::v1::Profile* Arena::CreateMaybeMessage<::io::openisms::v1::Profile>(Arena*);
 template<> ::io::openisms::v1::Repository* Arena::CreateMaybeMessage<::io::openisms::v1::Repository>(Arena*);
 template<> ::io::openisms::v1::SecurityFeatures* Arena::CreateMaybeMessage<::io::openisms::v1::SecurityFeatures>(Arena*);
 template<> ::io::openisms::v1::SourceSystem* Arena::CreateMaybeMessage<::io::openisms::v1::SourceSystem>(Arena*);
 template<> ::io::openisms::v1::Statistics* Arena::CreateMaybeMessage<::io::openisms::v1::Statistics>(Arena*);
-template<> ::io::openisms::v1::UrlWithEtag* Arena::CreateMaybeMessage<::io::openisms::v1::UrlWithEtag>(Arena*);
 template<> ::io::openisms::v1::User* Arena::CreateMaybeMessage<::io::openisms::v1::User>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace io {
@@ -1607,23 +1607,23 @@ class Person final :
       ::io::openisms::v1::Name* name);
   ::io::openisms::v1::Name* unsafe_arena_release_name();
 
-  // .io.openisms.v1.UrlWithEtag picture = 5;
+  // .io.openisms.v1.Photo picture = 5;
   bool has_picture() const;
   private:
   bool _internal_has_picture() const;
   public:
   void clear_picture();
-  const ::io::openisms::v1::UrlWithEtag& picture() const;
-  PROTOBUF_NODISCARD ::io::openisms::v1::UrlWithEtag* release_picture();
-  ::io::openisms::v1::UrlWithEtag* mutable_picture();
-  void set_allocated_picture(::io::openisms::v1::UrlWithEtag* picture);
+  const ::io::openisms::v1::Photo& picture() const;
+  PROTOBUF_NODISCARD ::io::openisms::v1::Photo* release_picture();
+  ::io::openisms::v1::Photo* mutable_picture();
+  void set_allocated_picture(::io::openisms::v1::Photo* picture);
   private:
-  const ::io::openisms::v1::UrlWithEtag& _internal_picture() const;
-  ::io::openisms::v1::UrlWithEtag* _internal_mutable_picture();
+  const ::io::openisms::v1::Photo& _internal_picture() const;
+  ::io::openisms::v1::Photo* _internal_mutable_picture();
   public:
   void unsafe_arena_set_allocated_picture(
-      ::io::openisms::v1::UrlWithEtag* picture);
-  ::io::openisms::v1::UrlWithEtag* unsafe_arena_release_picture();
+      ::io::openisms::v1::Photo* picture);
+  ::io::openisms::v1::Photo* unsafe_arena_release_picture();
 
   // .google.protobuf.Timestamp created = 10;
   bool has_created() const;
@@ -1673,7 +1673,7 @@ class Person final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr primary_email_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr company_;
   ::io::openisms::v1::Name* name_;
-  ::io::openisms::v1::UrlWithEtag* picture_;
+  ::io::openisms::v1::Photo* picture_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* created_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* updated_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1909,24 +1909,24 @@ class Name final :
 };
 // -------------------------------------------------------------------
 
-class UrlWithEtag final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:io.openisms.v1.UrlWithEtag) */ {
+class Photo final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:io.openisms.v1.Photo) */ {
  public:
-  inline UrlWithEtag() : UrlWithEtag(nullptr) {}
-  ~UrlWithEtag() override;
-  explicit PROTOBUF_CONSTEXPR UrlWithEtag(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline Photo() : Photo(nullptr) {}
+  ~Photo() override;
+  explicit PROTOBUF_CONSTEXPR Photo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  UrlWithEtag(const UrlWithEtag& from);
-  UrlWithEtag(UrlWithEtag&& from) noexcept
-    : UrlWithEtag() {
+  Photo(const Photo& from);
+  Photo(Photo&& from) noexcept
+    : Photo() {
     *this = ::std::move(from);
   }
 
-  inline UrlWithEtag& operator=(const UrlWithEtag& from) {
+  inline Photo& operator=(const Photo& from) {
     CopyFrom(from);
     return *this;
   }
-  inline UrlWithEtag& operator=(UrlWithEtag&& from) noexcept {
+  inline Photo& operator=(Photo&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1949,20 +1949,20 @@ class UrlWithEtag final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const UrlWithEtag& default_instance() {
+  static const Photo& default_instance() {
     return *internal_default_instance();
   }
-  static inline const UrlWithEtag* internal_default_instance() {
-    return reinterpret_cast<const UrlWithEtag*>(
-               &_UrlWithEtag_default_instance_);
+  static inline const Photo* internal_default_instance() {
+    return reinterpret_cast<const Photo*>(
+               &_Photo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     6;
 
-  friend void swap(UrlWithEtag& a, UrlWithEtag& b) {
+  friend void swap(Photo& a, Photo& b) {
     a.Swap(&b);
   }
-  inline void Swap(UrlWithEtag* other) {
+  inline void Swap(Photo* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1975,7 +1975,7 @@ class UrlWithEtag final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(UrlWithEtag* other) {
+  void UnsafeArenaSwap(Photo* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1983,13 +1983,13 @@ class UrlWithEtag final :
 
   // implements Message ----------------------------------------------
 
-  UrlWithEtag* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<UrlWithEtag>(arena);
+  Photo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Photo>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const UrlWithEtag& from);
+  void CopyFrom(const Photo& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const UrlWithEtag& from);
+  void MergeFrom(const Photo& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -2006,15 +2006,15 @@ class UrlWithEtag final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(UrlWithEtag* other);
+  void InternalSwap(Photo* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "io.openisms.v1.UrlWithEtag";
+    return "io.openisms.v1.Photo";
   }
   protected:
-  explicit UrlWithEtag(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit Photo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -2029,8 +2029,9 @@ class UrlWithEtag final :
 
   enum : int {
     kUrlFieldNumber = 1,
-    kEtagFieldNumber = 2,
-    kLastModifiedFieldNumber = 3,
+    kBase64EncodedFieldNumber = 2,
+    kEtagFieldNumber = 3,
+    kLastModifiedFieldNumber = 4,
   };
   // string url = 1;
   void clear_url();
@@ -2046,7 +2047,21 @@ class UrlWithEtag final :
   std::string* _internal_mutable_url();
   public:
 
-  // string etag = 2;
+  // string base_64_encoded = 2;
+  void clear_base_64_encoded();
+  const std::string& base_64_encoded() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_base_64_encoded(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_base_64_encoded();
+  PROTOBUF_NODISCARD std::string* release_base_64_encoded();
+  void set_allocated_base_64_encoded(std::string* base_64_encoded);
+  private:
+  const std::string& _internal_base_64_encoded() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_base_64_encoded(const std::string& value);
+  std::string* _internal_mutable_base_64_encoded();
+  public:
+
+  // string etag = 3;
   void clear_etag();
   const std::string& etag() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2060,7 +2075,7 @@ class UrlWithEtag final :
   std::string* _internal_mutable_etag();
   public:
 
-  // .google.protobuf.Timestamp last_modified = 3;
+  // .google.protobuf.Timestamp last_modified = 4;
   bool has_last_modified() const;
   private:
   bool _internal_has_last_modified() const;
@@ -2078,7 +2093,7 @@ class UrlWithEtag final :
       ::PROTOBUF_NAMESPACE_ID::Timestamp* last_modified);
   ::PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_last_modified();
 
-  // @@protoc_insertion_point(class_scope:io.openisms.v1.UrlWithEtag)
+  // @@protoc_insertion_point(class_scope:io.openisms.v1.Photo)
  private:
   class _Internal;
 
@@ -2086,6 +2101,7 @@ class UrlWithEtag final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr url_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr base_64_encoded_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr etag_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* last_modified_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -7634,7 +7650,7 @@ Person::mutable_other_emails() {
   return &other_emails_;
 }
 
-// .io.openisms.v1.UrlWithEtag picture = 5;
+// .io.openisms.v1.Photo picture = 5;
 inline bool Person::_internal_has_picture() const {
   return this != internal_default_instance() && picture_ != nullptr;
 }
@@ -7647,17 +7663,17 @@ inline void Person::clear_picture() {
   }
   picture_ = nullptr;
 }
-inline const ::io::openisms::v1::UrlWithEtag& Person::_internal_picture() const {
-  const ::io::openisms::v1::UrlWithEtag* p = picture_;
-  return p != nullptr ? *p : reinterpret_cast<const ::io::openisms::v1::UrlWithEtag&>(
-      ::io::openisms::v1::_UrlWithEtag_default_instance_);
+inline const ::io::openisms::v1::Photo& Person::_internal_picture() const {
+  const ::io::openisms::v1::Photo* p = picture_;
+  return p != nullptr ? *p : reinterpret_cast<const ::io::openisms::v1::Photo&>(
+      ::io::openisms::v1::_Photo_default_instance_);
 }
-inline const ::io::openisms::v1::UrlWithEtag& Person::picture() const {
+inline const ::io::openisms::v1::Photo& Person::picture() const {
   // @@protoc_insertion_point(field_get:io.openisms.v1.Person.picture)
   return _internal_picture();
 }
 inline void Person::unsafe_arena_set_allocated_picture(
-    ::io::openisms::v1::UrlWithEtag* picture) {
+    ::io::openisms::v1::Photo* picture) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(picture_);
   }
@@ -7669,9 +7685,9 @@ inline void Person::unsafe_arena_set_allocated_picture(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:io.openisms.v1.Person.picture)
 }
-inline ::io::openisms::v1::UrlWithEtag* Person::release_picture() {
+inline ::io::openisms::v1::Photo* Person::release_picture() {
   
-  ::io::openisms::v1::UrlWithEtag* temp = picture_;
+  ::io::openisms::v1::Photo* temp = picture_;
   picture_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -7684,27 +7700,27 @@ inline ::io::openisms::v1::UrlWithEtag* Person::release_picture() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::io::openisms::v1::UrlWithEtag* Person::unsafe_arena_release_picture() {
+inline ::io::openisms::v1::Photo* Person::unsafe_arena_release_picture() {
   // @@protoc_insertion_point(field_release:io.openisms.v1.Person.picture)
   
-  ::io::openisms::v1::UrlWithEtag* temp = picture_;
+  ::io::openisms::v1::Photo* temp = picture_;
   picture_ = nullptr;
   return temp;
 }
-inline ::io::openisms::v1::UrlWithEtag* Person::_internal_mutable_picture() {
+inline ::io::openisms::v1::Photo* Person::_internal_mutable_picture() {
   
   if (picture_ == nullptr) {
-    auto* p = CreateMaybeMessage<::io::openisms::v1::UrlWithEtag>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::io::openisms::v1::Photo>(GetArenaForAllocation());
     picture_ = p;
   }
   return picture_;
 }
-inline ::io::openisms::v1::UrlWithEtag* Person::mutable_picture() {
-  ::io::openisms::v1::UrlWithEtag* _msg = _internal_mutable_picture();
+inline ::io::openisms::v1::Photo* Person::mutable_picture() {
+  ::io::openisms::v1::Photo* _msg = _internal_mutable_picture();
   // @@protoc_insertion_point(field_mutable:io.openisms.v1.Person.picture)
   return _msg;
 }
-inline void Person::set_allocated_picture(::io::openisms::v1::UrlWithEtag* picture) {
+inline void Person::set_allocated_picture(::io::openisms::v1::Photo* picture) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete picture_;
@@ -8250,44 +8266,44 @@ inline void Name::set_allocated_role(std::string* role) {
 
 // -------------------------------------------------------------------
 
-// UrlWithEtag
+// Photo
 
 // string url = 1;
-inline void UrlWithEtag::clear_url() {
+inline void Photo::clear_url() {
   url_.ClearToEmpty();
 }
-inline const std::string& UrlWithEtag::url() const {
-  // @@protoc_insertion_point(field_get:io.openisms.v1.UrlWithEtag.url)
+inline const std::string& Photo::url() const {
+  // @@protoc_insertion_point(field_get:io.openisms.v1.Photo.url)
   return _internal_url();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void UrlWithEtag::set_url(ArgT0&& arg0, ArgT... args) {
+void Photo::set_url(ArgT0&& arg0, ArgT... args) {
  
  url_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:io.openisms.v1.UrlWithEtag.url)
+  // @@protoc_insertion_point(field_set:io.openisms.v1.Photo.url)
 }
-inline std::string* UrlWithEtag::mutable_url() {
+inline std::string* Photo::mutable_url() {
   std::string* _s = _internal_mutable_url();
-  // @@protoc_insertion_point(field_mutable:io.openisms.v1.UrlWithEtag.url)
+  // @@protoc_insertion_point(field_mutable:io.openisms.v1.Photo.url)
   return _s;
 }
-inline const std::string& UrlWithEtag::_internal_url() const {
+inline const std::string& Photo::_internal_url() const {
   return url_.Get();
 }
-inline void UrlWithEtag::_internal_set_url(const std::string& value) {
+inline void Photo::_internal_set_url(const std::string& value) {
   
   url_.Set(value, GetArenaForAllocation());
 }
-inline std::string* UrlWithEtag::_internal_mutable_url() {
+inline std::string* Photo::_internal_mutable_url() {
   
   return url_.Mutable(GetArenaForAllocation());
 }
-inline std::string* UrlWithEtag::release_url() {
-  // @@protoc_insertion_point(field_release:io.openisms.v1.UrlWithEtag.url)
+inline std::string* Photo::release_url() {
+  // @@protoc_insertion_point(field_release:io.openisms.v1.Photo.url)
   return url_.Release();
 }
-inline void UrlWithEtag::set_allocated_url(std::string* url) {
+inline void Photo::set_allocated_url(std::string* url) {
   if (url != nullptr) {
     
   } else {
@@ -8299,45 +8315,95 @@ inline void UrlWithEtag::set_allocated_url(std::string* url) {
     url_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:io.openisms.v1.UrlWithEtag.url)
+  // @@protoc_insertion_point(field_set_allocated:io.openisms.v1.Photo.url)
 }
 
-// string etag = 2;
-inline void UrlWithEtag::clear_etag() {
+// string base_64_encoded = 2;
+inline void Photo::clear_base_64_encoded() {
+  base_64_encoded_.ClearToEmpty();
+}
+inline const std::string& Photo::base_64_encoded() const {
+  // @@protoc_insertion_point(field_get:io.openisms.v1.Photo.base_64_encoded)
+  return _internal_base_64_encoded();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Photo::set_base_64_encoded(ArgT0&& arg0, ArgT... args) {
+ 
+ base_64_encoded_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:io.openisms.v1.Photo.base_64_encoded)
+}
+inline std::string* Photo::mutable_base_64_encoded() {
+  std::string* _s = _internal_mutable_base_64_encoded();
+  // @@protoc_insertion_point(field_mutable:io.openisms.v1.Photo.base_64_encoded)
+  return _s;
+}
+inline const std::string& Photo::_internal_base_64_encoded() const {
+  return base_64_encoded_.Get();
+}
+inline void Photo::_internal_set_base_64_encoded(const std::string& value) {
+  
+  base_64_encoded_.Set(value, GetArenaForAllocation());
+}
+inline std::string* Photo::_internal_mutable_base_64_encoded() {
+  
+  return base_64_encoded_.Mutable(GetArenaForAllocation());
+}
+inline std::string* Photo::release_base_64_encoded() {
+  // @@protoc_insertion_point(field_release:io.openisms.v1.Photo.base_64_encoded)
+  return base_64_encoded_.Release();
+}
+inline void Photo::set_allocated_base_64_encoded(std::string* base_64_encoded) {
+  if (base_64_encoded != nullptr) {
+    
+  } else {
+    
+  }
+  base_64_encoded_.SetAllocated(base_64_encoded, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (base_64_encoded_.IsDefault()) {
+    base_64_encoded_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:io.openisms.v1.Photo.base_64_encoded)
+}
+
+// string etag = 3;
+inline void Photo::clear_etag() {
   etag_.ClearToEmpty();
 }
-inline const std::string& UrlWithEtag::etag() const {
-  // @@protoc_insertion_point(field_get:io.openisms.v1.UrlWithEtag.etag)
+inline const std::string& Photo::etag() const {
+  // @@protoc_insertion_point(field_get:io.openisms.v1.Photo.etag)
   return _internal_etag();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void UrlWithEtag::set_etag(ArgT0&& arg0, ArgT... args) {
+void Photo::set_etag(ArgT0&& arg0, ArgT... args) {
  
  etag_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:io.openisms.v1.UrlWithEtag.etag)
+  // @@protoc_insertion_point(field_set:io.openisms.v1.Photo.etag)
 }
-inline std::string* UrlWithEtag::mutable_etag() {
+inline std::string* Photo::mutable_etag() {
   std::string* _s = _internal_mutable_etag();
-  // @@protoc_insertion_point(field_mutable:io.openisms.v1.UrlWithEtag.etag)
+  // @@protoc_insertion_point(field_mutable:io.openisms.v1.Photo.etag)
   return _s;
 }
-inline const std::string& UrlWithEtag::_internal_etag() const {
+inline const std::string& Photo::_internal_etag() const {
   return etag_.Get();
 }
-inline void UrlWithEtag::_internal_set_etag(const std::string& value) {
+inline void Photo::_internal_set_etag(const std::string& value) {
   
   etag_.Set(value, GetArenaForAllocation());
 }
-inline std::string* UrlWithEtag::_internal_mutable_etag() {
+inline std::string* Photo::_internal_mutable_etag() {
   
   return etag_.Mutable(GetArenaForAllocation());
 }
-inline std::string* UrlWithEtag::release_etag() {
-  // @@protoc_insertion_point(field_release:io.openisms.v1.UrlWithEtag.etag)
+inline std::string* Photo::release_etag() {
+  // @@protoc_insertion_point(field_release:io.openisms.v1.Photo.etag)
   return etag_.Release();
 }
-inline void UrlWithEtag::set_allocated_etag(std::string* etag) {
+inline void Photo::set_allocated_etag(std::string* etag) {
   if (etag != nullptr) {
     
   } else {
@@ -8349,26 +8415,26 @@ inline void UrlWithEtag::set_allocated_etag(std::string* etag) {
     etag_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:io.openisms.v1.UrlWithEtag.etag)
+  // @@protoc_insertion_point(field_set_allocated:io.openisms.v1.Photo.etag)
 }
 
-// .google.protobuf.Timestamp last_modified = 3;
-inline bool UrlWithEtag::_internal_has_last_modified() const {
+// .google.protobuf.Timestamp last_modified = 4;
+inline bool Photo::_internal_has_last_modified() const {
   return this != internal_default_instance() && last_modified_ != nullptr;
 }
-inline bool UrlWithEtag::has_last_modified() const {
+inline bool Photo::has_last_modified() const {
   return _internal_has_last_modified();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& UrlWithEtag::_internal_last_modified() const {
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& Photo::_internal_last_modified() const {
   const ::PROTOBUF_NAMESPACE_ID::Timestamp* p = last_modified_;
   return p != nullptr ? *p : reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Timestamp&>(
       ::PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& UrlWithEtag::last_modified() const {
-  // @@protoc_insertion_point(field_get:io.openisms.v1.UrlWithEtag.last_modified)
+inline const ::PROTOBUF_NAMESPACE_ID::Timestamp& Photo::last_modified() const {
+  // @@protoc_insertion_point(field_get:io.openisms.v1.Photo.last_modified)
   return _internal_last_modified();
 }
-inline void UrlWithEtag::unsafe_arena_set_allocated_last_modified(
+inline void Photo::unsafe_arena_set_allocated_last_modified(
     ::PROTOBUF_NAMESPACE_ID::Timestamp* last_modified) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(last_modified_);
@@ -8379,9 +8445,9 @@ inline void UrlWithEtag::unsafe_arena_set_allocated_last_modified(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:io.openisms.v1.UrlWithEtag.last_modified)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:io.openisms.v1.Photo.last_modified)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* UrlWithEtag::release_last_modified() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* Photo::release_last_modified() {
   
   ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = last_modified_;
   last_modified_ = nullptr;
@@ -8396,14 +8462,14 @@ inline ::PROTOBUF_NAMESPACE_ID::Timestamp* UrlWithEtag::release_last_modified() 
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* UrlWithEtag::unsafe_arena_release_last_modified() {
-  // @@protoc_insertion_point(field_release:io.openisms.v1.UrlWithEtag.last_modified)
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* Photo::unsafe_arena_release_last_modified() {
+  // @@protoc_insertion_point(field_release:io.openisms.v1.Photo.last_modified)
   
   ::PROTOBUF_NAMESPACE_ID::Timestamp* temp = last_modified_;
   last_modified_ = nullptr;
   return temp;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* UrlWithEtag::_internal_mutable_last_modified() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* Photo::_internal_mutable_last_modified() {
   
   if (last_modified_ == nullptr) {
     auto* p = CreateMaybeMessage<::PROTOBUF_NAMESPACE_ID::Timestamp>(GetArenaForAllocation());
@@ -8411,12 +8477,12 @@ inline ::PROTOBUF_NAMESPACE_ID::Timestamp* UrlWithEtag::_internal_mutable_last_m
   }
   return last_modified_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Timestamp* UrlWithEtag::mutable_last_modified() {
+inline ::PROTOBUF_NAMESPACE_ID::Timestamp* Photo::mutable_last_modified() {
   ::PROTOBUF_NAMESPACE_ID::Timestamp* _msg = _internal_mutable_last_modified();
-  // @@protoc_insertion_point(field_mutable:io.openisms.v1.UrlWithEtag.last_modified)
+  // @@protoc_insertion_point(field_mutable:io.openisms.v1.Photo.last_modified)
   return _msg;
 }
-inline void UrlWithEtag::set_allocated_last_modified(::PROTOBUF_NAMESPACE_ID::Timestamp* last_modified) {
+inline void Photo::set_allocated_last_modified(::PROTOBUF_NAMESPACE_ID::Timestamp* last_modified) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(last_modified_);
@@ -8434,7 +8500,7 @@ inline void UrlWithEtag::set_allocated_last_modified(::PROTOBUF_NAMESPACE_ID::Ti
     
   }
   last_modified_ = last_modified;
-  // @@protoc_insertion_point(field_set_allocated:io.openisms.v1.UrlWithEtag.last_modified)
+  // @@protoc_insertion_point(field_set_allocated:io.openisms.v1.Photo.last_modified)
 }
 
 // -------------------------------------------------------------------

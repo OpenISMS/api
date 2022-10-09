@@ -418,8 +418,8 @@ struct Io_Openisms_V1_Person {
     set {_uniqueStorage()._otherEmails = newValue}
   }
 
-  var picture: Io_Openisms_V1_UrlWithEtag {
-    get {return _storage._picture ?? Io_Openisms_V1_UrlWithEtag()}
+  var picture: Io_Openisms_V1_Photo {
+    get {return _storage._picture ?? Io_Openisms_V1_Photo()}
     set {_uniqueStorage()._picture = newValue}
   }
   /// Returns true if `picture` has been explicitly set.
@@ -484,12 +484,14 @@ struct Io_Openisms_V1_Name {
   init() {}
 }
 
-struct Io_Openisms_V1_UrlWithEtag {
+struct Io_Openisms_V1_Photo {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var url: String = String()
+
+  var base64Encoded: String = String()
 
   var etag: String = String()
 
@@ -1148,7 +1150,7 @@ extension Io_Openisms_V1_SourceSystem.SourceType: @unchecked Sendable {}
 extension Io_Openisms_V1_User: @unchecked Sendable {}
 extension Io_Openisms_V1_Person: @unchecked Sendable {}
 extension Io_Openisms_V1_Name: @unchecked Sendable {}
-extension Io_Openisms_V1_UrlWithEtag: @unchecked Sendable {}
+extension Io_Openisms_V1_Photo: @unchecked Sendable {}
 extension Io_Openisms_V1_Employment: @unchecked Sendable {}
 extension Io_Openisms_V1_ConnectedAccount: @unchecked Sendable {}
 extension Io_Openisms_V1_PhysicalObject: @unchecked Sendable {}
@@ -1564,7 +1566,7 @@ extension Io_Openisms_V1_Person: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     var _name: Io_Openisms_V1_Name? = nil
     var _primaryEmail: String = String()
     var _otherEmails: [String] = []
-    var _picture: Io_Openisms_V1_UrlWithEtag? = nil
+    var _picture: Io_Openisms_V1_Photo? = nil
     var _company: String = String()
     var _created: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
     var _updated: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
@@ -1732,12 +1734,13 @@ extension Io_Openisms_V1_Name: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension Io_Openisms_V1_UrlWithEtag: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UrlWithEtag"
+extension Io_Openisms_V1_Photo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Photo"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "url"),
-    2: .same(proto: "etag"),
-    3: .standard(proto: "last_modified"),
+    2: .standard(proto: "base_64_encoded"),
+    3: .same(proto: "etag"),
+    4: .standard(proto: "last_modified"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1747,8 +1750,9 @@ extension Io_Openisms_V1_UrlWithEtag: SwiftProtobuf.Message, SwiftProtobuf._Mess
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.url) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.etag) }()
-      case 3: try { try decoder.decodeSingularMessageField(value: &self._lastModified) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.base64Encoded) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.etag) }()
+      case 4: try { try decoder.decodeSingularMessageField(value: &self._lastModified) }()
       default: break
       }
     }
@@ -1762,17 +1766,21 @@ extension Io_Openisms_V1_UrlWithEtag: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if !self.url.isEmpty {
       try visitor.visitSingularStringField(value: self.url, fieldNumber: 1)
     }
+    if !self.base64Encoded.isEmpty {
+      try visitor.visitSingularStringField(value: self.base64Encoded, fieldNumber: 2)
+    }
     if !self.etag.isEmpty {
-      try visitor.visitSingularStringField(value: self.etag, fieldNumber: 2)
+      try visitor.visitSingularStringField(value: self.etag, fieldNumber: 3)
     }
     try { if let v = self._lastModified {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Io_Openisms_V1_UrlWithEtag, rhs: Io_Openisms_V1_UrlWithEtag) -> Bool {
+  static func ==(lhs: Io_Openisms_V1_Photo, rhs: Io_Openisms_V1_Photo) -> Bool {
     if lhs.url != rhs.url {return false}
+    if lhs.base64Encoded != rhs.base64Encoded {return false}
     if lhs.etag != rhs.etag {return false}
     if lhs._lastModified != rhs._lastModified {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

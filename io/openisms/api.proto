@@ -76,7 +76,7 @@ message Person {
   Name name = 2;
   string primary_email = 3;
   repeated string other_emails = 4;
-  UrlWithEtag picture = 5;
+  Photo picture = 5;
   string company = 6;
 
   google.protobuf.Timestamp created = 10; // technical date
@@ -93,10 +93,11 @@ message Name {
   string role = 6; // Developer, Customer Support Agent
 }
 
-message UrlWithEtag {
+message Photo {
   string url = 1;
-  string etag = 2;
-  google.protobuf.Timestamp last_modified = 3;
+  string base_64_encoded = 2;
+  string etag = 3;
+  google.protobuf.Timestamp last_modified = 4;
 }
 
 message Employment {

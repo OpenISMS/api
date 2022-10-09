@@ -39,13 +39,13 @@ CF_EXTERN_C_BEGIN
 @class OperatingSystem;
 @class Pentest;
 @class Person;
+@class Photo;
 @class PhysicalObject;
 @class Profile;
 @class Repository;
 @class SecurityFeatures;
 @class SourceSystem;
 @class Statistics;
-@class UrlWithEtag;
 @class User;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -386,7 +386,7 @@ GPB_FINAL @interface Person : GPBMessage
 /** The number of items in @c otherEmailsArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger otherEmailsArray_Count;
 
-@property(nonatomic, readwrite, strong, null_resettable) UrlWithEtag *picture;
+@property(nonatomic, readwrite, strong, null_resettable) Photo *picture;
 /** Test to see if @c picture has been set. */
 @property(nonatomic, readwrite) BOOL hasPicture;
 
@@ -434,17 +434,20 @@ GPB_FINAL @interface Name : GPBMessage
 
 @end
 
-#pragma mark - UrlWithEtag
+#pragma mark - Photo
 
-typedef GPB_ENUM(UrlWithEtag_FieldNumber) {
-  UrlWithEtag_FieldNumber_URL = 1,
-  UrlWithEtag_FieldNumber_Etag = 2,
-  UrlWithEtag_FieldNumber_LastModified = 3,
+typedef GPB_ENUM(Photo_FieldNumber) {
+  Photo_FieldNumber_URL = 1,
+  Photo_FieldNumber_Base64Encoded = 2,
+  Photo_FieldNumber_Etag = 3,
+  Photo_FieldNumber_LastModified = 4,
 };
 
-GPB_FINAL @interface UrlWithEtag : GPBMessage
+GPB_FINAL @interface Photo : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *base64Encoded;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *etag;
 

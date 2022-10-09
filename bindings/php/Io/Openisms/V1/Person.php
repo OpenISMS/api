@@ -30,7 +30,7 @@ class Person extends \Google\Protobuf\Internal\Message
      */
     private $other_emails;
     /**
-     * Generated from protobuf field <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+     * Generated from protobuf field <code>.io.openisms.v1.Photo picture = 5;</code>
      */
     protected $picture = null;
     /**
@@ -60,7 +60,7 @@ class Person extends \Google\Protobuf\Internal\Message
      *     @type \Io\Openisms\V1\Name $name
      *     @type string $primary_email
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $other_emails
-     *     @type \Io\Openisms\V1\UrlWithEtag $picture
+     *     @type \Io\Openisms\V1\Photo $picture
      *     @type string $company
      *     @type \Google\Protobuf\Timestamp $created
      *           technical date
@@ -172,8 +172,8 @@ class Person extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
-     * @return \Io\Openisms\V1\UrlWithEtag|null
+     * Generated from protobuf field <code>.io.openisms.v1.Photo picture = 5;</code>
+     * @return \Io\Openisms\V1\Photo|null
      */
     public function getPicture()
     {
@@ -191,13 +191,13 @@ class Person extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
-     * @param \Io\Openisms\V1\UrlWithEtag $var
+     * Generated from protobuf field <code>.io.openisms.v1.Photo picture = 5;</code>
+     * @param \Io\Openisms\V1\Photo $var
      * @return $this
      */
     public function setPicture($var)
     {
-        GPBUtil::checkMessage($var, \Io\Openisms\V1\UrlWithEtag::class);
+        GPBUtil::checkMessage($var, \Io\Openisms\V1\Photo::class);
         $this->picture = $var;
 
         return $this;

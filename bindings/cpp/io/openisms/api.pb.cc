@@ -133,20 +133,21 @@ struct NameDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NameDefaultTypeInternal _Name_default_instance_;
-PROTOBUF_CONSTEXPR UrlWithEtag::UrlWithEtag(
+PROTOBUF_CONSTEXPR Photo::Photo(
     ::_pbi::ConstantInitialized)
   : url_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , base_64_encoded_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
   , etag_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
   , last_modified_(nullptr){}
-struct UrlWithEtagDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UrlWithEtagDefaultTypeInternal()
+struct PhotoDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR PhotoDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~UrlWithEtagDefaultTypeInternal() {}
+  ~PhotoDefaultTypeInternal() {}
   union {
-    UrlWithEtag _instance;
+    Photo _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UrlWithEtagDefaultTypeInternal _UrlWithEtag_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PhotoDefaultTypeInternal _Photo_default_instance_;
 PROTOBUF_CONSTEXPR Employment::Employment(
     ::_pbi::ConstantInitialized)
   : contract_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
@@ -478,14 +479,15 @@ const uint32_t TableStruct_io_2fopenisms_2fapi_2eproto::offsets[] PROTOBUF_SECTI
   PROTOBUF_FIELD_OFFSET(::io::openisms::v1::Name, position_),
   PROTOBUF_FIELD_OFFSET(::io::openisms::v1::Name, role_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::io::openisms::v1::UrlWithEtag, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::io::openisms::v1::Photo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::io::openisms::v1::UrlWithEtag, url_),
-  PROTOBUF_FIELD_OFFSET(::io::openisms::v1::UrlWithEtag, etag_),
-  PROTOBUF_FIELD_OFFSET(::io::openisms::v1::UrlWithEtag, last_modified_),
+  PROTOBUF_FIELD_OFFSET(::io::openisms::v1::Photo, url_),
+  PROTOBUF_FIELD_OFFSET(::io::openisms::v1::Photo, base_64_encoded_),
+  PROTOBUF_FIELD_OFFSET(::io::openisms::v1::Photo, etag_),
+  PROTOBUF_FIELD_OFFSET(::io::openisms::v1::Photo, last_modified_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::io::openisms::v1::Employment, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -665,21 +667,21 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 34, -1, -1, sizeof(::io::openisms::v1::User)},
   { 53, -1, -1, sizeof(::io::openisms::v1::Person)},
   { 67, -1, -1, sizeof(::io::openisms::v1::Name)},
-  { 79, -1, -1, sizeof(::io::openisms::v1::UrlWithEtag)},
-  { 88, -1, -1, sizeof(::io::openisms::v1::Employment)},
-  { 98, -1, -1, sizeof(::io::openisms::v1::ConnectedAccount)},
-  { 110, -1, -1, sizeof(::io::openisms::v1::PhysicalObject)},
-  { 132, -1, -1, sizeof(::io::openisms::v1::SecurityFeatures)},
-  { 147, -1, -1, sizeof(::io::openisms::v1::Network)},
-  { 156, -1, -1, sizeof(::io::openisms::v1::OperatingSystem)},
-  { 165, -1, -1, sizeof(::io::openisms::v1::Application)},
-  { 180, -1, -1, sizeof(::io::openisms::v1::Profile)},
-  { 191, -1, -1, sizeof(::io::openisms::v1::Date)},
-  { 200, -1, -1, sizeof(::io::openisms::v1::Certification)},
-  { 209, -1, -1, sizeof(::io::openisms::v1::Company)},
-  { 220, -1, -1, sizeof(::io::openisms::v1::Pentest)},
-  { 236, -1, -1, sizeof(::io::openisms::v1::Repository)},
-  { 249, -1, -1, sizeof(::io::openisms::v1::Statistics)},
+  { 79, -1, -1, sizeof(::io::openisms::v1::Photo)},
+  { 89, -1, -1, sizeof(::io::openisms::v1::Employment)},
+  { 99, -1, -1, sizeof(::io::openisms::v1::ConnectedAccount)},
+  { 111, -1, -1, sizeof(::io::openisms::v1::PhysicalObject)},
+  { 133, -1, -1, sizeof(::io::openisms::v1::SecurityFeatures)},
+  { 148, -1, -1, sizeof(::io::openisms::v1::Network)},
+  { 157, -1, -1, sizeof(::io::openisms::v1::OperatingSystem)},
+  { 166, -1, -1, sizeof(::io::openisms::v1::Application)},
+  { 181, -1, -1, sizeof(::io::openisms::v1::Profile)},
+  { 192, -1, -1, sizeof(::io::openisms::v1::Date)},
+  { 201, -1, -1, sizeof(::io::openisms::v1::Certification)},
+  { 210, -1, -1, sizeof(::io::openisms::v1::Company)},
+  { 221, -1, -1, sizeof(::io::openisms::v1::Pentest)},
+  { 237, -1, -1, sizeof(::io::openisms::v1::Repository)},
+  { 250, -1, -1, sizeof(::io::openisms::v1::Statistics)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -689,7 +691,7 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::io::openisms::v1::_User_default_instance_._instance,
   &::io::openisms::v1::_Person_default_instance_._instance,
   &::io::openisms::v1::_Name_default_instance_._instance,
-  &::io::openisms::v1::_UrlWithEtag_default_instance_._instance,
+  &::io::openisms::v1::_Photo_default_instance_._instance,
   &::io::openisms::v1::_Employment_default_instance_._instance,
   &::io::openisms::v1::_ConnectedAccount_default_instance_._instance,
   &::io::openisms::v1::_PhysicalObject_default_instance_._instance,
@@ -747,87 +749,88 @@ const char descriptor_table_protodef_io_2fopenisms_2fapi_2eproto[] PROTOBUF_SECT
   "onnected_accounts\030\025 \003(\0132 .io.openisms.v1"
   ".ConnectedAccount\0223\n\013possessions\030\026 \003(\0132\036"
   ".io.openisms.v1.PhysicalObject\022\014\n\004tags\030("
-  " \003(\t\"\376\001\n\006Person\022\n\n\002id\030\001 \001(\t\022\"\n\004name\030\002 \001("
+  " \003(\t\"\370\001\n\006Person\022\n\n\002id\030\001 \001(\t\022\"\n\004name\030\002 \001("
   "\0132\024.io.openisms.v1.Name\022\025\n\rprimary_email"
-  "\030\003 \001(\t\022\024\n\014other_emails\030\004 \003(\t\022,\n\007picture\030"
-  "\005 \001(\0132\033.io.openisms.v1.UrlWithEtag\022\017\n\007co"
-  "mpany\030\006 \001(\t\022+\n\007created\030\n \001(\0132\032.google.pr"
-  "otobuf.Timestamp\022+\n\007updated\030\013 \001(\0132\032.goog"
-  "le.protobuf.Timestamp\"q\n\004Name\022\022\n\ngiven_n"
-  "ame\030\001 \001(\t\022\023\n\013family_name\030\002 \001(\t\022\021\n\tfull_n"
-  "ame\030\003 \001(\t\022\r\n\005title\030\004 \001(\t\022\020\n\010position\030\005 \001"
-  "(\t\022\014\n\004role\030\006 \001(\t\"[\n\013UrlWithEtag\022\013\n\003url\030\001"
-  " \001(\t\022\014\n\004etag\030\002 \001(\t\0221\n\rlast_modified\030\003 \001("
-  "\0132\032.google.protobuf.Timestamp\"v\n\nEmploym"
-  "ent\022\020\n\010contract\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022#\n"
-  "\005begin\030\003 \001(\0132\024.io.openisms.v1.Date\022!\n\003en"
-  "d\030\004 \001(\0132\024.io.openisms.v1.Date\"x\n\020Connect"
-  "edAccount\022\016\n\006app_id\030\001 \001(\t\022\020\n\010app_name\030\002 "
-  "\001(\t\022\020\n\010app_type\030\003 \001(\t\022\017\n\007app_url\030\004 \001(\t\022\017"
-  "\n\007user_id\030\005 \001(\t\022\016\n\006scopes\030\006 \003(\t\"\262\003\n\016Phys"
-  "icalObject\022\014\n\004type\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\024"
-  "\n\014manufacturer\030\003 \001(\t\022\016\n\006vendor\030\004 \001(\t\022\022\n\n"
-  "identifier\030\005 \001(\t\022\025\n\rserial_number\030\006 \001(\t\022"
-  "\014\n\004imei\030\007 \001(\t\022\014\n\004meid\030\010 \001(\t\022)\n\010networks\030"
-  "\t \003(\0132\027.io.openisms.v1.Network\022\020\n\010hostna"
-  "me\030\n \001(\t\022\025\n\ruser_accounts\030\013 \003(\t\022+\n\002os\030\014 "
-  "\001(\0132\037.io.openisms.v1.OperatingSystem\0222\n\010"
-  "security\030\r \001(\0132 .io.openisms.v1.Security"
-  "Features\022)\n\010profiles\030\016 \003(\0132\027.io.openisms"
-  ".v1.Profile\022)\n\004apps\030\017 \003(\0132\033.io.openisms."
-  "v1.Application\022\014\n\004tags\030\024 \003(\t\"\366\003\n\020Securit"
-  "yFeatures\0223\n\017activation_lock\030\001 \001(\0132\032.goo"
-  "gle.protobuf.BoolValue\022.\n\nsupervised\030\002 \001"
-  "(\0132\032.google.protobuf.BoolValue\022.\n\nfile_v"
-  "ault\030\003 \001(\0132\032.google.protobuf.BoolValue\0228"
-  "\n\024full_disk_encryption\030\004 \001(\0132\032.google.pr"
-  "otobuf.BoolValue\0223\n\017secure_password\030\005 \001("
-  "\0132\032.google.protobuf.BoolValue\0229\n\025automat"
-  "ic_screen_lock\030\006 \001(\0132\032.google.protobuf.B"
-  "oolValue\0226\n\021screen_lock_after\030\007 \001(\0132\033.go"
-  "ogle.protobuf.Int32Value\0224\n\020firewall_ena"
-  "bled\030\010 \001(\0132\032.google.protobuf.BoolValue\0225"
-  "\n\021automatic_updates\030\t \001(\0132\032.google.proto"
-  "buf.BoolValue\":\n\007Network\022\014\n\004name\030\001 \001(\t\022\014"
-  "\n\004type\030\002 \001(\t\022\023\n\013mac_address\030\003 \001(\t\"\206\002\n\017Op"
-  "eratingSystem\022<\n\002os\030\001 \001(\01620.io.openisms."
-  "v1.OperatingSystem.OperatingSystems\022\025\n\rm"
-  "ajor_version\030\002 \001(\t\022\024\n\014full_version\030\003 \001(\t"
-  "\"\207\001\n\020OperatingSystems\022\r\n\tundefined\020\000\022\t\n\005"
-  "macos\020\001\022\013\n\007windows\020\002\022\t\n\005linux\020\003\022\010\n\004unix\020"
-  "\004\022\r\n\tchrome_os\020\005\022\007\n\003ios\020\n\022\013\n\007android\020\013\022\007"
-  "\n\003ros\020\016\022\t\n\005other\020\017\"\345\001\n\013Application\022\014\n\004na"
-  "me\030\001 \001(\t\022\014\n\004path\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\013"
-  "\n\003url\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\017\n\007vers"
-  "ion\030\006 \001(\t\022*\n\006signed\030\007 \001(\0132\032.google.proto"
-  "buf.BoolValue\022.\n\nsystem_app\030\010 \001(\0132\032.goog"
-  "le.protobuf.BoolValue\022\033\n\023installation_so"
-  "urce\030\t \001(\t\"\222\001\n\007Profile\022\014\n\004name\030\001 \001(\t\022\022\n\n"
-  "identifier\030\002 \001(\t\0223\n\017removal_allowed\030\003 \001("
-  "\0132\032.google.protobuf.BoolValue\022\024\n\014payload"
-  "_type\030\004 \001(\t\022\032\n\022payload_identifier\030\005 \001(\t\""
-  "0\n\004Date\022\014\n\004year\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\013\n\003"
-  "day\030\003 \001(\005\"8\n\rCertification\022\014\n\004type\030\001 \001(\t"
-  "\022\013\n\003url\030\002 \001(\t\022\014\n\004tags\030\n \003(\t\"p\n\007Company\022\014"
-  "\n\004name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\020\n\010category\030\003 "
-  "\001(\t\022\'\n\007contact\030\004 \001(\0132\026.io.openisms.v1.Pe"
-  "rson\022\017\n\007address\030\005 \003(\t\"\373\001\n\007Pentest\022\n\n\002id\030"
-  "\001 \001(\t\022#\n\005begin\030\002 \001(\0132\024.io.openisms.v1.Da"
-  "te\022!\n\003end\030\003 \001(\0132\024.io.openisms.v1.Date\022(\n"
-  "\007company\030\004 \001(\0132\027.io.openisms.v1.Company\022"
-  "\r\n\005focus\030\005 \001(\t\022\016\n\006passed\030\006 \001(\010\022\016\n\006result"
-  "\030\007 \001(\t\022\013\n\003url\030\010 \001(\t\022(\n\010contacts\030\t \003(\0132\026."
-  "io.openisms.v1.Person\022\014\n\004tags\030\n \003(\t\"\300\001\n\n"
-  "Repository\022\014\n\004name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\023\n"
-  "\013description\030\003 \001(\t\022.\n\nvisibility\030\004 \001(\0162\032"
-  ".io.openisms.v1.Visibility\022\'\n\007members\030\005 "
-  "\003(\0132\026.io.openisms.v1.Person\022\033\n\023security_"
-  "attributes\030\006 \003(\t\022\014\n\004tags\030\n \003(\t\"N\n\nStatis"
-  "tics\022\022\n\nidentifier\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r"
-  "\n\005value\030\003 \001(\005\022\017\n\007comment\030\004 \001(\t*G\n\nVisibi"
-  "lity\022\r\n\tundefined\020\000\022\n\n\006public\020\001\022\014\n\010inter"
-  "nal\020\002\022\020\n\014confidential\020\003B&\n\013io.openismsZ\027"
-  "github.com/openisms/apib\006proto3"
+  "\030\003 \001(\t\022\024\n\014other_emails\030\004 \003(\t\022&\n\007picture\030"
+  "\005 \001(\0132\025.io.openisms.v1.Photo\022\017\n\007company\030"
+  "\006 \001(\t\022+\n\007created\030\n \001(\0132\032.google.protobuf"
+  ".Timestamp\022+\n\007updated\030\013 \001(\0132\032.google.pro"
+  "tobuf.Timestamp\"q\n\004Name\022\022\n\ngiven_name\030\001 "
+  "\001(\t\022\023\n\013family_name\030\002 \001(\t\022\021\n\tfull_name\030\003 "
+  "\001(\t\022\r\n\005title\030\004 \001(\t\022\020\n\010position\030\005 \001(\t\022\014\n\004"
+  "role\030\006 \001(\t\"n\n\005Photo\022\013\n\003url\030\001 \001(\t\022\027\n\017base"
+  "_64_encoded\030\002 \001(\t\022\014\n\004etag\030\003 \001(\t\0221\n\rlast_"
+  "modified\030\004 \001(\0132\032.google.protobuf.Timesta"
+  "mp\"v\n\nEmployment\022\020\n\010contract\030\001 \001(\t\022\016\n\006st"
+  "atus\030\002 \001(\t\022#\n\005begin\030\003 \001(\0132\024.io.openisms."
+  "v1.Date\022!\n\003end\030\004 \001(\0132\024.io.openisms.v1.Da"
+  "te\"x\n\020ConnectedAccount\022\016\n\006app_id\030\001 \001(\t\022\020"
+  "\n\010app_name\030\002 \001(\t\022\020\n\010app_type\030\003 \001(\t\022\017\n\007ap"
+  "p_url\030\004 \001(\t\022\017\n\007user_id\030\005 \001(\t\022\016\n\006scopes\030\006"
+  " \003(\t\"\262\003\n\016PhysicalObject\022\014\n\004type\030\001 \001(\t\022\014\n"
+  "\004name\030\002 \001(\t\022\024\n\014manufacturer\030\003 \001(\t\022\016\n\006ven"
+  "dor\030\004 \001(\t\022\022\n\nidentifier\030\005 \001(\t\022\025\n\rserial_"
+  "number\030\006 \001(\t\022\014\n\004imei\030\007 \001(\t\022\014\n\004meid\030\010 \001(\t"
+  "\022)\n\010networks\030\t \003(\0132\027.io.openisms.v1.Netw"
+  "ork\022\020\n\010hostname\030\n \001(\t\022\025\n\ruser_accounts\030\013"
+  " \003(\t\022+\n\002os\030\014 \001(\0132\037.io.openisms.v1.Operat"
+  "ingSystem\0222\n\010security\030\r \001(\0132 .io.openism"
+  "s.v1.SecurityFeatures\022)\n\010profiles\030\016 \003(\0132"
+  "\027.io.openisms.v1.Profile\022)\n\004apps\030\017 \003(\0132\033"
+  ".io.openisms.v1.Application\022\014\n\004tags\030\024 \003("
+  "\t\"\366\003\n\020SecurityFeatures\0223\n\017activation_loc"
+  "k\030\001 \001(\0132\032.google.protobuf.BoolValue\022.\n\ns"
+  "upervised\030\002 \001(\0132\032.google.protobuf.BoolVa"
+  "lue\022.\n\nfile_vault\030\003 \001(\0132\032.google.protobu"
+  "f.BoolValue\0228\n\024full_disk_encryption\030\004 \001("
+  "\0132\032.google.protobuf.BoolValue\0223\n\017secure_"
+  "password\030\005 \001(\0132\032.google.protobuf.BoolVal"
+  "ue\0229\n\025automatic_screen_lock\030\006 \001(\0132\032.goog"
+  "le.protobuf.BoolValue\0226\n\021screen_lock_aft"
+  "er\030\007 \001(\0132\033.google.protobuf.Int32Value\0224\n"
+  "\020firewall_enabled\030\010 \001(\0132\032.google.protobu"
+  "f.BoolValue\0225\n\021automatic_updates\030\t \001(\0132\032"
+  ".google.protobuf.BoolValue\":\n\007Network\022\014\n"
+  "\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\023\n\013mac_address"
+  "\030\003 \001(\t\"\206\002\n\017OperatingSystem\022<\n\002os\030\001 \001(\01620"
+  ".io.openisms.v1.OperatingSystem.Operatin"
+  "gSystems\022\025\n\rmajor_version\030\002 \001(\t\022\024\n\014full_"
+  "version\030\003 \001(\t\"\207\001\n\020OperatingSystems\022\r\n\tun"
+  "defined\020\000\022\t\n\005macos\020\001\022\013\n\007windows\020\002\022\t\n\005lin"
+  "ux\020\003\022\010\n\004unix\020\004\022\r\n\tchrome_os\020\005\022\007\n\003ios\020\n\022\013"
+  "\n\007android\020\013\022\007\n\003ros\020\016\022\t\n\005other\020\017\"\345\001\n\013Appl"
+  "ication\022\014\n\004name\030\001 \001(\t\022\014\n\004path\030\002 \001(\t\022\016\n\006v"
+  "endor\030\003 \001(\t\022\013\n\003url\030\004 \001(\t\022\023\n\013description\030"
+  "\005 \001(\t\022\017\n\007version\030\006 \001(\t\022*\n\006signed\030\007 \001(\0132\032"
+  ".google.protobuf.BoolValue\022.\n\nsystem_app"
+  "\030\010 \001(\0132\032.google.protobuf.BoolValue\022\033\n\023in"
+  "stallation_source\030\t \001(\t\"\222\001\n\007Profile\022\014\n\004n"
+  "ame\030\001 \001(\t\022\022\n\nidentifier\030\002 \001(\t\0223\n\017removal"
+  "_allowed\030\003 \001(\0132\032.google.protobuf.BoolVal"
+  "ue\022\024\n\014payload_type\030\004 \001(\t\022\032\n\022payload_iden"
+  "tifier\030\005 \001(\t\"0\n\004Date\022\014\n\004year\030\001 \001(\005\022\r\n\005mo"
+  "nth\030\002 \001(\005\022\013\n\003day\030\003 \001(\005\"8\n\rCertification\022"
+  "\014\n\004type\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004tags\030\n \003(\t"
+  "\"p\n\007Company\022\014\n\004name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\020"
+  "\n\010category\030\003 \001(\t\022\'\n\007contact\030\004 \001(\0132\026.io.o"
+  "penisms.v1.Person\022\017\n\007address\030\005 \003(\t\"\373\001\n\007P"
+  "entest\022\n\n\002id\030\001 \001(\t\022#\n\005begin\030\002 \001(\0132\024.io.o"
+  "penisms.v1.Date\022!\n\003end\030\003 \001(\0132\024.io.openis"
+  "ms.v1.Date\022(\n\007company\030\004 \001(\0132\027.io.openism"
+  "s.v1.Company\022\r\n\005focus\030\005 \001(\t\022\016\n\006passed\030\006 "
+  "\001(\010\022\016\n\006result\030\007 \001(\t\022\013\n\003url\030\010 \001(\t\022(\n\010cont"
+  "acts\030\t \003(\0132\026.io.openisms.v1.Person\022\014\n\004ta"
+  "gs\030\n \003(\t\"\300\001\n\nRepository\022\014\n\004name\030\001 \001(\t\022\013\n"
+  "\003url\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022.\n\nvisib"
+  "ility\030\004 \001(\0162\032.io.openisms.v1.Visibility\022"
+  "\'\n\007members\030\005 \003(\0132\026.io.openisms.v1.Person"
+  "\022\033\n\023security_attributes\030\006 \003(\t\022\014\n\004tags\030\n "
+  "\003(\t\"N\n\nStatistics\022\022\n\nidentifier\030\001 \001(\t\022\014\n"
+  "\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\005\022\017\n\007comment\030\004 "
+  "\001(\t*G\n\nVisibility\022\r\n\tundefined\020\000\022\n\n\006publ"
+  "ic\020\001\022\014\n\010internal\020\002\022\020\n\014confidential\020\003B&\n\013"
+  "io.openismsZ\027github.com/openisms/apib\006pr"
+  "oto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_io_2fopenisms_2fapi_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
@@ -835,7 +838,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_io_2fopenisms_2fapi
 };
 static ::_pbi::once_flag descriptor_table_io_2fopenisms_2fapi_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_io_2fopenisms_2fapi_2eproto = {
-    false, false, 4831, descriptor_table_protodef_io_2fopenisms_2fapi_2eproto,
+    false, false, 4844, descriptor_table_protodef_io_2fopenisms_2fapi_2eproto,
     "io/openisms/api.proto",
     &descriptor_table_io_2fopenisms_2fapi_2eproto_once, descriptor_table_io_2fopenisms_2fapi_2eproto_deps, 2, 21,
     schemas, file_default_instances, TableStruct_io_2fopenisms_2fapi_2eproto::offsets,
@@ -2742,7 +2745,7 @@ void User::InternalSwap(User* other) {
 class Person::_Internal {
  public:
   static const ::io::openisms::v1::Name& name(const Person* msg);
-  static const ::io::openisms::v1::UrlWithEtag& picture(const Person* msg);
+  static const ::io::openisms::v1::Photo& picture(const Person* msg);
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& created(const Person* msg);
   static const ::PROTOBUF_NAMESPACE_ID::Timestamp& updated(const Person* msg);
 };
@@ -2751,7 +2754,7 @@ const ::io::openisms::v1::Name&
 Person::_Internal::name(const Person* msg) {
   return *msg->name_;
 }
-const ::io::openisms::v1::UrlWithEtag&
+const ::io::openisms::v1::Photo&
 Person::_Internal::picture(const Person* msg) {
   return *msg->picture_;
 }
@@ -2816,7 +2819,7 @@ Person::Person(const Person& from)
     name_ = nullptr;
   }
   if (from._internal_has_picture()) {
-    picture_ = new ::io::openisms::v1::UrlWithEtag(*from.picture_);
+    picture_ = new ::io::openisms::v1::Photo(*from.picture_);
   } else {
     picture_ = nullptr;
   }
@@ -2954,7 +2957,7 @@ const char* Person::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // .io.openisms.v1.UrlWithEtag picture = 5;
+      // .io.openisms.v1.Photo picture = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_picture(), ptr);
@@ -3054,7 +3057,7 @@ uint8_t* Person::_InternalSerialize(
     target = stream->WriteString(4, s, target);
   }
 
-  // .io.openisms.v1.UrlWithEtag picture = 5;
+  // .io.openisms.v1.Photo picture = 5;
   if (this->_internal_has_picture()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(5, _Internal::picture(this),
@@ -3137,7 +3140,7 @@ size_t Person::ByteSizeLong() const {
         *name_);
   }
 
-  // .io.openisms.v1.UrlWithEtag picture = 5;
+  // .io.openisms.v1.Photo picture = 5;
   if (this->_internal_has_picture()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3194,7 +3197,7 @@ void Person::MergeFrom(const Person& from) {
     _internal_mutable_name()->::io::openisms::v1::Name::MergeFrom(from._internal_name());
   }
   if (from._internal_has_picture()) {
-    _internal_mutable_picture()->::io::openisms::v1::UrlWithEtag::MergeFrom(from._internal_picture());
+    _internal_mutable_picture()->::io::openisms::v1::Photo::MergeFrom(from._internal_picture());
   }
   if (from._internal_has_created()) {
     _internal_mutable_created()->::PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_created());
@@ -3685,28 +3688,28 @@ void Name::InternalSwap(Name* other) {
 
 // ===================================================================
 
-class UrlWithEtag::_Internal {
+class Photo::_Internal {
  public:
-  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& last_modified(const UrlWithEtag* msg);
+  static const ::PROTOBUF_NAMESPACE_ID::Timestamp& last_modified(const Photo* msg);
 };
 
 const ::PROTOBUF_NAMESPACE_ID::Timestamp&
-UrlWithEtag::_Internal::last_modified(const UrlWithEtag* msg) {
+Photo::_Internal::last_modified(const Photo* msg) {
   return *msg->last_modified_;
 }
-void UrlWithEtag::clear_last_modified() {
+void Photo::clear_last_modified() {
   if (GetArenaForAllocation() == nullptr && last_modified_ != nullptr) {
     delete last_modified_;
   }
   last_modified_ = nullptr;
 }
-UrlWithEtag::UrlWithEtag(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+Photo::Photo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:io.openisms.v1.UrlWithEtag)
+  // @@protoc_insertion_point(arena_constructor:io.openisms.v1.Photo)
 }
-UrlWithEtag::UrlWithEtag(const UrlWithEtag& from)
+Photo::Photo(const Photo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   url_.InitDefault();
@@ -3715,6 +3718,14 @@ UrlWithEtag::UrlWithEtag(const UrlWithEtag& from)
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_url().empty()) {
     url_.Set(from._internal_url(), 
+      GetArenaForAllocation());
+  }
+  base_64_encoded_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    base_64_encoded_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_base_64_encoded().empty()) {
+    base_64_encoded_.Set(from._internal_base_64_encoded(), 
       GetArenaForAllocation());
   }
   etag_.InitDefault();
@@ -3730,13 +3741,17 @@ UrlWithEtag::UrlWithEtag(const UrlWithEtag& from)
   } else {
     last_modified_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:io.openisms.v1.UrlWithEtag)
+  // @@protoc_insertion_point(copy_constructor:io.openisms.v1.Photo)
 }
 
-inline void UrlWithEtag::SharedCtor() {
+inline void Photo::SharedCtor() {
 url_.InitDefault();
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   url_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+base_64_encoded_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  base_64_encoded_.Set("", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 etag_.InitDefault();
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -3745,8 +3760,8 @@ etag_.InitDefault();
 last_modified_ = nullptr;
 }
 
-UrlWithEtag::~UrlWithEtag() {
-  // @@protoc_insertion_point(destructor:io.openisms.v1.UrlWithEtag)
+Photo::~Photo() {
+  // @@protoc_insertion_point(destructor:io.openisms.v1.Photo)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -3754,24 +3769,26 @@ UrlWithEtag::~UrlWithEtag() {
   SharedDtor();
 }
 
-inline void UrlWithEtag::SharedDtor() {
+inline void Photo::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   url_.Destroy();
+  base_64_encoded_.Destroy();
   etag_.Destroy();
   if (this != internal_default_instance()) delete last_modified_;
 }
 
-void UrlWithEtag::SetCachedSize(int size) const {
+void Photo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void UrlWithEtag::Clear() {
-// @@protoc_insertion_point(message_clear_start:io.openisms.v1.UrlWithEtag)
+void Photo::Clear() {
+// @@protoc_insertion_point(message_clear_start:io.openisms.v1.Photo)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   url_.ClearToEmpty();
+  base_64_encoded_.ClearToEmpty();
   etag_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && last_modified_ != nullptr) {
     delete last_modified_;
@@ -3780,7 +3797,7 @@ void UrlWithEtag::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* UrlWithEtag::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Photo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -3792,23 +3809,33 @@ const char* UrlWithEtag::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_url();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "io.openisms.v1.UrlWithEtag.url"));
+          CHK_(::_pbi::VerifyUTF8(str, "io.openisms.v1.Photo.url"));
         } else
           goto handle_unusual;
         continue;
-      // string etag = 2;
+      // string base_64_encoded = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_base_64_encoded();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "io.openisms.v1.Photo.base_64_encoded"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string etag = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_etag();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "io.openisms.v1.UrlWithEtag.etag"));
+          CHK_(::_pbi::VerifyUTF8(str, "io.openisms.v1.Photo.etag"));
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.Timestamp last_modified = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+      // .google.protobuf.Timestamp last_modified = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_last_modified(), ptr);
           CHK_(ptr);
         } else
@@ -3837,9 +3864,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* UrlWithEtag::_InternalSerialize(
+uint8_t* Photo::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:io.openisms.v1.UrlWithEtag)
+  // @@protoc_insertion_point(serialize_to_array_start:io.openisms.v1.Photo)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3848,25 +3875,35 @@ uint8_t* UrlWithEtag::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_url().data(), static_cast<int>(this->_internal_url().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "io.openisms.v1.UrlWithEtag.url");
+      "io.openisms.v1.Photo.url");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_url(), target);
   }
 
-  // string etag = 2;
+  // string base_64_encoded = 2;
+  if (!this->_internal_base_64_encoded().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_base_64_encoded().data(), static_cast<int>(this->_internal_base_64_encoded().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "io.openisms.v1.Photo.base_64_encoded");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_base_64_encoded(), target);
+  }
+
+  // string etag = 3;
   if (!this->_internal_etag().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_etag().data(), static_cast<int>(this->_internal_etag().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "io.openisms.v1.UrlWithEtag.etag");
+      "io.openisms.v1.Photo.etag");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_etag(), target);
+        3, this->_internal_etag(), target);
   }
 
-  // .google.protobuf.Timestamp last_modified = 3;
+  // .google.protobuf.Timestamp last_modified = 4;
   if (this->_internal_has_last_modified()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::last_modified(this),
+      InternalWriteMessage(4, _Internal::last_modified(this),
         _Internal::last_modified(this).GetCachedSize(), target, stream);
   }
 
@@ -3874,12 +3911,12 @@ uint8_t* UrlWithEtag::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:io.openisms.v1.UrlWithEtag)
+  // @@protoc_insertion_point(serialize_to_array_end:io.openisms.v1.Photo)
   return target;
 }
 
-size_t UrlWithEtag::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:io.openisms.v1.UrlWithEtag)
+size_t Photo::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:io.openisms.v1.Photo)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -3893,14 +3930,21 @@ size_t UrlWithEtag::ByteSizeLong() const {
         this->_internal_url());
   }
 
-  // string etag = 2;
+  // string base_64_encoded = 2;
+  if (!this->_internal_base_64_encoded().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_base_64_encoded());
+  }
+
+  // string etag = 3;
   if (!this->_internal_etag().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_etag());
   }
 
-  // .google.protobuf.Timestamp last_modified = 3;
+  // .google.protobuf.Timestamp last_modified = 4;
   if (this->_internal_has_last_modified()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3910,27 +3954,30 @@ size_t UrlWithEtag::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UrlWithEtag::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Photo::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    UrlWithEtag::MergeImpl
+    Photo::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UrlWithEtag::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Photo::GetClassData() const { return &_class_data_; }
 
-void UrlWithEtag::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void Photo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<UrlWithEtag *>(to)->MergeFrom(
-      static_cast<const UrlWithEtag &>(from));
+  static_cast<Photo *>(to)->MergeFrom(
+      static_cast<const Photo &>(from));
 }
 
 
-void UrlWithEtag::MergeFrom(const UrlWithEtag& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:io.openisms.v1.UrlWithEtag)
+void Photo::MergeFrom(const Photo& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:io.openisms.v1.Photo)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_url().empty()) {
     _internal_set_url(from._internal_url());
+  }
+  if (!from._internal_base_64_encoded().empty()) {
+    _internal_set_base_64_encoded(from._internal_base_64_encoded());
   }
   if (!from._internal_etag().empty()) {
     _internal_set_etag(from._internal_etag());
@@ -3941,18 +3988,18 @@ void UrlWithEtag::MergeFrom(const UrlWithEtag& from) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void UrlWithEtag::CopyFrom(const UrlWithEtag& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:io.openisms.v1.UrlWithEtag)
+void Photo::CopyFrom(const Photo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:io.openisms.v1.Photo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool UrlWithEtag::IsInitialized() const {
+bool Photo::IsInitialized() const {
   return true;
 }
 
-void UrlWithEtag::InternalSwap(UrlWithEtag* other) {
+void Photo::InternalSwap(Photo* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
@@ -3962,13 +4009,17 @@ void UrlWithEtag::InternalSwap(UrlWithEtag* other) {
       &other->url_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &base_64_encoded_, lhs_arena,
+      &other->base_64_encoded_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &etag_, lhs_arena,
       &other->etag_, rhs_arena
   );
   swap(last_modified_, other->last_modified_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata UrlWithEtag::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Photo::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_io_2fopenisms_2fapi_2eproto_getter, &descriptor_table_io_2fopenisms_2fapi_2eproto_once,
       file_level_metadata_io_2fopenisms_2fapi_2eproto[6]);
@@ -9898,9 +9949,9 @@ template<> PROTOBUF_NOINLINE ::io::openisms::v1::Name*
 Arena::CreateMaybeMessage< ::io::openisms::v1::Name >(Arena* arena) {
   return Arena::CreateMessageInternal< ::io::openisms::v1::Name >(arena);
 }
-template<> PROTOBUF_NOINLINE ::io::openisms::v1::UrlWithEtag*
-Arena::CreateMaybeMessage< ::io::openisms::v1::UrlWithEtag >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::io::openisms::v1::UrlWithEtag >(arena);
+template<> PROTOBUF_NOINLINE ::io::openisms::v1::Photo*
+Arena::CreateMaybeMessage< ::io::openisms::v1::Photo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::io::openisms::v1::Photo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::io::openisms::v1::Employment*
 Arena::CreateMaybeMessage< ::io::openisms::v1::Employment >(Arena* arena) {

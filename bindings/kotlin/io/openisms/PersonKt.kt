@@ -151,9 +151,9 @@ public object PersonKt {
       _builder.clearOtherEmails()
     }
     /**
-     * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+     * <code>.io.openisms.v1.Photo picture = 5;</code>
      */
-    public var picture: io.openisms.Api.UrlWithEtag
+    public var picture: io.openisms.Api.Photo
       @JvmName("getPicture")
       get() = _builder.getPicture()
       @JvmName("setPicture")
@@ -161,13 +161,13 @@ public object PersonKt {
         _builder.setPicture(value)
       }
     /**
-     * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+     * <code>.io.openisms.v1.Photo picture = 5;</code>
      */
     public fun clearPicture() {
       _builder.clearPicture()
     }
     /**
-     * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+     * <code>.io.openisms.v1.Photo picture = 5;</code>
      * @return Whether the picture field is set.
      */
     public fun hasPicture(): kotlin.Boolean {
@@ -271,7 +271,7 @@ public inline fun io.openisms.Api.Person.copy(block: io.openisms.PersonKt.Dsl.()
 val io.openisms.Api.PersonOrBuilder.nameOrNull: io.openisms.Api.Name?
   get() = if (hasName()) getName() else null
 
-val io.openisms.Api.PersonOrBuilder.pictureOrNull: io.openisms.Api.UrlWithEtag?
+val io.openisms.Api.PersonOrBuilder.pictureOrNull: io.openisms.Api.Photo?
   get() = if (hasPicture()) getPicture() else null
 
 val io.openisms.Api.PersonOrBuilder.createdOrNull: com.google.protobuf.Timestamp?

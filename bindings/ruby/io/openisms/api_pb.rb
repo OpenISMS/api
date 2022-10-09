@@ -68,7 +68,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :name, :message, 2, "io.openisms.v1.Name"
       optional :primary_email, :string, 3
       repeated :other_emails, :string, 4
-      optional :picture, :message, 5, "io.openisms.v1.UrlWithEtag"
+      optional :picture, :message, 5, "io.openisms.v1.Photo"
       optional :company, :string, 6
       optional :created, :message, 10, "google.protobuf.Timestamp"
       optional :updated, :message, 11, "google.protobuf.Timestamp"
@@ -81,10 +81,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :position, :string, 5
       optional :role, :string, 6
     end
-    add_message "io.openisms.v1.UrlWithEtag" do
+    add_message "io.openisms.v1.Photo" do
       optional :url, :string, 1
-      optional :etag, :string, 2
-      optional :last_modified, :message, 3, "google.protobuf.Timestamp"
+      optional :base_64_encoded, :string, 2
+      optional :etag, :string, 3
+      optional :last_modified, :message, 4, "google.protobuf.Timestamp"
     end
     add_message "io.openisms.v1.Employment" do
       optional :contract, :string, 1
@@ -232,7 +233,7 @@ module Io
       User = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("io.openisms.v1.User").msgclass
       Person = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("io.openisms.v1.Person").msgclass
       Name = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("io.openisms.v1.Name").msgclass
-      UrlWithEtag = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("io.openisms.v1.UrlWithEtag").msgclass
+      Photo = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("io.openisms.v1.Photo").msgclass
       Employment = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("io.openisms.v1.Employment").msgclass
       ConnectedAccount = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("io.openisms.v1.ConnectedAccount").msgclass
       PhysicalObject = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("io.openisms.v1.PhysicalObject").msgclass

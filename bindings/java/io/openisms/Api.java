@@ -9324,19 +9324,19 @@ public final class Api {
         getOtherEmailsBytes(int index);
 
     /**
-     * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+     * <code>.io.openisms.v1.Photo picture = 5;</code>
      * @return Whether the picture field is set.
      */
     boolean hasPicture();
     /**
-     * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+     * <code>.io.openisms.v1.Photo picture = 5;</code>
      * @return The picture.
      */
-    io.openisms.Api.UrlWithEtag getPicture();
+    io.openisms.Api.Photo getPicture();
     /**
-     * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+     * <code>.io.openisms.v1.Photo picture = 5;</code>
      */
-    io.openisms.Api.UrlWithEtagOrBuilder getPictureOrBuilder();
+    io.openisms.Api.PhotoOrBuilder getPictureOrBuilder();
 
     /**
      * <code>string company = 6;</code>
@@ -9489,11 +9489,11 @@ public final class Api {
               break;
             }
             case 42: {
-              io.openisms.Api.UrlWithEtag.Builder subBuilder = null;
+              io.openisms.Api.Photo.Builder subBuilder = null;
               if (picture_ != null) {
                 subBuilder = picture_.toBuilder();
               }
-              picture_ = input.readMessage(io.openisms.Api.UrlWithEtag.parser(), extensionRegistry);
+              picture_ = input.readMessage(io.openisms.Api.Photo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(picture_);
                 picture_ = subBuilder.buildPartial();
@@ -9708,9 +9708,9 @@ public final class Api {
     }
 
     public static final int PICTURE_FIELD_NUMBER = 5;
-    private io.openisms.Api.UrlWithEtag picture_;
+    private io.openisms.Api.Photo picture_;
     /**
-     * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+     * <code>.io.openisms.v1.Photo picture = 5;</code>
      * @return Whether the picture field is set.
      */
     @java.lang.Override
@@ -9718,18 +9718,18 @@ public final class Api {
       return picture_ != null;
     }
     /**
-     * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+     * <code>.io.openisms.v1.Photo picture = 5;</code>
      * @return The picture.
      */
     @java.lang.Override
-    public io.openisms.Api.UrlWithEtag getPicture() {
-      return picture_ == null ? io.openisms.Api.UrlWithEtag.getDefaultInstance() : picture_;
+    public io.openisms.Api.Photo getPicture() {
+      return picture_ == null ? io.openisms.Api.Photo.getDefaultInstance() : picture_;
     }
     /**
-     * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+     * <code>.io.openisms.v1.Photo picture = 5;</code>
      */
     @java.lang.Override
-    public io.openisms.Api.UrlWithEtagOrBuilder getPictureOrBuilder() {
+    public io.openisms.Api.PhotoOrBuilder getPictureOrBuilder() {
       return getPicture();
     }
 
@@ -10720,31 +10720,31 @@ public final class Api {
         return this;
       }
 
-      private io.openisms.Api.UrlWithEtag picture_;
+      private io.openisms.Api.Photo picture_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.openisms.Api.UrlWithEtag, io.openisms.Api.UrlWithEtag.Builder, io.openisms.Api.UrlWithEtagOrBuilder> pictureBuilder_;
+          io.openisms.Api.Photo, io.openisms.Api.Photo.Builder, io.openisms.Api.PhotoOrBuilder> pictureBuilder_;
       /**
-       * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+       * <code>.io.openisms.v1.Photo picture = 5;</code>
        * @return Whether the picture field is set.
        */
       public boolean hasPicture() {
         return pictureBuilder_ != null || picture_ != null;
       }
       /**
-       * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+       * <code>.io.openisms.v1.Photo picture = 5;</code>
        * @return The picture.
        */
-      public io.openisms.Api.UrlWithEtag getPicture() {
+      public io.openisms.Api.Photo getPicture() {
         if (pictureBuilder_ == null) {
-          return picture_ == null ? io.openisms.Api.UrlWithEtag.getDefaultInstance() : picture_;
+          return picture_ == null ? io.openisms.Api.Photo.getDefaultInstance() : picture_;
         } else {
           return pictureBuilder_.getMessage();
         }
       }
       /**
-       * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+       * <code>.io.openisms.v1.Photo picture = 5;</code>
        */
-      public Builder setPicture(io.openisms.Api.UrlWithEtag value) {
+      public Builder setPicture(io.openisms.Api.Photo value) {
         if (pictureBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10758,10 +10758,10 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+       * <code>.io.openisms.v1.Photo picture = 5;</code>
        */
       public Builder setPicture(
-          io.openisms.Api.UrlWithEtag.Builder builderForValue) {
+          io.openisms.Api.Photo.Builder builderForValue) {
         if (pictureBuilder_ == null) {
           picture_ = builderForValue.build();
           onChanged();
@@ -10772,13 +10772,13 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+       * <code>.io.openisms.v1.Photo picture = 5;</code>
        */
-      public Builder mergePicture(io.openisms.Api.UrlWithEtag value) {
+      public Builder mergePicture(io.openisms.Api.Photo value) {
         if (pictureBuilder_ == null) {
           if (picture_ != null) {
             picture_ =
-              io.openisms.Api.UrlWithEtag.newBuilder(picture_).mergeFrom(value).buildPartial();
+              io.openisms.Api.Photo.newBuilder(picture_).mergeFrom(value).buildPartial();
           } else {
             picture_ = value;
           }
@@ -10790,7 +10790,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+       * <code>.io.openisms.v1.Photo picture = 5;</code>
        */
       public Builder clearPicture() {
         if (pictureBuilder_ == null) {
@@ -10804,33 +10804,33 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+       * <code>.io.openisms.v1.Photo picture = 5;</code>
        */
-      public io.openisms.Api.UrlWithEtag.Builder getPictureBuilder() {
+      public io.openisms.Api.Photo.Builder getPictureBuilder() {
         
         onChanged();
         return getPictureFieldBuilder().getBuilder();
       }
       /**
-       * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+       * <code>.io.openisms.v1.Photo picture = 5;</code>
        */
-      public io.openisms.Api.UrlWithEtagOrBuilder getPictureOrBuilder() {
+      public io.openisms.Api.PhotoOrBuilder getPictureOrBuilder() {
         if (pictureBuilder_ != null) {
           return pictureBuilder_.getMessageOrBuilder();
         } else {
           return picture_ == null ?
-              io.openisms.Api.UrlWithEtag.getDefaultInstance() : picture_;
+              io.openisms.Api.Photo.getDefaultInstance() : picture_;
         }
       }
       /**
-       * <code>.io.openisms.v1.UrlWithEtag picture = 5;</code>
+       * <code>.io.openisms.v1.Photo picture = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.openisms.Api.UrlWithEtag, io.openisms.Api.UrlWithEtag.Builder, io.openisms.Api.UrlWithEtagOrBuilder> 
+          io.openisms.Api.Photo, io.openisms.Api.Photo.Builder, io.openisms.Api.PhotoOrBuilder> 
           getPictureFieldBuilder() {
         if (pictureBuilder_ == null) {
           pictureBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.openisms.Api.UrlWithEtag, io.openisms.Api.UrlWithEtag.Builder, io.openisms.Api.UrlWithEtagOrBuilder>(
+              io.openisms.Api.Photo, io.openisms.Api.Photo.Builder, io.openisms.Api.PhotoOrBuilder>(
                   getPicture(),
                   getParentForChildren(),
                   isClean());
@@ -12705,8 +12705,8 @@ public final class Api {
 
   }
 
-  public interface UrlWithEtagOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:io.openisms.v1.UrlWithEtag)
+  public interface PhotoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:io.openisms.v1.Photo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -12722,46 +12722,59 @@ public final class Api {
         getUrlBytes();
 
     /**
-     * <code>string etag = 2;</code>
+     * <code>string base_64_encoded = 2;</code>
+     * @return The base64Encoded.
+     */
+    java.lang.String getBase64Encoded();
+    /**
+     * <code>string base_64_encoded = 2;</code>
+     * @return The bytes for base64Encoded.
+     */
+    com.google.protobuf.ByteString
+        getBase64EncodedBytes();
+
+    /**
+     * <code>string etag = 3;</code>
      * @return The etag.
      */
     java.lang.String getEtag();
     /**
-     * <code>string etag = 2;</code>
+     * <code>string etag = 3;</code>
      * @return The bytes for etag.
      */
     com.google.protobuf.ByteString
         getEtagBytes();
 
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
      * @return Whether the lastModified field is set.
      */
     boolean hasLastModified();
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
      * @return The lastModified.
      */
     com.google.protobuf.Timestamp getLastModified();
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
      */
     com.google.protobuf.TimestampOrBuilder getLastModifiedOrBuilder();
   }
   /**
-   * Protobuf type {@code io.openisms.v1.UrlWithEtag}
+   * Protobuf type {@code io.openisms.v1.Photo}
    */
-  public static final class UrlWithEtag extends
+  public static final class Photo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:io.openisms.v1.UrlWithEtag)
-      UrlWithEtagOrBuilder {
+      // @@protoc_insertion_point(message_implements:io.openisms.v1.Photo)
+      PhotoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UrlWithEtag.newBuilder() to construct.
-    private UrlWithEtag(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Photo.newBuilder() to construct.
+    private Photo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UrlWithEtag() {
+    private Photo() {
       url_ = "";
+      base64Encoded_ = "";
       etag_ = "";
     }
 
@@ -12769,7 +12782,7 @@ public final class Api {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UrlWithEtag();
+      return new Photo();
     }
 
     @java.lang.Override
@@ -12777,7 +12790,7 @@ public final class Api {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UrlWithEtag(
+    private Photo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12804,10 +12817,16 @@ public final class Api {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              etag_ = s;
+              base64Encoded_ = s;
               break;
             }
             case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              etag_ = s;
+              break;
+            }
+            case 34: {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (lastModified_ != null) {
                 subBuilder = lastModified_.toBuilder();
@@ -12843,15 +12862,15 @@ public final class Api {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.openisms.Api.internal_static_io_openisms_v1_UrlWithEtag_descriptor;
+      return io.openisms.Api.internal_static_io_openisms_v1_Photo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.openisms.Api.internal_static_io_openisms_v1_UrlWithEtag_fieldAccessorTable
+      return io.openisms.Api.internal_static_io_openisms_v1_Photo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.openisms.Api.UrlWithEtag.class, io.openisms.Api.UrlWithEtag.Builder.class);
+              io.openisms.Api.Photo.class, io.openisms.Api.Photo.Builder.class);
     }
 
     public static final int URL_FIELD_NUMBER = 1;
@@ -12892,10 +12911,48 @@ public final class Api {
       }
     }
 
-    public static final int ETAG_FIELD_NUMBER = 2;
+    public static final int BASE_64_ENCODED_FIELD_NUMBER = 2;
+    private volatile java.lang.Object base64Encoded_;
+    /**
+     * <code>string base_64_encoded = 2;</code>
+     * @return The base64Encoded.
+     */
+    @java.lang.Override
+    public java.lang.String getBase64Encoded() {
+      java.lang.Object ref = base64Encoded_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        base64Encoded_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string base_64_encoded = 2;</code>
+     * @return The bytes for base64Encoded.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBase64EncodedBytes() {
+      java.lang.Object ref = base64Encoded_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        base64Encoded_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ETAG_FIELD_NUMBER = 3;
     private volatile java.lang.Object etag_;
     /**
-     * <code>string etag = 2;</code>
+     * <code>string etag = 3;</code>
      * @return The etag.
      */
     @java.lang.Override
@@ -12912,7 +12969,7 @@ public final class Api {
       }
     }
     /**
-     * <code>string etag = 2;</code>
+     * <code>string etag = 3;</code>
      * @return The bytes for etag.
      */
     @java.lang.Override
@@ -12930,10 +12987,10 @@ public final class Api {
       }
     }
 
-    public static final int LAST_MODIFIED_FIELD_NUMBER = 3;
+    public static final int LAST_MODIFIED_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp lastModified_;
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
      * @return Whether the lastModified field is set.
      */
     @java.lang.Override
@@ -12941,7 +12998,7 @@ public final class Api {
       return lastModified_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
      * @return The lastModified.
      */
     @java.lang.Override
@@ -12949,7 +13006,7 @@ public final class Api {
       return lastModified_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastModified_;
     }
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLastModifiedOrBuilder() {
@@ -12973,11 +13030,14 @@ public final class Api {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(base64Encoded_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, base64Encoded_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, etag_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, etag_);
       }
       if (lastModified_ != null) {
-        output.writeMessage(3, getLastModified());
+        output.writeMessage(4, getLastModified());
       }
       unknownFields.writeTo(output);
     }
@@ -12991,12 +13051,15 @@ public final class Api {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(base64Encoded_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, base64Encoded_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, etag_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, etag_);
       }
       if (lastModified_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getLastModified());
+          .computeMessageSize(4, getLastModified());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13008,13 +13071,15 @@ public final class Api {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof io.openisms.Api.UrlWithEtag)) {
+      if (!(obj instanceof io.openisms.Api.Photo)) {
         return super.equals(obj);
       }
-      io.openisms.Api.UrlWithEtag other = (io.openisms.Api.UrlWithEtag) obj;
+      io.openisms.Api.Photo other = (io.openisms.Api.Photo) obj;
 
       if (!getUrl()
           .equals(other.getUrl())) return false;
+      if (!getBase64Encoded()
+          .equals(other.getBase64Encoded())) return false;
       if (!getEtag()
           .equals(other.getEtag())) return false;
       if (hasLastModified() != other.hasLastModified()) return false;
@@ -13035,6 +13100,8 @@ public final class Api {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + URL_FIELD_NUMBER;
       hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + BASE_64_ENCODED_FIELD_NUMBER;
+      hash = (53 * hash) + getBase64Encoded().hashCode();
       hash = (37 * hash) + ETAG_FIELD_NUMBER;
       hash = (53 * hash) + getEtag().hashCode();
       if (hasLastModified()) {
@@ -13046,69 +13113,69 @@ public final class Api {
       return hash;
     }
 
-    public static io.openisms.Api.UrlWithEtag parseFrom(
+    public static io.openisms.Api.Photo parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.openisms.Api.UrlWithEtag parseFrom(
+    public static io.openisms.Api.Photo parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.openisms.Api.UrlWithEtag parseFrom(
+    public static io.openisms.Api.Photo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.openisms.Api.UrlWithEtag parseFrom(
+    public static io.openisms.Api.Photo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.openisms.Api.UrlWithEtag parseFrom(byte[] data)
+    public static io.openisms.Api.Photo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.openisms.Api.UrlWithEtag parseFrom(
+    public static io.openisms.Api.Photo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.openisms.Api.UrlWithEtag parseFrom(java.io.InputStream input)
+    public static io.openisms.Api.Photo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.openisms.Api.UrlWithEtag parseFrom(
+    public static io.openisms.Api.Photo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.openisms.Api.UrlWithEtag parseDelimitedFrom(java.io.InputStream input)
+    public static io.openisms.Api.Photo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static io.openisms.Api.UrlWithEtag parseDelimitedFrom(
+    public static io.openisms.Api.Photo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.openisms.Api.UrlWithEtag parseFrom(
+    public static io.openisms.Api.Photo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.openisms.Api.UrlWithEtag parseFrom(
+    public static io.openisms.Api.Photo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -13121,7 +13188,7 @@ public final class Api {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(io.openisms.Api.UrlWithEtag prototype) {
+    public static Builder newBuilder(io.openisms.Api.Photo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -13137,26 +13204,26 @@ public final class Api {
       return builder;
     }
     /**
-     * Protobuf type {@code io.openisms.v1.UrlWithEtag}
+     * Protobuf type {@code io.openisms.v1.Photo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:io.openisms.v1.UrlWithEtag)
-        io.openisms.Api.UrlWithEtagOrBuilder {
+        // @@protoc_insertion_point(builder_implements:io.openisms.v1.Photo)
+        io.openisms.Api.PhotoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return io.openisms.Api.internal_static_io_openisms_v1_UrlWithEtag_descriptor;
+        return io.openisms.Api.internal_static_io_openisms_v1_Photo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.openisms.Api.internal_static_io_openisms_v1_UrlWithEtag_fieldAccessorTable
+        return io.openisms.Api.internal_static_io_openisms_v1_Photo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.openisms.Api.UrlWithEtag.class, io.openisms.Api.UrlWithEtag.Builder.class);
+                io.openisms.Api.Photo.class, io.openisms.Api.Photo.Builder.class);
       }
 
-      // Construct using io.openisms.Api.UrlWithEtag.newBuilder()
+      // Construct using io.openisms.Api.Photo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -13176,6 +13243,8 @@ public final class Api {
         super.clear();
         url_ = "";
 
+        base64Encoded_ = "";
+
         etag_ = "";
 
         if (lastModifiedBuilder_ == null) {
@@ -13190,17 +13259,17 @@ public final class Api {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return io.openisms.Api.internal_static_io_openisms_v1_UrlWithEtag_descriptor;
+        return io.openisms.Api.internal_static_io_openisms_v1_Photo_descriptor;
       }
 
       @java.lang.Override
-      public io.openisms.Api.UrlWithEtag getDefaultInstanceForType() {
-        return io.openisms.Api.UrlWithEtag.getDefaultInstance();
+      public io.openisms.Api.Photo getDefaultInstanceForType() {
+        return io.openisms.Api.Photo.getDefaultInstance();
       }
 
       @java.lang.Override
-      public io.openisms.Api.UrlWithEtag build() {
-        io.openisms.Api.UrlWithEtag result = buildPartial();
+      public io.openisms.Api.Photo build() {
+        io.openisms.Api.Photo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -13208,9 +13277,10 @@ public final class Api {
       }
 
       @java.lang.Override
-      public io.openisms.Api.UrlWithEtag buildPartial() {
-        io.openisms.Api.UrlWithEtag result = new io.openisms.Api.UrlWithEtag(this);
+      public io.openisms.Api.Photo buildPartial() {
+        io.openisms.Api.Photo result = new io.openisms.Api.Photo(this);
         result.url_ = url_;
+        result.base64Encoded_ = base64Encoded_;
         result.etag_ = etag_;
         if (lastModifiedBuilder_ == null) {
           result.lastModified_ = lastModified_;
@@ -13255,18 +13325,22 @@ public final class Api {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.openisms.Api.UrlWithEtag) {
-          return mergeFrom((io.openisms.Api.UrlWithEtag)other);
+        if (other instanceof io.openisms.Api.Photo) {
+          return mergeFrom((io.openisms.Api.Photo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(io.openisms.Api.UrlWithEtag other) {
-        if (other == io.openisms.Api.UrlWithEtag.getDefaultInstance()) return this;
+      public Builder mergeFrom(io.openisms.Api.Photo other) {
+        if (other == io.openisms.Api.Photo.getDefaultInstance()) return this;
         if (!other.getUrl().isEmpty()) {
           url_ = other.url_;
+          onChanged();
+        }
+        if (!other.getBase64Encoded().isEmpty()) {
+          base64Encoded_ = other.base64Encoded_;
           onChanged();
         }
         if (!other.getEtag().isEmpty()) {
@@ -13291,11 +13365,11 @@ public final class Api {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.openisms.Api.UrlWithEtag parsedMessage = null;
+        io.openisms.Api.Photo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.openisms.Api.UrlWithEtag) e.getUnfinishedMessage();
+          parsedMessage = (io.openisms.Api.Photo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -13381,9 +13455,85 @@ public final class Api {
         return this;
       }
 
+      private java.lang.Object base64Encoded_ = "";
+      /**
+       * <code>string base_64_encoded = 2;</code>
+       * @return The base64Encoded.
+       */
+      public java.lang.String getBase64Encoded() {
+        java.lang.Object ref = base64Encoded_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          base64Encoded_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string base_64_encoded = 2;</code>
+       * @return The bytes for base64Encoded.
+       */
+      public com.google.protobuf.ByteString
+          getBase64EncodedBytes() {
+        java.lang.Object ref = base64Encoded_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          base64Encoded_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string base_64_encoded = 2;</code>
+       * @param value The base64Encoded to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBase64Encoded(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        base64Encoded_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string base_64_encoded = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBase64Encoded() {
+        
+        base64Encoded_ = getDefaultInstance().getBase64Encoded();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string base_64_encoded = 2;</code>
+       * @param value The bytes for base64Encoded to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBase64EncodedBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        base64Encoded_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object etag_ = "";
       /**
-       * <code>string etag = 2;</code>
+       * <code>string etag = 3;</code>
        * @return The etag.
        */
       public java.lang.String getEtag() {
@@ -13399,7 +13549,7 @@ public final class Api {
         }
       }
       /**
-       * <code>string etag = 2;</code>
+       * <code>string etag = 3;</code>
        * @return The bytes for etag.
        */
       public com.google.protobuf.ByteString
@@ -13416,7 +13566,7 @@ public final class Api {
         }
       }
       /**
-       * <code>string etag = 2;</code>
+       * <code>string etag = 3;</code>
        * @param value The etag to set.
        * @return This builder for chaining.
        */
@@ -13431,7 +13581,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>string etag = 2;</code>
+       * <code>string etag = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearEtag() {
@@ -13441,7 +13591,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>string etag = 2;</code>
+       * <code>string etag = 3;</code>
        * @param value The bytes for etag to set.
        * @return This builder for chaining.
        */
@@ -13461,14 +13611,14 @@ public final class Api {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastModifiedBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
        * @return Whether the lastModified field is set.
        */
       public boolean hasLastModified() {
         return lastModifiedBuilder_ != null || lastModified_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
        * @return The lastModified.
        */
       public com.google.protobuf.Timestamp getLastModified() {
@@ -13479,7 +13629,7 @@ public final class Api {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
        */
       public Builder setLastModified(com.google.protobuf.Timestamp value) {
         if (lastModifiedBuilder_ == null) {
@@ -13495,7 +13645,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
        */
       public Builder setLastModified(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -13509,7 +13659,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
        */
       public Builder mergeLastModified(com.google.protobuf.Timestamp value) {
         if (lastModifiedBuilder_ == null) {
@@ -13527,7 +13677,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
        */
       public Builder clearLastModified() {
         if (lastModifiedBuilder_ == null) {
@@ -13541,7 +13691,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
        */
       public com.google.protobuf.Timestamp.Builder getLastModifiedBuilder() {
         
@@ -13549,7 +13699,7 @@ public final class Api {
         return getLastModifiedFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getLastModifiedOrBuilder() {
         if (lastModifiedBuilder_ != null) {
@@ -13560,7 +13710,7 @@ public final class Api {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 3;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -13588,41 +13738,41 @@ public final class Api {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:io.openisms.v1.UrlWithEtag)
+      // @@protoc_insertion_point(builder_scope:io.openisms.v1.Photo)
     }
 
-    // @@protoc_insertion_point(class_scope:io.openisms.v1.UrlWithEtag)
-    private static final io.openisms.Api.UrlWithEtag DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:io.openisms.v1.Photo)
+    private static final io.openisms.Api.Photo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new io.openisms.Api.UrlWithEtag();
+      DEFAULT_INSTANCE = new io.openisms.Api.Photo();
     }
 
-    public static io.openisms.Api.UrlWithEtag getDefaultInstance() {
+    public static io.openisms.Api.Photo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UrlWithEtag>
-        PARSER = new com.google.protobuf.AbstractParser<UrlWithEtag>() {
+    private static final com.google.protobuf.Parser<Photo>
+        PARSER = new com.google.protobuf.AbstractParser<Photo>() {
       @java.lang.Override
-      public UrlWithEtag parsePartialFrom(
+      public Photo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UrlWithEtag(input, extensionRegistry);
+        return new Photo(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UrlWithEtag> parser() {
+    public static com.google.protobuf.Parser<Photo> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UrlWithEtag> getParserForType() {
+    public com.google.protobuf.Parser<Photo> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public io.openisms.Api.UrlWithEtag getDefaultInstanceForType() {
+    public io.openisms.Api.Photo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -35529,10 +35679,10 @@ public final class Api {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_io_openisms_v1_Name_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_io_openisms_v1_UrlWithEtag_descriptor;
+    internal_static_io_openisms_v1_Photo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_io_openisms_v1_UrlWithEtag_fieldAccessorTable;
+      internal_static_io_openisms_v1_Photo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_io_openisms_v1_Employment_descriptor;
   private static final 
@@ -35652,87 +35802,88 @@ public final class Api {
       "onnected_accounts\030\025 \003(\0132 .io.openisms.v1" +
       ".ConnectedAccount\0223\n\013possessions\030\026 \003(\0132\036" +
       ".io.openisms.v1.PhysicalObject\022\014\n\004tags\030(" +
-      " \003(\t\"\376\001\n\006Person\022\n\n\002id\030\001 \001(\t\022\"\n\004name\030\002 \001(" +
+      " \003(\t\"\370\001\n\006Person\022\n\n\002id\030\001 \001(\t\022\"\n\004name\030\002 \001(" +
       "\0132\024.io.openisms.v1.Name\022\025\n\rprimary_email" +
-      "\030\003 \001(\t\022\024\n\014other_emails\030\004 \003(\t\022,\n\007picture\030" +
-      "\005 \001(\0132\033.io.openisms.v1.UrlWithEtag\022\017\n\007co" +
-      "mpany\030\006 \001(\t\022+\n\007created\030\n \001(\0132\032.google.pr" +
-      "otobuf.Timestamp\022+\n\007updated\030\013 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\"q\n\004Name\022\022\n\ngiven_n" +
-      "ame\030\001 \001(\t\022\023\n\013family_name\030\002 \001(\t\022\021\n\tfull_n" +
-      "ame\030\003 \001(\t\022\r\n\005title\030\004 \001(\t\022\020\n\010position\030\005 \001" +
-      "(\t\022\014\n\004role\030\006 \001(\t\"[\n\013UrlWithEtag\022\013\n\003url\030\001" +
-      " \001(\t\022\014\n\004etag\030\002 \001(\t\0221\n\rlast_modified\030\003 \001(" +
-      "\0132\032.google.protobuf.Timestamp\"v\n\nEmploym" +
-      "ent\022\020\n\010contract\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022#\n" +
-      "\005begin\030\003 \001(\0132\024.io.openisms.v1.Date\022!\n\003en" +
-      "d\030\004 \001(\0132\024.io.openisms.v1.Date\"x\n\020Connect" +
-      "edAccount\022\016\n\006app_id\030\001 \001(\t\022\020\n\010app_name\030\002 " +
-      "\001(\t\022\020\n\010app_type\030\003 \001(\t\022\017\n\007app_url\030\004 \001(\t\022\017" +
-      "\n\007user_id\030\005 \001(\t\022\016\n\006scopes\030\006 \003(\t\"\262\003\n\016Phys" +
-      "icalObject\022\014\n\004type\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\024" +
-      "\n\014manufacturer\030\003 \001(\t\022\016\n\006vendor\030\004 \001(\t\022\022\n\n" +
-      "identifier\030\005 \001(\t\022\025\n\rserial_number\030\006 \001(\t\022" +
-      "\014\n\004imei\030\007 \001(\t\022\014\n\004meid\030\010 \001(\t\022)\n\010networks\030" +
-      "\t \003(\0132\027.io.openisms.v1.Network\022\020\n\010hostna" +
-      "me\030\n \001(\t\022\025\n\ruser_accounts\030\013 \003(\t\022+\n\002os\030\014 " +
-      "\001(\0132\037.io.openisms.v1.OperatingSystem\0222\n\010" +
-      "security\030\r \001(\0132 .io.openisms.v1.Security" +
-      "Features\022)\n\010profiles\030\016 \003(\0132\027.io.openisms" +
-      ".v1.Profile\022)\n\004apps\030\017 \003(\0132\033.io.openisms." +
-      "v1.Application\022\014\n\004tags\030\024 \003(\t\"\366\003\n\020Securit" +
-      "yFeatures\0223\n\017activation_lock\030\001 \001(\0132\032.goo" +
-      "gle.protobuf.BoolValue\022.\n\nsupervised\030\002 \001" +
-      "(\0132\032.google.protobuf.BoolValue\022.\n\nfile_v" +
-      "ault\030\003 \001(\0132\032.google.protobuf.BoolValue\0228" +
-      "\n\024full_disk_encryption\030\004 \001(\0132\032.google.pr" +
-      "otobuf.BoolValue\0223\n\017secure_password\030\005 \001(" +
-      "\0132\032.google.protobuf.BoolValue\0229\n\025automat" +
-      "ic_screen_lock\030\006 \001(\0132\032.google.protobuf.B" +
-      "oolValue\0226\n\021screen_lock_after\030\007 \001(\0132\033.go" +
-      "ogle.protobuf.Int32Value\0224\n\020firewall_ena" +
-      "bled\030\010 \001(\0132\032.google.protobuf.BoolValue\0225" +
-      "\n\021automatic_updates\030\t \001(\0132\032.google.proto" +
-      "buf.BoolValue\":\n\007Network\022\014\n\004name\030\001 \001(\t\022\014" +
-      "\n\004type\030\002 \001(\t\022\023\n\013mac_address\030\003 \001(\t\"\206\002\n\017Op" +
-      "eratingSystem\022<\n\002os\030\001 \001(\01620.io.openisms." +
-      "v1.OperatingSystem.OperatingSystems\022\025\n\rm" +
-      "ajor_version\030\002 \001(\t\022\024\n\014full_version\030\003 \001(\t" +
-      "\"\207\001\n\020OperatingSystems\022\r\n\tundefined\020\000\022\t\n\005" +
-      "macos\020\001\022\013\n\007windows\020\002\022\t\n\005linux\020\003\022\010\n\004unix\020" +
-      "\004\022\r\n\tchrome_os\020\005\022\007\n\003ios\020\n\022\013\n\007android\020\013\022\007" +
-      "\n\003ros\020\016\022\t\n\005other\020\017\"\345\001\n\013Application\022\014\n\004na" +
-      "me\030\001 \001(\t\022\014\n\004path\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\013" +
-      "\n\003url\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\017\n\007vers" +
-      "ion\030\006 \001(\t\022*\n\006signed\030\007 \001(\0132\032.google.proto" +
-      "buf.BoolValue\022.\n\nsystem_app\030\010 \001(\0132\032.goog" +
-      "le.protobuf.BoolValue\022\033\n\023installation_so" +
-      "urce\030\t \001(\t\"\222\001\n\007Profile\022\014\n\004name\030\001 \001(\t\022\022\n\n" +
-      "identifier\030\002 \001(\t\0223\n\017removal_allowed\030\003 \001(" +
-      "\0132\032.google.protobuf.BoolValue\022\024\n\014payload" +
-      "_type\030\004 \001(\t\022\032\n\022payload_identifier\030\005 \001(\t\"" +
-      "0\n\004Date\022\014\n\004year\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\013\n\003" +
-      "day\030\003 \001(\005\"8\n\rCertification\022\014\n\004type\030\001 \001(\t" +
-      "\022\013\n\003url\030\002 \001(\t\022\014\n\004tags\030\n \003(\t\"p\n\007Company\022\014" +
-      "\n\004name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\020\n\010category\030\003 " +
-      "\001(\t\022\'\n\007contact\030\004 \001(\0132\026.io.openisms.v1.Pe" +
-      "rson\022\017\n\007address\030\005 \003(\t\"\373\001\n\007Pentest\022\n\n\002id\030" +
-      "\001 \001(\t\022#\n\005begin\030\002 \001(\0132\024.io.openisms.v1.Da" +
-      "te\022!\n\003end\030\003 \001(\0132\024.io.openisms.v1.Date\022(\n" +
-      "\007company\030\004 \001(\0132\027.io.openisms.v1.Company\022" +
-      "\r\n\005focus\030\005 \001(\t\022\016\n\006passed\030\006 \001(\010\022\016\n\006result" +
-      "\030\007 \001(\t\022\013\n\003url\030\010 \001(\t\022(\n\010contacts\030\t \003(\0132\026." +
-      "io.openisms.v1.Person\022\014\n\004tags\030\n \003(\t\"\300\001\n\n" +
-      "Repository\022\014\n\004name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\023\n" +
-      "\013description\030\003 \001(\t\022.\n\nvisibility\030\004 \001(\0162\032" +
-      ".io.openisms.v1.Visibility\022\'\n\007members\030\005 " +
-      "\003(\0132\026.io.openisms.v1.Person\022\033\n\023security_" +
-      "attributes\030\006 \003(\t\022\014\n\004tags\030\n \003(\t\"N\n\nStatis" +
-      "tics\022\022\n\nidentifier\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r" +
-      "\n\005value\030\003 \001(\005\022\017\n\007comment\030\004 \001(\t*G\n\nVisibi" +
-      "lity\022\r\n\tundefined\020\000\022\n\n\006public\020\001\022\014\n\010inter" +
-      "nal\020\002\022\020\n\014confidential\020\003B&\n\013io.openismsZ\027" +
-      "github.com/openisms/apib\006proto3"
+      "\030\003 \001(\t\022\024\n\014other_emails\030\004 \003(\t\022&\n\007picture\030" +
+      "\005 \001(\0132\025.io.openisms.v1.Photo\022\017\n\007company\030" +
+      "\006 \001(\t\022+\n\007created\030\n \001(\0132\032.google.protobuf" +
+      ".Timestamp\022+\n\007updated\030\013 \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\"q\n\004Name\022\022\n\ngiven_name\030\001 " +
+      "\001(\t\022\023\n\013family_name\030\002 \001(\t\022\021\n\tfull_name\030\003 " +
+      "\001(\t\022\r\n\005title\030\004 \001(\t\022\020\n\010position\030\005 \001(\t\022\014\n\004" +
+      "role\030\006 \001(\t\"n\n\005Photo\022\013\n\003url\030\001 \001(\t\022\027\n\017base" +
+      "_64_encoded\030\002 \001(\t\022\014\n\004etag\030\003 \001(\t\0221\n\rlast_" +
+      "modified\030\004 \001(\0132\032.google.protobuf.Timesta" +
+      "mp\"v\n\nEmployment\022\020\n\010contract\030\001 \001(\t\022\016\n\006st" +
+      "atus\030\002 \001(\t\022#\n\005begin\030\003 \001(\0132\024.io.openisms." +
+      "v1.Date\022!\n\003end\030\004 \001(\0132\024.io.openisms.v1.Da" +
+      "te\"x\n\020ConnectedAccount\022\016\n\006app_id\030\001 \001(\t\022\020" +
+      "\n\010app_name\030\002 \001(\t\022\020\n\010app_type\030\003 \001(\t\022\017\n\007ap" +
+      "p_url\030\004 \001(\t\022\017\n\007user_id\030\005 \001(\t\022\016\n\006scopes\030\006" +
+      " \003(\t\"\262\003\n\016PhysicalObject\022\014\n\004type\030\001 \001(\t\022\014\n" +
+      "\004name\030\002 \001(\t\022\024\n\014manufacturer\030\003 \001(\t\022\016\n\006ven" +
+      "dor\030\004 \001(\t\022\022\n\nidentifier\030\005 \001(\t\022\025\n\rserial_" +
+      "number\030\006 \001(\t\022\014\n\004imei\030\007 \001(\t\022\014\n\004meid\030\010 \001(\t" +
+      "\022)\n\010networks\030\t \003(\0132\027.io.openisms.v1.Netw" +
+      "ork\022\020\n\010hostname\030\n \001(\t\022\025\n\ruser_accounts\030\013" +
+      " \003(\t\022+\n\002os\030\014 \001(\0132\037.io.openisms.v1.Operat" +
+      "ingSystem\0222\n\010security\030\r \001(\0132 .io.openism" +
+      "s.v1.SecurityFeatures\022)\n\010profiles\030\016 \003(\0132" +
+      "\027.io.openisms.v1.Profile\022)\n\004apps\030\017 \003(\0132\033" +
+      ".io.openisms.v1.Application\022\014\n\004tags\030\024 \003(" +
+      "\t\"\366\003\n\020SecurityFeatures\0223\n\017activation_loc" +
+      "k\030\001 \001(\0132\032.google.protobuf.BoolValue\022.\n\ns" +
+      "upervised\030\002 \001(\0132\032.google.protobuf.BoolVa" +
+      "lue\022.\n\nfile_vault\030\003 \001(\0132\032.google.protobu" +
+      "f.BoolValue\0228\n\024full_disk_encryption\030\004 \001(" +
+      "\0132\032.google.protobuf.BoolValue\0223\n\017secure_" +
+      "password\030\005 \001(\0132\032.google.protobuf.BoolVal" +
+      "ue\0229\n\025automatic_screen_lock\030\006 \001(\0132\032.goog" +
+      "le.protobuf.BoolValue\0226\n\021screen_lock_aft" +
+      "er\030\007 \001(\0132\033.google.protobuf.Int32Value\0224\n" +
+      "\020firewall_enabled\030\010 \001(\0132\032.google.protobu" +
+      "f.BoolValue\0225\n\021automatic_updates\030\t \001(\0132\032" +
+      ".google.protobuf.BoolValue\":\n\007Network\022\014\n" +
+      "\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\023\n\013mac_address" +
+      "\030\003 \001(\t\"\206\002\n\017OperatingSystem\022<\n\002os\030\001 \001(\01620" +
+      ".io.openisms.v1.OperatingSystem.Operatin" +
+      "gSystems\022\025\n\rmajor_version\030\002 \001(\t\022\024\n\014full_" +
+      "version\030\003 \001(\t\"\207\001\n\020OperatingSystems\022\r\n\tun" +
+      "defined\020\000\022\t\n\005macos\020\001\022\013\n\007windows\020\002\022\t\n\005lin" +
+      "ux\020\003\022\010\n\004unix\020\004\022\r\n\tchrome_os\020\005\022\007\n\003ios\020\n\022\013" +
+      "\n\007android\020\013\022\007\n\003ros\020\016\022\t\n\005other\020\017\"\345\001\n\013Appl" +
+      "ication\022\014\n\004name\030\001 \001(\t\022\014\n\004path\030\002 \001(\t\022\016\n\006v" +
+      "endor\030\003 \001(\t\022\013\n\003url\030\004 \001(\t\022\023\n\013description\030" +
+      "\005 \001(\t\022\017\n\007version\030\006 \001(\t\022*\n\006signed\030\007 \001(\0132\032" +
+      ".google.protobuf.BoolValue\022.\n\nsystem_app" +
+      "\030\010 \001(\0132\032.google.protobuf.BoolValue\022\033\n\023in" +
+      "stallation_source\030\t \001(\t\"\222\001\n\007Profile\022\014\n\004n" +
+      "ame\030\001 \001(\t\022\022\n\nidentifier\030\002 \001(\t\0223\n\017removal" +
+      "_allowed\030\003 \001(\0132\032.google.protobuf.BoolVal" +
+      "ue\022\024\n\014payload_type\030\004 \001(\t\022\032\n\022payload_iden" +
+      "tifier\030\005 \001(\t\"0\n\004Date\022\014\n\004year\030\001 \001(\005\022\r\n\005mo" +
+      "nth\030\002 \001(\005\022\013\n\003day\030\003 \001(\005\"8\n\rCertification\022" +
+      "\014\n\004type\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004tags\030\n \003(\t" +
+      "\"p\n\007Company\022\014\n\004name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\020" +
+      "\n\010category\030\003 \001(\t\022\'\n\007contact\030\004 \001(\0132\026.io.o" +
+      "penisms.v1.Person\022\017\n\007address\030\005 \003(\t\"\373\001\n\007P" +
+      "entest\022\n\n\002id\030\001 \001(\t\022#\n\005begin\030\002 \001(\0132\024.io.o" +
+      "penisms.v1.Date\022!\n\003end\030\003 \001(\0132\024.io.openis" +
+      "ms.v1.Date\022(\n\007company\030\004 \001(\0132\027.io.openism" +
+      "s.v1.Company\022\r\n\005focus\030\005 \001(\t\022\016\n\006passed\030\006 " +
+      "\001(\010\022\016\n\006result\030\007 \001(\t\022\013\n\003url\030\010 \001(\t\022(\n\010cont" +
+      "acts\030\t \003(\0132\026.io.openisms.v1.Person\022\014\n\004ta" +
+      "gs\030\n \003(\t\"\300\001\n\nRepository\022\014\n\004name\030\001 \001(\t\022\013\n" +
+      "\003url\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022.\n\nvisib" +
+      "ility\030\004 \001(\0162\032.io.openisms.v1.Visibility\022" +
+      "\'\n\007members\030\005 \003(\0132\026.io.openisms.v1.Person" +
+      "\022\033\n\023security_attributes\030\006 \003(\t\022\014\n\004tags\030\n " +
+      "\003(\t\"N\n\nStatistics\022\022\n\nidentifier\030\001 \001(\t\022\014\n" +
+      "\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\005\022\017\n\007comment\030\004 " +
+      "\001(\t*G\n\nVisibility\022\r\n\tundefined\020\000\022\n\n\006publ" +
+      "ic\020\001\022\014\n\010internal\020\002\022\020\n\014confidential\020\003B&\n\013" +
+      "io.openismsZ\027github.com/openisms/apib\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -35776,12 +35927,12 @@ public final class Api {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_openisms_v1_Name_descriptor,
         new java.lang.String[] { "GivenName", "FamilyName", "FullName", "Title", "Position", "Role", });
-    internal_static_io_openisms_v1_UrlWithEtag_descriptor =
+    internal_static_io_openisms_v1_Photo_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_io_openisms_v1_UrlWithEtag_fieldAccessorTable = new
+    internal_static_io_openisms_v1_Photo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_io_openisms_v1_UrlWithEtag_descriptor,
-        new java.lang.String[] { "Url", "Etag", "LastModified", });
+        internal_static_io_openisms_v1_Photo_descriptor,
+        new java.lang.String[] { "Url", "Base64Encoded", "Etag", "LastModified", });
     internal_static_io_openisms_v1_Employment_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_io_openisms_v1_Employment_fieldAccessorTable = new

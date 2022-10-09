@@ -16,7 +16,7 @@ final case class Person(
     name: _root_.scala.Option[io.openisms.api.Name] = _root_.scala.None,
     primaryEmail: _root_.scala.Predef.String = "",
     otherEmails: _root_.scala.Seq[_root_.scala.Predef.String] = _root_.scala.Seq.empty,
-    picture: _root_.scala.Option[io.openisms.api.UrlWithEtag] = _root_.scala.None,
+    picture: _root_.scala.Option[io.openisms.api.Photo] = _root_.scala.None,
     company: _root_.scala.Predef.String = "",
     created: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None,
     updated: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None,
@@ -137,9 +137,9 @@ final case class Person(
     def addOtherEmails(__vs: _root_.scala.Predef.String *): Person = addAllOtherEmails(__vs)
     def addAllOtherEmails(__vs: Iterable[_root_.scala.Predef.String]): Person = copy(otherEmails = otherEmails ++ __vs)
     def withOtherEmails(__v: _root_.scala.Seq[_root_.scala.Predef.String]): Person = copy(otherEmails = __v)
-    def getPicture: io.openisms.api.UrlWithEtag = picture.getOrElse(io.openisms.api.UrlWithEtag.defaultInstance)
+    def getPicture: io.openisms.api.Photo = picture.getOrElse(io.openisms.api.Photo.defaultInstance)
     def clearPicture: Person = copy(picture = _root_.scala.None)
-    def withPicture(__v: io.openisms.api.UrlWithEtag): Person = copy(picture = Option(__v))
+    def withPicture(__v: io.openisms.api.Photo): Person = copy(picture = Option(__v))
     def withCompany(__v: _root_.scala.Predef.String): Person = copy(company = __v)
     def getCreated: com.google.protobuf.timestamp.Timestamp = created.getOrElse(com.google.protobuf.timestamp.Timestamp.defaultInstance)
     def clearCreated: Person = copy(created = _root_.scala.None)
@@ -195,7 +195,7 @@ object Person extends scalapb.GeneratedMessageCompanion[io.openisms.api.Person] 
     var __name: _root_.scala.Option[io.openisms.api.Name] = _root_.scala.None
     var __primaryEmail: _root_.scala.Predef.String = ""
     val __otherEmails: _root_.scala.collection.immutable.VectorBuilder[_root_.scala.Predef.String] = new _root_.scala.collection.immutable.VectorBuilder[_root_.scala.Predef.String]
-    var __picture: _root_.scala.Option[io.openisms.api.UrlWithEtag] = _root_.scala.None
+    var __picture: _root_.scala.Option[io.openisms.api.Photo] = _root_.scala.None
     var __company: _root_.scala.Predef.String = ""
     var __created: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None
     var __updated: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None
@@ -214,7 +214,7 @@ object Person extends scalapb.GeneratedMessageCompanion[io.openisms.api.Person] 
         case 34 =>
           __otherEmails += _input__.readStringRequireUtf8()
         case 42 =>
-          __picture = Option(__picture.fold(_root_.scalapb.LiteParser.readMessage[io.openisms.api.UrlWithEtag](_input__))(_root_.scalapb.LiteParser.readMessage(_input__, _)))
+          __picture = Option(__picture.fold(_root_.scalapb.LiteParser.readMessage[io.openisms.api.Photo](_input__))(_root_.scalapb.LiteParser.readMessage(_input__, _)))
         case 50 =>
           __company = _input__.readStringRequireUtf8()
         case 82 =>
@@ -248,7 +248,7 @@ object Person extends scalapb.GeneratedMessageCompanion[io.openisms.api.Person] 
         name = __fieldsMap.get(scalaDescriptor.findFieldByNumber(2).get).flatMap(_.as[_root_.scala.Option[io.openisms.api.Name]]),
         primaryEmail = __fieldsMap.get(scalaDescriptor.findFieldByNumber(3).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
         otherEmails = __fieldsMap.get(scalaDescriptor.findFieldByNumber(4).get).map(_.as[_root_.scala.Seq[_root_.scala.Predef.String]]).getOrElse(_root_.scala.Seq.empty),
-        picture = __fieldsMap.get(scalaDescriptor.findFieldByNumber(5).get).flatMap(_.as[_root_.scala.Option[io.openisms.api.UrlWithEtag]]),
+        picture = __fieldsMap.get(scalaDescriptor.findFieldByNumber(5).get).flatMap(_.as[_root_.scala.Option[io.openisms.api.Photo]]),
         company = __fieldsMap.get(scalaDescriptor.findFieldByNumber(6).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
         created = __fieldsMap.get(scalaDescriptor.findFieldByNumber(10).get).flatMap(_.as[_root_.scala.Option[com.google.protobuf.timestamp.Timestamp]]),
         updated = __fieldsMap.get(scalaDescriptor.findFieldByNumber(11).get).flatMap(_.as[_root_.scala.Option[com.google.protobuf.timestamp.Timestamp]])
@@ -261,7 +261,7 @@ object Person extends scalapb.GeneratedMessageCompanion[io.openisms.api.Person] 
     var __out: _root_.scalapb.GeneratedMessageCompanion[_] = null
     (__number: @_root_.scala.unchecked) match {
       case 2 => __out = io.openisms.api.Name
-      case 5 => __out = io.openisms.api.UrlWithEtag
+      case 5 => __out = io.openisms.api.Photo
       case 10 => __out = com.google.protobuf.timestamp.Timestamp
       case 11 => __out = com.google.protobuf.timestamp.Timestamp
     }
@@ -285,8 +285,8 @@ object Person extends scalapb.GeneratedMessageCompanion[io.openisms.api.Person] 
     def optionalName: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Option[io.openisms.api.Name]] = field(_.name)((c_, f_) => c_.copy(name = f_))
     def primaryEmail: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.primaryEmail)((c_, f_) => c_.copy(primaryEmail = f_))
     def otherEmails: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Seq[_root_.scala.Predef.String]] = field(_.otherEmails)((c_, f_) => c_.copy(otherEmails = f_))
-    def picture: _root_.scalapb.lenses.Lens[UpperPB, io.openisms.api.UrlWithEtag] = field(_.getPicture)((c_, f_) => c_.copy(picture = Option(f_)))
-    def optionalPicture: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Option[io.openisms.api.UrlWithEtag]] = field(_.picture)((c_, f_) => c_.copy(picture = f_))
+    def picture: _root_.scalapb.lenses.Lens[UpperPB, io.openisms.api.Photo] = field(_.getPicture)((c_, f_) => c_.copy(picture = Option(f_)))
+    def optionalPicture: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Option[io.openisms.api.Photo]] = field(_.picture)((c_, f_) => c_.copy(picture = f_))
     def company: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.company)((c_, f_) => c_.copy(company = f_))
     def created: _root_.scalapb.lenses.Lens[UpperPB, com.google.protobuf.timestamp.Timestamp] = field(_.getCreated)((c_, f_) => c_.copy(created = Option(f_)))
     def optionalCreated: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Option[com.google.protobuf.timestamp.Timestamp]] = field(_.created)((c_, f_) => c_.copy(created = f_))
@@ -306,7 +306,7 @@ object Person extends scalapb.GeneratedMessageCompanion[io.openisms.api.Person] 
     name: _root_.scala.Option[io.openisms.api.Name],
     primaryEmail: _root_.scala.Predef.String,
     otherEmails: _root_.scala.Seq[_root_.scala.Predef.String],
-    picture: _root_.scala.Option[io.openisms.api.UrlWithEtag],
+    picture: _root_.scala.Option[io.openisms.api.Photo],
     company: _root_.scala.Predef.String,
     created: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp],
     updated: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp]
