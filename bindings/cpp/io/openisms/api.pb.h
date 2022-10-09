@@ -2030,8 +2030,9 @@ class Photo final :
   enum : int {
     kUrlFieldNumber = 1,
     kBase64EncodedFieldNumber = 2,
-    kEtagFieldNumber = 3,
-    kLastModifiedFieldNumber = 4,
+    kMimeTypeFieldNumber = 3,
+    kEtagFieldNumber = 4,
+    kLastModifiedFieldNumber = 5,
   };
   // string url = 1;
   void clear_url();
@@ -2061,7 +2062,21 @@ class Photo final :
   std::string* _internal_mutable_base_64_encoded();
   public:
 
-  // string etag = 3;
+  // string mime_type = 3;
+  void clear_mime_type();
+  const std::string& mime_type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mime_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mime_type();
+  PROTOBUF_NODISCARD std::string* release_mime_type();
+  void set_allocated_mime_type(std::string* mime_type);
+  private:
+  const std::string& _internal_mime_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mime_type(const std::string& value);
+  std::string* _internal_mutable_mime_type();
+  public:
+
+  // string etag = 4;
   void clear_etag();
   const std::string& etag() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2075,7 +2090,7 @@ class Photo final :
   std::string* _internal_mutable_etag();
   public:
 
-  // .google.protobuf.Timestamp last_modified = 4;
+  // .google.protobuf.Timestamp last_modified = 5;
   bool has_last_modified() const;
   private:
   bool _internal_has_last_modified() const;
@@ -2102,6 +2117,7 @@ class Photo final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr url_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr base_64_encoded_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mime_type_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr etag_;
   ::PROTOBUF_NAMESPACE_ID::Timestamp* last_modified_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -8368,7 +8384,57 @@ inline void Photo::set_allocated_base_64_encoded(std::string* base_64_encoded) {
   // @@protoc_insertion_point(field_set_allocated:io.openisms.v1.Photo.base_64_encoded)
 }
 
-// string etag = 3;
+// string mime_type = 3;
+inline void Photo::clear_mime_type() {
+  mime_type_.ClearToEmpty();
+}
+inline const std::string& Photo::mime_type() const {
+  // @@protoc_insertion_point(field_get:io.openisms.v1.Photo.mime_type)
+  return _internal_mime_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Photo::set_mime_type(ArgT0&& arg0, ArgT... args) {
+ 
+ mime_type_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:io.openisms.v1.Photo.mime_type)
+}
+inline std::string* Photo::mutable_mime_type() {
+  std::string* _s = _internal_mutable_mime_type();
+  // @@protoc_insertion_point(field_mutable:io.openisms.v1.Photo.mime_type)
+  return _s;
+}
+inline const std::string& Photo::_internal_mime_type() const {
+  return mime_type_.Get();
+}
+inline void Photo::_internal_set_mime_type(const std::string& value) {
+  
+  mime_type_.Set(value, GetArenaForAllocation());
+}
+inline std::string* Photo::_internal_mutable_mime_type() {
+  
+  return mime_type_.Mutable(GetArenaForAllocation());
+}
+inline std::string* Photo::release_mime_type() {
+  // @@protoc_insertion_point(field_release:io.openisms.v1.Photo.mime_type)
+  return mime_type_.Release();
+}
+inline void Photo::set_allocated_mime_type(std::string* mime_type) {
+  if (mime_type != nullptr) {
+    
+  } else {
+    
+  }
+  mime_type_.SetAllocated(mime_type, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (mime_type_.IsDefault()) {
+    mime_type_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:io.openisms.v1.Photo.mime_type)
+}
+
+// string etag = 4;
 inline void Photo::clear_etag() {
   etag_.ClearToEmpty();
 }
@@ -8418,7 +8484,7 @@ inline void Photo::set_allocated_etag(std::string* etag) {
   // @@protoc_insertion_point(field_set_allocated:io.openisms.v1.Photo.etag)
 }
 
-// .google.protobuf.Timestamp last_modified = 4;
+// .google.protobuf.Timestamp last_modified = 5;
 inline bool Photo::_internal_has_last_modified() const {
   return this != internal_default_instance() && last_modified_ != nullptr;
 }

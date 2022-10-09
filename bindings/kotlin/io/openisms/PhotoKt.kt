@@ -57,7 +57,24 @@ public object PhotoKt {
     }
 
     /**
-     * <code>string etag = 3;</code>
+     * <code>string mime_type = 3;</code>
+     */
+    public var mimeType: kotlin.String
+      @JvmName("getMimeType")
+      get() = _builder.getMimeType()
+      @JvmName("setMimeType")
+      set(value) {
+        _builder.setMimeType(value)
+      }
+    /**
+     * <code>string mime_type = 3;</code>
+     */
+    public fun clearMimeType() {
+      _builder.clearMimeType()
+    }
+
+    /**
+     * <code>string etag = 4;</code>
      */
     public var etag: kotlin.String
       @JvmName("getEtag")
@@ -67,14 +84,14 @@ public object PhotoKt {
         _builder.setEtag(value)
       }
     /**
-     * <code>string etag = 3;</code>
+     * <code>string etag = 4;</code>
      */
     public fun clearEtag() {
       _builder.clearEtag()
     }
 
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 5;</code>
      */
     public var lastModified: com.google.protobuf.Timestamp
       @JvmName("getLastModified")
@@ -84,13 +101,13 @@ public object PhotoKt {
         _builder.setLastModified(value)
       }
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 5;</code>
      */
     public fun clearLastModified() {
       _builder.clearLastModified()
     }
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 5;</code>
      * @return Whether the lastModified field is set.
      */
     public fun hasLastModified(): kotlin.Boolean {

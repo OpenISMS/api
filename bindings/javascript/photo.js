@@ -73,7 +73,8 @@ proto.io.openisms.v1.Photo.toObject = function(includeInstance, msg) {
   var f, obj = {
     url: jspb.Message.getFieldWithDefault(msg, 1, ""),
     base64Encoded: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    etag: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    mimeType: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    etag: jspb.Message.getFieldWithDefault(msg, 4, ""),
     lastModified: (f = msg.getLastModified()) && proto.google.protobuf.Timestamp.toObject(includeInstance, f)
   };
 
@@ -121,9 +122,13 @@ proto.io.openisms.v1.Photo.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEtag(value);
+      msg.setMimeType(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEtag(value);
+      break;
+    case 5:
       var value = new proto.google.protobuf.Timestamp;
       reader.readMessage(value,proto.google.protobuf.Timestamp.deserializeBinaryFromReader);
       msg.setLastModified(value);
@@ -171,17 +176,24 @@ proto.io.openisms.v1.Photo.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getEtag();
+  f = message.getMimeType();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
+  f = message.getEtag();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getLastModified();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       proto.google.protobuf.Timestamp.serializeBinaryToWriter
     );
@@ -226,10 +238,10 @@ proto.io.openisms.v1.Photo.prototype.setBase64Encoded = function(value) {
 
 
 /**
- * optional string etag = 3;
+ * optional string mime_type = 3;
  * @return {string}
  */
-proto.io.openisms.v1.Photo.prototype.getEtag = function() {
+proto.io.openisms.v1.Photo.prototype.getMimeType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -238,18 +250,36 @@ proto.io.openisms.v1.Photo.prototype.getEtag = function() {
  * @param {string} value
  * @return {!proto.io.openisms.v1.Photo} returns this
  */
-proto.io.openisms.v1.Photo.prototype.setEtag = function(value) {
+proto.io.openisms.v1.Photo.prototype.setMimeType = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp last_modified = 4;
+ * optional string etag = 4;
+ * @return {string}
+ */
+proto.io.openisms.v1.Photo.prototype.getEtag = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.io.openisms.v1.Photo} returns this
+ */
+proto.io.openisms.v1.Photo.prototype.setEtag = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional google.protobuf.Timestamp last_modified = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.io.openisms.v1.Photo.prototype.getLastModified = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, proto.google.protobuf.Timestamp, 4));
+    jspb.Message.getWrapperField(this, proto.google.protobuf.Timestamp, 5));
 };
 
 
@@ -258,7 +288,7 @@ proto.io.openisms.v1.Photo.prototype.getLastModified = function() {
  * @return {!proto.io.openisms.v1.Photo} returns this
 */
 proto.io.openisms.v1.Photo.prototype.setLastModified = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -276,7 +306,7 @@ proto.io.openisms.v1.Photo.prototype.clearLastModified = function() {
  * @return {boolean}
  */
 proto.io.openisms.v1.Photo.prototype.hasLastModified = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

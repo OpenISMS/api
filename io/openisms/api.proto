@@ -96,8 +96,9 @@ message Name {
 message Photo {
   string url = 1;
   string base_64_encoded = 2;
-  string etag = 3;
-  google.protobuf.Timestamp last_modified = 4;
+  string mime_type = 3;
+  string etag = 4;
+  google.protobuf.Timestamp last_modified = 5;
 }
 
 message Employment {

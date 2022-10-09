@@ -9,6 +9,7 @@ package io.openisms.api
 final case class Photo(
     url: _root_.scala.Predef.String = "",
     base64Encoded: _root_.scala.Predef.String = "",
+    mimeType: _root_.scala.Predef.String = "",
     etag: _root_.scala.Predef.String = "",
     lastModified: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None,
     unknownFields: _root_.scalapb.UnknownFieldSet = _root_.scalapb.UnknownFieldSet.empty
@@ -33,9 +34,16 @@ final case class Photo(
       };
       
       {
-        val __value = etag
+        val __value = mimeType
         if (!__value.isEmpty) {
           __size += _root_.com.google.protobuf.CodedOutputStream.computeStringSize(3, __value)
+        }
+      };
+      
+      {
+        val __value = etag
+        if (!__value.isEmpty) {
+          __size += _root_.com.google.protobuf.CodedOutputStream.computeStringSize(4, __value)
         }
       };
       if (lastModified.isDefined) {
@@ -68,14 +76,20 @@ final case class Photo(
         }
       };
       {
-        val __v = etag
+        val __v = mimeType
         if (!__v.isEmpty) {
           _output__.writeString(3, __v)
         }
       };
+      {
+        val __v = etag
+        if (!__v.isEmpty) {
+          _output__.writeString(4, __v)
+        }
+      };
       lastModified.foreach { __v =>
         val __m = __v
-        _output__.writeTag(4, 2)
+        _output__.writeTag(5, 2)
         _output__.writeUInt32NoTag(__m.serializedSize)
         __m.writeTo(_output__)
       };
@@ -83,6 +97,7 @@ final case class Photo(
     }
     def withUrl(__v: _root_.scala.Predef.String): Photo = copy(url = __v)
     def withBase64Encoded(__v: _root_.scala.Predef.String): Photo = copy(base64Encoded = __v)
+    def withMimeType(__v: _root_.scala.Predef.String): Photo = copy(mimeType = __v)
     def withEtag(__v: _root_.scala.Predef.String): Photo = copy(etag = __v)
     def getLastModified: com.google.protobuf.timestamp.Timestamp = lastModified.getOrElse(com.google.protobuf.timestamp.Timestamp.defaultInstance)
     def clearLastModified: Photo = copy(lastModified = _root_.scala.None)
@@ -100,10 +115,14 @@ final case class Photo(
           if (__t != "") __t else null
         }
         case 3 => {
+          val __t = mimeType
+          if (__t != "") __t else null
+        }
+        case 4 => {
           val __t = etag
           if (__t != "") __t else null
         }
-        case 4 => lastModified.orNull
+        case 5 => lastModified.orNull
       }
     }
     def getField(__field: _root_.scalapb.descriptors.FieldDescriptor): _root_.scalapb.descriptors.PValue = {
@@ -111,8 +130,9 @@ final case class Photo(
       (__field.number: @_root_.scala.unchecked) match {
         case 1 => _root_.scalapb.descriptors.PString(url)
         case 2 => _root_.scalapb.descriptors.PString(base64Encoded)
-        case 3 => _root_.scalapb.descriptors.PString(etag)
-        case 4 => lastModified.map(_.toPMessage).getOrElse(_root_.scalapb.descriptors.PEmpty)
+        case 3 => _root_.scalapb.descriptors.PString(mimeType)
+        case 4 => _root_.scalapb.descriptors.PString(etag)
+        case 5 => lastModified.map(_.toPMessage).getOrElse(_root_.scalapb.descriptors.PEmpty)
       }
     }
     def toProtoString: _root_.scala.Predef.String = _root_.scalapb.TextFormat.printToUnicodeString(this)
@@ -125,6 +145,7 @@ object Photo extends scalapb.GeneratedMessageCompanion[io.openisms.api.Photo] {
   def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): io.openisms.api.Photo = {
     var __url: _root_.scala.Predef.String = ""
     var __base64Encoded: _root_.scala.Predef.String = ""
+    var __mimeType: _root_.scala.Predef.String = ""
     var __etag: _root_.scala.Predef.String = ""
     var __lastModified: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None
     var `_unknownFields__`: _root_.scalapb.UnknownFieldSet.Builder = null
@@ -138,8 +159,10 @@ object Photo extends scalapb.GeneratedMessageCompanion[io.openisms.api.Photo] {
         case 18 =>
           __base64Encoded = _input__.readStringRequireUtf8()
         case 26 =>
-          __etag = _input__.readStringRequireUtf8()
+          __mimeType = _input__.readStringRequireUtf8()
         case 34 =>
+          __etag = _input__.readStringRequireUtf8()
+        case 42 =>
           __lastModified = Option(__lastModified.fold(_root_.scalapb.LiteParser.readMessage[com.google.protobuf.timestamp.Timestamp](_input__))(_root_.scalapb.LiteParser.readMessage(_input__, _)))
         case tag =>
           if (_unknownFields__ == null) {
@@ -151,6 +174,7 @@ object Photo extends scalapb.GeneratedMessageCompanion[io.openisms.api.Photo] {
     io.openisms.api.Photo(
         url = __url,
         base64Encoded = __base64Encoded,
+        mimeType = __mimeType,
         etag = __etag,
         lastModified = __lastModified,
         unknownFields = if (_unknownFields__ == null) _root_.scalapb.UnknownFieldSet.empty else _unknownFields__.result()
@@ -162,8 +186,9 @@ object Photo extends scalapb.GeneratedMessageCompanion[io.openisms.api.Photo] {
       io.openisms.api.Photo(
         url = __fieldsMap.get(scalaDescriptor.findFieldByNumber(1).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
         base64Encoded = __fieldsMap.get(scalaDescriptor.findFieldByNumber(2).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
-        etag = __fieldsMap.get(scalaDescriptor.findFieldByNumber(3).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
-        lastModified = __fieldsMap.get(scalaDescriptor.findFieldByNumber(4).get).flatMap(_.as[_root_.scala.Option[com.google.protobuf.timestamp.Timestamp]])
+        mimeType = __fieldsMap.get(scalaDescriptor.findFieldByNumber(3).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
+        etag = __fieldsMap.get(scalaDescriptor.findFieldByNumber(4).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
+        lastModified = __fieldsMap.get(scalaDescriptor.findFieldByNumber(5).get).flatMap(_.as[_root_.scala.Option[com.google.protobuf.timestamp.Timestamp]])
       )
     case _ => throw new RuntimeException("Expected PMessage")
   }
@@ -172,7 +197,7 @@ object Photo extends scalapb.GeneratedMessageCompanion[io.openisms.api.Photo] {
   def messageCompanionForFieldNumber(__number: _root_.scala.Int): _root_.scalapb.GeneratedMessageCompanion[_] = {
     var __out: _root_.scalapb.GeneratedMessageCompanion[_] = null
     (__number: @_root_.scala.unchecked) match {
-      case 4 => __out = com.google.protobuf.timestamp.Timestamp
+      case 5 => __out = com.google.protobuf.timestamp.Timestamp
     }
     __out
   }
@@ -181,28 +206,33 @@ object Photo extends scalapb.GeneratedMessageCompanion[io.openisms.api.Photo] {
   lazy val defaultInstance = io.openisms.api.Photo(
     url = "",
     base64Encoded = "",
+    mimeType = "",
     etag = "",
     lastModified = _root_.scala.None
   )
   implicit class PhotoLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, io.openisms.api.Photo]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, io.openisms.api.Photo](_l) {
     def url: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.url)((c_, f_) => c_.copy(url = f_))
     def base64Encoded: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.base64Encoded)((c_, f_) => c_.copy(base64Encoded = f_))
+    def mimeType: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.mimeType)((c_, f_) => c_.copy(mimeType = f_))
     def etag: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.etag)((c_, f_) => c_.copy(etag = f_))
     def lastModified: _root_.scalapb.lenses.Lens[UpperPB, com.google.protobuf.timestamp.Timestamp] = field(_.getLastModified)((c_, f_) => c_.copy(lastModified = Option(f_)))
     def optionalLastModified: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Option[com.google.protobuf.timestamp.Timestamp]] = field(_.lastModified)((c_, f_) => c_.copy(lastModified = f_))
   }
   final val URL_FIELD_NUMBER = 1
   final val BASE_64_ENCODED_FIELD_NUMBER = 2
-  final val ETAG_FIELD_NUMBER = 3
-  final val LAST_MODIFIED_FIELD_NUMBER = 4
+  final val MIME_TYPE_FIELD_NUMBER = 3
+  final val ETAG_FIELD_NUMBER = 4
+  final val LAST_MODIFIED_FIELD_NUMBER = 5
   def of(
     url: _root_.scala.Predef.String,
     base64Encoded: _root_.scala.Predef.String,
+    mimeType: _root_.scala.Predef.String,
     etag: _root_.scala.Predef.String,
     lastModified: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp]
   ): _root_.io.openisms.api.Photo = _root_.io.openisms.api.Photo(
     url,
     base64Encoded,
+    mimeType,
     etag,
     lastModified
   )

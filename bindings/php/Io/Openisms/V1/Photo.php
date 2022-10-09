@@ -22,11 +22,15 @@ class Photo extends \Google\Protobuf\Internal\Message
      */
     protected $base_64_encoded = '';
     /**
-     * Generated from protobuf field <code>string etag = 3;</code>
+     * Generated from protobuf field <code>string mime_type = 3;</code>
+     */
+    protected $mime_type = '';
+    /**
+     * Generated from protobuf field <code>string etag = 4;</code>
      */
     protected $etag = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified = 5;</code>
      */
     protected $last_modified = null;
 
@@ -38,6 +42,7 @@ class Photo extends \Google\Protobuf\Internal\Message
      *
      *     @type string $url
      *     @type string $base_64_encoded
+     *     @type string $mime_type
      *     @type string $etag
      *     @type \Google\Protobuf\Timestamp $last_modified
      * }
@@ -92,7 +97,29 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string etag = 3;</code>
+     * Generated from protobuf field <code>string mime_type = 3;</code>
+     * @return string
+     */
+    public function getMimeType()
+    {
+        return $this->mime_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>string mime_type = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMimeType($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->mime_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string etag = 4;</code>
      * @return string
      */
     public function getEtag()
@@ -101,7 +128,7 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string etag = 3;</code>
+     * Generated from protobuf field <code>string etag = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -114,7 +141,7 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastModified()
@@ -133,7 +160,7 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified = 4;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified = 5;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

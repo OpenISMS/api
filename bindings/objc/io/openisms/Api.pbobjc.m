@@ -885,6 +885,7 @@ typedef struct Name__storage_ {
 
 @dynamic URL;
 @dynamic base64Encoded;
+@dynamic mimeType;
 @dynamic etag;
 @dynamic hasLastModified, lastModified;
 
@@ -892,6 +893,7 @@ typedef struct Photo__storage_ {
   uint32_t _has_storage_[1];
   NSString *URL;
   NSString *base64Encoded;
+  NSString *mimeType;
   NSString *etag;
   GPBTimestamp *lastModified;
 } Photo__storage_;
@@ -921,10 +923,19 @@ typedef struct Photo__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
+        .name = "mimeType",
+        .dataTypeSpecific.clazz = Nil,
+        .number = Photo_FieldNumber_MimeType,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Photo__storage_, mimeType),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldClearHasIvarOnZero),
+        .dataType = GPBDataTypeString,
+      },
+      {
         .name = "etag",
         .dataTypeSpecific.clazz = Nil,
         .number = Photo_FieldNumber_Etag,
-        .hasIndex = 2,
+        .hasIndex = 3,
         .offset = (uint32_t)offsetof(Photo__storage_, etag),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldClearHasIvarOnZero),
         .dataType = GPBDataTypeString,
@@ -933,7 +944,7 @@ typedef struct Photo__storage_ {
         .name = "lastModified",
         .dataTypeSpecific.clazz = GPBObjCClass(GPBTimestamp),
         .number = Photo_FieldNumber_LastModified,
-        .hasIndex = 3,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(Photo__storage_, lastModified),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,

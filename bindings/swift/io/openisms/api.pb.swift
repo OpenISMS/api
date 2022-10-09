@@ -493,6 +493,8 @@ struct Io_Openisms_V1_Photo {
 
   var base64Encoded: String = String()
 
+  var mimeType: String = String()
+
   var etag: String = String()
 
   var lastModified: SwiftProtobuf.Google_Protobuf_Timestamp {
@@ -1739,8 +1741,9 @@ extension Io_Openisms_V1_Photo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "url"),
     2: .standard(proto: "base_64_encoded"),
-    3: .same(proto: "etag"),
-    4: .standard(proto: "last_modified"),
+    3: .standard(proto: "mime_type"),
+    4: .same(proto: "etag"),
+    5: .standard(proto: "last_modified"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1751,8 +1754,9 @@ extension Io_Openisms_V1_Photo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.url) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self.base64Encoded) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.etag) }()
-      case 4: try { try decoder.decodeSingularMessageField(value: &self._lastModified) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.mimeType) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.etag) }()
+      case 5: try { try decoder.decodeSingularMessageField(value: &self._lastModified) }()
       default: break
       }
     }
@@ -1769,11 +1773,14 @@ extension Io_Openisms_V1_Photo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if !self.base64Encoded.isEmpty {
       try visitor.visitSingularStringField(value: self.base64Encoded, fieldNumber: 2)
     }
+    if !self.mimeType.isEmpty {
+      try visitor.visitSingularStringField(value: self.mimeType, fieldNumber: 3)
+    }
     if !self.etag.isEmpty {
-      try visitor.visitSingularStringField(value: self.etag, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.etag, fieldNumber: 4)
     }
     try { if let v = self._lastModified {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1781,6 +1788,7 @@ extension Io_Openisms_V1_Photo: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   static func ==(lhs: Io_Openisms_V1_Photo, rhs: Io_Openisms_V1_Photo) -> Bool {
     if lhs.url != rhs.url {return false}
     if lhs.base64Encoded != rhs.base64Encoded {return false}
+    if lhs.mimeType != rhs.mimeType {return false}
     if lhs.etag != rhs.etag {return false}
     if lhs._lastModified != rhs._lastModified {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

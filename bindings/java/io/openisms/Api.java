@@ -12734,29 +12734,41 @@ public final class Api {
         getBase64EncodedBytes();
 
     /**
-     * <code>string etag = 3;</code>
+     * <code>string mime_type = 3;</code>
+     * @return The mimeType.
+     */
+    java.lang.String getMimeType();
+    /**
+     * <code>string mime_type = 3;</code>
+     * @return The bytes for mimeType.
+     */
+    com.google.protobuf.ByteString
+        getMimeTypeBytes();
+
+    /**
+     * <code>string etag = 4;</code>
      * @return The etag.
      */
     java.lang.String getEtag();
     /**
-     * <code>string etag = 3;</code>
+     * <code>string etag = 4;</code>
      * @return The bytes for etag.
      */
     com.google.protobuf.ByteString
         getEtagBytes();
 
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 5;</code>
      * @return Whether the lastModified field is set.
      */
     boolean hasLastModified();
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 5;</code>
      * @return The lastModified.
      */
     com.google.protobuf.Timestamp getLastModified();
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 5;</code>
      */
     com.google.protobuf.TimestampOrBuilder getLastModifiedOrBuilder();
   }
@@ -12775,6 +12787,7 @@ public final class Api {
     private Photo() {
       url_ = "";
       base64Encoded_ = "";
+      mimeType_ = "";
       etag_ = "";
     }
 
@@ -12823,10 +12836,16 @@ public final class Api {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              etag_ = s;
+              mimeType_ = s;
               break;
             }
             case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              etag_ = s;
+              break;
+            }
+            case 42: {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (lastModified_ != null) {
                 subBuilder = lastModified_.toBuilder();
@@ -12949,10 +12968,48 @@ public final class Api {
       }
     }
 
-    public static final int ETAG_FIELD_NUMBER = 3;
+    public static final int MIME_TYPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object mimeType_;
+    /**
+     * <code>string mime_type = 3;</code>
+     * @return The mimeType.
+     */
+    @java.lang.Override
+    public java.lang.String getMimeType() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mimeType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string mime_type = 3;</code>
+     * @return The bytes for mimeType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMimeTypeBytes() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mimeType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ETAG_FIELD_NUMBER = 4;
     private volatile java.lang.Object etag_;
     /**
-     * <code>string etag = 3;</code>
+     * <code>string etag = 4;</code>
      * @return The etag.
      */
     @java.lang.Override
@@ -12969,7 +13026,7 @@ public final class Api {
       }
     }
     /**
-     * <code>string etag = 3;</code>
+     * <code>string etag = 4;</code>
      * @return The bytes for etag.
      */
     @java.lang.Override
@@ -12987,10 +13044,10 @@ public final class Api {
       }
     }
 
-    public static final int LAST_MODIFIED_FIELD_NUMBER = 4;
+    public static final int LAST_MODIFIED_FIELD_NUMBER = 5;
     private com.google.protobuf.Timestamp lastModified_;
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 5;</code>
      * @return Whether the lastModified field is set.
      */
     @java.lang.Override
@@ -12998,7 +13055,7 @@ public final class Api {
       return lastModified_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 5;</code>
      * @return The lastModified.
      */
     @java.lang.Override
@@ -13006,7 +13063,7 @@ public final class Api {
       return lastModified_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastModified_;
     }
     /**
-     * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+     * <code>.google.protobuf.Timestamp last_modified = 5;</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLastModifiedOrBuilder() {
@@ -13033,11 +13090,14 @@ public final class Api {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(base64Encoded_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, base64Encoded_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mimeType_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, etag_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, etag_);
       }
       if (lastModified_ != null) {
-        output.writeMessage(4, getLastModified());
+        output.writeMessage(5, getLastModified());
       }
       unknownFields.writeTo(output);
     }
@@ -13054,12 +13114,15 @@ public final class Api {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(base64Encoded_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, base64Encoded_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, mimeType_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, etag_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, etag_);
       }
       if (lastModified_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getLastModified());
+          .computeMessageSize(5, getLastModified());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13080,6 +13143,8 @@ public final class Api {
           .equals(other.getUrl())) return false;
       if (!getBase64Encoded()
           .equals(other.getBase64Encoded())) return false;
+      if (!getMimeType()
+          .equals(other.getMimeType())) return false;
       if (!getEtag()
           .equals(other.getEtag())) return false;
       if (hasLastModified() != other.hasLastModified()) return false;
@@ -13102,6 +13167,8 @@ public final class Api {
       hash = (53 * hash) + getUrl().hashCode();
       hash = (37 * hash) + BASE_64_ENCODED_FIELD_NUMBER;
       hash = (53 * hash) + getBase64Encoded().hashCode();
+      hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getMimeType().hashCode();
       hash = (37 * hash) + ETAG_FIELD_NUMBER;
       hash = (53 * hash) + getEtag().hashCode();
       if (hasLastModified()) {
@@ -13245,6 +13312,8 @@ public final class Api {
 
         base64Encoded_ = "";
 
+        mimeType_ = "";
+
         etag_ = "";
 
         if (lastModifiedBuilder_ == null) {
@@ -13281,6 +13350,7 @@ public final class Api {
         io.openisms.Api.Photo result = new io.openisms.Api.Photo(this);
         result.url_ = url_;
         result.base64Encoded_ = base64Encoded_;
+        result.mimeType_ = mimeType_;
         result.etag_ = etag_;
         if (lastModifiedBuilder_ == null) {
           result.lastModified_ = lastModified_;
@@ -13341,6 +13411,10 @@ public final class Api {
         }
         if (!other.getBase64Encoded().isEmpty()) {
           base64Encoded_ = other.base64Encoded_;
+          onChanged();
+        }
+        if (!other.getMimeType().isEmpty()) {
+          mimeType_ = other.mimeType_;
           onChanged();
         }
         if (!other.getEtag().isEmpty()) {
@@ -13531,9 +13605,85 @@ public final class Api {
         return this;
       }
 
+      private java.lang.Object mimeType_ = "";
+      /**
+       * <code>string mime_type = 3;</code>
+       * @return The mimeType.
+       */
+      public java.lang.String getMimeType() {
+        java.lang.Object ref = mimeType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mimeType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string mime_type = 3;</code>
+       * @return The bytes for mimeType.
+       */
+      public com.google.protobuf.ByteString
+          getMimeTypeBytes() {
+        java.lang.Object ref = mimeType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mimeType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string mime_type = 3;</code>
+       * @param value The mimeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mimeType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mime_type = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMimeType() {
+        
+        mimeType_ = getDefaultInstance().getMimeType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mime_type = 3;</code>
+       * @param value The bytes for mimeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mimeType_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object etag_ = "";
       /**
-       * <code>string etag = 3;</code>
+       * <code>string etag = 4;</code>
        * @return The etag.
        */
       public java.lang.String getEtag() {
@@ -13549,7 +13699,7 @@ public final class Api {
         }
       }
       /**
-       * <code>string etag = 3;</code>
+       * <code>string etag = 4;</code>
        * @return The bytes for etag.
        */
       public com.google.protobuf.ByteString
@@ -13566,7 +13716,7 @@ public final class Api {
         }
       }
       /**
-       * <code>string etag = 3;</code>
+       * <code>string etag = 4;</code>
        * @param value The etag to set.
        * @return This builder for chaining.
        */
@@ -13581,7 +13731,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>string etag = 3;</code>
+       * <code>string etag = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearEtag() {
@@ -13591,7 +13741,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>string etag = 3;</code>
+       * <code>string etag = 4;</code>
        * @param value The bytes for etag to set.
        * @return This builder for chaining.
        */
@@ -13611,14 +13761,14 @@ public final class Api {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastModifiedBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 5;</code>
        * @return Whether the lastModified field is set.
        */
       public boolean hasLastModified() {
         return lastModifiedBuilder_ != null || lastModified_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 5;</code>
        * @return The lastModified.
        */
       public com.google.protobuf.Timestamp getLastModified() {
@@ -13629,7 +13779,7 @@ public final class Api {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 5;</code>
        */
       public Builder setLastModified(com.google.protobuf.Timestamp value) {
         if (lastModifiedBuilder_ == null) {
@@ -13645,7 +13795,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 5;</code>
        */
       public Builder setLastModified(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -13659,7 +13809,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 5;</code>
        */
       public Builder mergeLastModified(com.google.protobuf.Timestamp value) {
         if (lastModifiedBuilder_ == null) {
@@ -13677,7 +13827,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 5;</code>
        */
       public Builder clearLastModified() {
         if (lastModifiedBuilder_ == null) {
@@ -13691,7 +13841,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 5;</code>
        */
       public com.google.protobuf.Timestamp.Builder getLastModifiedBuilder() {
         
@@ -13699,7 +13849,7 @@ public final class Api {
         return getLastModifiedFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 5;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getLastModifiedOrBuilder() {
         if (lastModifiedBuilder_ != null) {
@@ -13710,7 +13860,7 @@ public final class Api {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp last_modified = 4;</code>
+       * <code>.google.protobuf.Timestamp last_modified = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -35811,79 +35961,79 @@ public final class Api {
       "tobuf.Timestamp\"q\n\004Name\022\022\n\ngiven_name\030\001 " +
       "\001(\t\022\023\n\013family_name\030\002 \001(\t\022\021\n\tfull_name\030\003 " +
       "\001(\t\022\r\n\005title\030\004 \001(\t\022\020\n\010position\030\005 \001(\t\022\014\n\004" +
-      "role\030\006 \001(\t\"n\n\005Photo\022\013\n\003url\030\001 \001(\t\022\027\n\017base" +
-      "_64_encoded\030\002 \001(\t\022\014\n\004etag\030\003 \001(\t\0221\n\rlast_" +
-      "modified\030\004 \001(\0132\032.google.protobuf.Timesta" +
-      "mp\"v\n\nEmployment\022\020\n\010contract\030\001 \001(\t\022\016\n\006st" +
-      "atus\030\002 \001(\t\022#\n\005begin\030\003 \001(\0132\024.io.openisms." +
-      "v1.Date\022!\n\003end\030\004 \001(\0132\024.io.openisms.v1.Da" +
-      "te\"x\n\020ConnectedAccount\022\016\n\006app_id\030\001 \001(\t\022\020" +
-      "\n\010app_name\030\002 \001(\t\022\020\n\010app_type\030\003 \001(\t\022\017\n\007ap" +
-      "p_url\030\004 \001(\t\022\017\n\007user_id\030\005 \001(\t\022\016\n\006scopes\030\006" +
-      " \003(\t\"\262\003\n\016PhysicalObject\022\014\n\004type\030\001 \001(\t\022\014\n" +
-      "\004name\030\002 \001(\t\022\024\n\014manufacturer\030\003 \001(\t\022\016\n\006ven" +
-      "dor\030\004 \001(\t\022\022\n\nidentifier\030\005 \001(\t\022\025\n\rserial_" +
-      "number\030\006 \001(\t\022\014\n\004imei\030\007 \001(\t\022\014\n\004meid\030\010 \001(\t" +
-      "\022)\n\010networks\030\t \003(\0132\027.io.openisms.v1.Netw" +
-      "ork\022\020\n\010hostname\030\n \001(\t\022\025\n\ruser_accounts\030\013" +
-      " \003(\t\022+\n\002os\030\014 \001(\0132\037.io.openisms.v1.Operat" +
-      "ingSystem\0222\n\010security\030\r \001(\0132 .io.openism" +
-      "s.v1.SecurityFeatures\022)\n\010profiles\030\016 \003(\0132" +
-      "\027.io.openisms.v1.Profile\022)\n\004apps\030\017 \003(\0132\033" +
-      ".io.openisms.v1.Application\022\014\n\004tags\030\024 \003(" +
-      "\t\"\366\003\n\020SecurityFeatures\0223\n\017activation_loc" +
-      "k\030\001 \001(\0132\032.google.protobuf.BoolValue\022.\n\ns" +
-      "upervised\030\002 \001(\0132\032.google.protobuf.BoolVa" +
-      "lue\022.\n\nfile_vault\030\003 \001(\0132\032.google.protobu" +
-      "f.BoolValue\0228\n\024full_disk_encryption\030\004 \001(" +
-      "\0132\032.google.protobuf.BoolValue\0223\n\017secure_" +
-      "password\030\005 \001(\0132\032.google.protobuf.BoolVal" +
-      "ue\0229\n\025automatic_screen_lock\030\006 \001(\0132\032.goog" +
-      "le.protobuf.BoolValue\0226\n\021screen_lock_aft" +
-      "er\030\007 \001(\0132\033.google.protobuf.Int32Value\0224\n" +
-      "\020firewall_enabled\030\010 \001(\0132\032.google.protobu" +
-      "f.BoolValue\0225\n\021automatic_updates\030\t \001(\0132\032" +
-      ".google.protobuf.BoolValue\":\n\007Network\022\014\n" +
-      "\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\023\n\013mac_address" +
-      "\030\003 \001(\t\"\206\002\n\017OperatingSystem\022<\n\002os\030\001 \001(\01620" +
-      ".io.openisms.v1.OperatingSystem.Operatin" +
-      "gSystems\022\025\n\rmajor_version\030\002 \001(\t\022\024\n\014full_" +
-      "version\030\003 \001(\t\"\207\001\n\020OperatingSystems\022\r\n\tun" +
-      "defined\020\000\022\t\n\005macos\020\001\022\013\n\007windows\020\002\022\t\n\005lin" +
-      "ux\020\003\022\010\n\004unix\020\004\022\r\n\tchrome_os\020\005\022\007\n\003ios\020\n\022\013" +
-      "\n\007android\020\013\022\007\n\003ros\020\016\022\t\n\005other\020\017\"\345\001\n\013Appl" +
-      "ication\022\014\n\004name\030\001 \001(\t\022\014\n\004path\030\002 \001(\t\022\016\n\006v" +
-      "endor\030\003 \001(\t\022\013\n\003url\030\004 \001(\t\022\023\n\013description\030" +
-      "\005 \001(\t\022\017\n\007version\030\006 \001(\t\022*\n\006signed\030\007 \001(\0132\032" +
-      ".google.protobuf.BoolValue\022.\n\nsystem_app" +
-      "\030\010 \001(\0132\032.google.protobuf.BoolValue\022\033\n\023in" +
-      "stallation_source\030\t \001(\t\"\222\001\n\007Profile\022\014\n\004n" +
-      "ame\030\001 \001(\t\022\022\n\nidentifier\030\002 \001(\t\0223\n\017removal" +
-      "_allowed\030\003 \001(\0132\032.google.protobuf.BoolVal" +
-      "ue\022\024\n\014payload_type\030\004 \001(\t\022\032\n\022payload_iden" +
-      "tifier\030\005 \001(\t\"0\n\004Date\022\014\n\004year\030\001 \001(\005\022\r\n\005mo" +
-      "nth\030\002 \001(\005\022\013\n\003day\030\003 \001(\005\"8\n\rCertification\022" +
-      "\014\n\004type\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004tags\030\n \003(\t" +
-      "\"p\n\007Company\022\014\n\004name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\020" +
-      "\n\010category\030\003 \001(\t\022\'\n\007contact\030\004 \001(\0132\026.io.o" +
-      "penisms.v1.Person\022\017\n\007address\030\005 \003(\t\"\373\001\n\007P" +
-      "entest\022\n\n\002id\030\001 \001(\t\022#\n\005begin\030\002 \001(\0132\024.io.o" +
-      "penisms.v1.Date\022!\n\003end\030\003 \001(\0132\024.io.openis" +
-      "ms.v1.Date\022(\n\007company\030\004 \001(\0132\027.io.openism" +
-      "s.v1.Company\022\r\n\005focus\030\005 \001(\t\022\016\n\006passed\030\006 " +
-      "\001(\010\022\016\n\006result\030\007 \001(\t\022\013\n\003url\030\010 \001(\t\022(\n\010cont" +
-      "acts\030\t \003(\0132\026.io.openisms.v1.Person\022\014\n\004ta" +
-      "gs\030\n \003(\t\"\300\001\n\nRepository\022\014\n\004name\030\001 \001(\t\022\013\n" +
-      "\003url\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022.\n\nvisib" +
-      "ility\030\004 \001(\0162\032.io.openisms.v1.Visibility\022" +
-      "\'\n\007members\030\005 \003(\0132\026.io.openisms.v1.Person" +
-      "\022\033\n\023security_attributes\030\006 \003(\t\022\014\n\004tags\030\n " +
-      "\003(\t\"N\n\nStatistics\022\022\n\nidentifier\030\001 \001(\t\022\014\n" +
-      "\004name\030\002 \001(\t\022\r\n\005value\030\003 \001(\005\022\017\n\007comment\030\004 " +
-      "\001(\t*G\n\nVisibility\022\r\n\tundefined\020\000\022\n\n\006publ" +
-      "ic\020\001\022\014\n\010internal\020\002\022\020\n\014confidential\020\003B&\n\013" +
-      "io.openismsZ\027github.com/openisms/apib\006pr" +
-      "oto3"
+      "role\030\006 \001(\t\"\201\001\n\005Photo\022\013\n\003url\030\001 \001(\t\022\027\n\017bas" +
+      "e_64_encoded\030\002 \001(\t\022\021\n\tmime_type\030\003 \001(\t\022\014\n" +
+      "\004etag\030\004 \001(\t\0221\n\rlast_modified\030\005 \001(\0132\032.goo" +
+      "gle.protobuf.Timestamp\"v\n\nEmployment\022\020\n\010" +
+      "contract\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022#\n\005begin\030" +
+      "\003 \001(\0132\024.io.openisms.v1.Date\022!\n\003end\030\004 \001(\013" +
+      "2\024.io.openisms.v1.Date\"x\n\020ConnectedAccou" +
+      "nt\022\016\n\006app_id\030\001 \001(\t\022\020\n\010app_name\030\002 \001(\t\022\020\n\010" +
+      "app_type\030\003 \001(\t\022\017\n\007app_url\030\004 \001(\t\022\017\n\007user_" +
+      "id\030\005 \001(\t\022\016\n\006scopes\030\006 \003(\t\"\262\003\n\016PhysicalObj" +
+      "ect\022\014\n\004type\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\024\n\014manuf" +
+      "acturer\030\003 \001(\t\022\016\n\006vendor\030\004 \001(\t\022\022\n\nidentif" +
+      "ier\030\005 \001(\t\022\025\n\rserial_number\030\006 \001(\t\022\014\n\004imei" +
+      "\030\007 \001(\t\022\014\n\004meid\030\010 \001(\t\022)\n\010networks\030\t \003(\0132\027" +
+      ".io.openisms.v1.Network\022\020\n\010hostname\030\n \001(" +
+      "\t\022\025\n\ruser_accounts\030\013 \003(\t\022+\n\002os\030\014 \001(\0132\037.i" +
+      "o.openisms.v1.OperatingSystem\0222\n\010securit" +
+      "y\030\r \001(\0132 .io.openisms.v1.SecurityFeature" +
+      "s\022)\n\010profiles\030\016 \003(\0132\027.io.openisms.v1.Pro" +
+      "file\022)\n\004apps\030\017 \003(\0132\033.io.openisms.v1.Appl" +
+      "ication\022\014\n\004tags\030\024 \003(\t\"\366\003\n\020SecurityFeatur" +
+      "es\0223\n\017activation_lock\030\001 \001(\0132\032.google.pro" +
+      "tobuf.BoolValue\022.\n\nsupervised\030\002 \001(\0132\032.go" +
+      "ogle.protobuf.BoolValue\022.\n\nfile_vault\030\003 " +
+      "\001(\0132\032.google.protobuf.BoolValue\0228\n\024full_" +
+      "disk_encryption\030\004 \001(\0132\032.google.protobuf." +
+      "BoolValue\0223\n\017secure_password\030\005 \001(\0132\032.goo" +
+      "gle.protobuf.BoolValue\0229\n\025automatic_scre" +
+      "en_lock\030\006 \001(\0132\032.google.protobuf.BoolValu" +
+      "e\0226\n\021screen_lock_after\030\007 \001(\0132\033.google.pr" +
+      "otobuf.Int32Value\0224\n\020firewall_enabled\030\010 " +
+      "\001(\0132\032.google.protobuf.BoolValue\0225\n\021autom" +
+      "atic_updates\030\t \001(\0132\032.google.protobuf.Boo" +
+      "lValue\":\n\007Network\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030" +
+      "\002 \001(\t\022\023\n\013mac_address\030\003 \001(\t\"\206\002\n\017Operating" +
+      "System\022<\n\002os\030\001 \001(\01620.io.openisms.v1.Oper" +
+      "atingSystem.OperatingSystems\022\025\n\rmajor_ve" +
+      "rsion\030\002 \001(\t\022\024\n\014full_version\030\003 \001(\t\"\207\001\n\020Op" +
+      "eratingSystems\022\r\n\tundefined\020\000\022\t\n\005macos\020\001" +
+      "\022\013\n\007windows\020\002\022\t\n\005linux\020\003\022\010\n\004unix\020\004\022\r\n\tch" +
+      "rome_os\020\005\022\007\n\003ios\020\n\022\013\n\007android\020\013\022\007\n\003ros\020\016" +
+      "\022\t\n\005other\020\017\"\345\001\n\013Application\022\014\n\004name\030\001 \001(" +
+      "\t\022\014\n\004path\030\002 \001(\t\022\016\n\006vendor\030\003 \001(\t\022\013\n\003url\030\004" +
+      " \001(\t\022\023\n\013description\030\005 \001(\t\022\017\n\007version\030\006 \001" +
+      "(\t\022*\n\006signed\030\007 \001(\0132\032.google.protobuf.Boo" +
+      "lValue\022.\n\nsystem_app\030\010 \001(\0132\032.google.prot" +
+      "obuf.BoolValue\022\033\n\023installation_source\030\t " +
+      "\001(\t\"\222\001\n\007Profile\022\014\n\004name\030\001 \001(\t\022\022\n\nidentif" +
+      "ier\030\002 \001(\t\0223\n\017removal_allowed\030\003 \001(\0132\032.goo" +
+      "gle.protobuf.BoolValue\022\024\n\014payload_type\030\004" +
+      " \001(\t\022\032\n\022payload_identifier\030\005 \001(\t\"0\n\004Date" +
+      "\022\014\n\004year\030\001 \001(\005\022\r\n\005month\030\002 \001(\005\022\013\n\003day\030\003 \001" +
+      "(\005\"8\n\rCertification\022\014\n\004type\030\001 \001(\t\022\013\n\003url" +
+      "\030\002 \001(\t\022\014\n\004tags\030\n \003(\t\"p\n\007Company\022\014\n\004name\030" +
+      "\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\020\n\010category\030\003 \001(\t\022\'\n\007" +
+      "contact\030\004 \001(\0132\026.io.openisms.v1.Person\022\017\n" +
+      "\007address\030\005 \003(\t\"\373\001\n\007Pentest\022\n\n\002id\030\001 \001(\t\022#" +
+      "\n\005begin\030\002 \001(\0132\024.io.openisms.v1.Date\022!\n\003e" +
+      "nd\030\003 \001(\0132\024.io.openisms.v1.Date\022(\n\007compan" +
+      "y\030\004 \001(\0132\027.io.openisms.v1.Company\022\r\n\005focu" +
+      "s\030\005 \001(\t\022\016\n\006passed\030\006 \001(\010\022\016\n\006result\030\007 \001(\t\022" +
+      "\013\n\003url\030\010 \001(\t\022(\n\010contacts\030\t \003(\0132\026.io.open" +
+      "isms.v1.Person\022\014\n\004tags\030\n \003(\t\"\300\001\n\nReposit" +
+      "ory\022\014\n\004name\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\023\n\013descri" +
+      "ption\030\003 \001(\t\022.\n\nvisibility\030\004 \001(\0162\032.io.ope" +
+      "nisms.v1.Visibility\022\'\n\007members\030\005 \003(\0132\026.i" +
+      "o.openisms.v1.Person\022\033\n\023security_attribu" +
+      "tes\030\006 \003(\t\022\014\n\004tags\030\n \003(\t\"N\n\nStatistics\022\022\n" +
+      "\nidentifier\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\r\n\005value" +
+      "\030\003 \001(\005\022\017\n\007comment\030\004 \001(\t*G\n\nVisibility\022\r\n" +
+      "\tundefined\020\000\022\n\n\006public\020\001\022\014\n\010internal\020\002\022\020" +
+      "\n\014confidential\020\003B&\n\013io.openismsZ\027github." +
+      "com/openisms/apib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -35932,7 +36082,7 @@ public final class Api {
     internal_static_io_openisms_v1_Photo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_io_openisms_v1_Photo_descriptor,
-        new java.lang.String[] { "Url", "Base64Encoded", "Etag", "LastModified", });
+        new java.lang.String[] { "Url", "Base64Encoded", "MimeType", "Etag", "LastModified", });
     internal_static_io_openisms_v1_Employment_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_io_openisms_v1_Employment_fieldAccessorTable = new

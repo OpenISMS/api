@@ -84,8 +84,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "io.openisms.v1.Photo" do
       optional :url, :string, 1
       optional :base_64_encoded, :string, 2
-      optional :etag, :string, 3
-      optional :last_modified, :message, 4, "google.protobuf.Timestamp"
+      optional :mime_type, :string, 3
+      optional :etag, :string, 4
+      optional :last_modified, :message, 5, "google.protobuf.Timestamp"
     end
     add_message "io.openisms.v1.Employment" do
       optional :contract, :string, 1

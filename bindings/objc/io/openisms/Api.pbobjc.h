@@ -439,8 +439,9 @@ GPB_FINAL @interface Name : GPBMessage
 typedef GPB_ENUM(Photo_FieldNumber) {
   Photo_FieldNumber_URL = 1,
   Photo_FieldNumber_Base64Encoded = 2,
-  Photo_FieldNumber_Etag = 3,
-  Photo_FieldNumber_LastModified = 4,
+  Photo_FieldNumber_MimeType = 3,
+  Photo_FieldNumber_Etag = 4,
+  Photo_FieldNumber_LastModified = 5,
 };
 
 GPB_FINAL @interface Photo : GPBMessage
@@ -448,6 +449,8 @@ GPB_FINAL @interface Photo : GPBMessage
 @property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *base64Encoded;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *mimeType;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *etag;
 
